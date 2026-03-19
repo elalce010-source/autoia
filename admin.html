@@ -441,7 +441,7 @@
       <div class="nav-section">Soporte</div>
       <div class="nav-item" onclick="showPage('tickets',this)">
         <span class="nav-icon">🎫</span><span>Tickets</span>
-        <span class="nav-badge" id="ticketBadge">3</span>
+        <span class="nav-badge" id="ticketBadge">0</span>
       </div>
       <div class="nav-item" onclick="showPage('activity',this)">
         <span class="nav-icon">⚡</span><span>Actividad</span>
@@ -480,45 +480,45 @@
         <div class="stats-grid">
           <div class="stat-card purple">
             <div class="stat-label">Usuarios totales</div>
-            <div class="stat-value purple" id="statUsers">1,284</div>
-            <div class="stat-change up">↑ 12% esta semana</div>
+            <div class="stat-value purple" id="statUsers">0</div>
+            <div class="stat-change up">Sin datos aún</div>
           </div>
           <div class="stat-card green">
             <div class="stat-label">Ingresos del mes</div>
-            <div class="stat-value green" id="statRevenue">8,432€</div>
-            <div class="stat-change up">↑ 8% vs mes anterior</div>
+            <div class="stat-value green" id="statRevenue">0€</div>
+            <div class="stat-change up">Sin datos aún</div>
           </div>
           <div class="stat-card cyan">
             <div class="stat-label">Vídeos hoy</div>
-            <div class="stat-value cyan" id="statVideos">347</div>
-            <div class="stat-change up">↑ 23% vs ayer</div>
+            <div class="stat-value cyan" id="statVideos">0</div>
+            <div class="stat-change up">Sin datos aún</div>
           </div>
           <div class="stat-card amber">
             <div class="stat-label">Tickets abiertos</div>
-            <div class="stat-value amber" id="statTickets">3</div>
-            <div class="stat-change down">↑ 1 nuevo hoy</div>
+            <div class="stat-value amber" id="statTickets">0</div>
+            <div class="stat-change down">Sin datos aún</div>
           </div>
         </div>
         <div class="stats-grid" style="grid-template-columns:repeat(4,1fr);">
           <div class="stat-card">
             <div class="stat-label">Plan Gratis</div>
-            <div class="stat-value" style="color:var(--text2);font-size:24px;" id="countFree">642</div>
-            <div class="stat-change" style="color:var(--text3);">50% del total</div>
+            <div class="stat-value" style="color:var(--text2);font-size:24px;" id="countFree">0</div>
+            <div class="stat-change" style="color:var(--text3);">Sin datos aún</div>
           </div>
           <div class="stat-card amber">
             <div class="stat-label">Plan Noob</div>
-            <div class="stat-value amber" style="font-size:24px;" id="countNoob">384</div>
-            <div class="stat-change up">30% del total</div>
+            <div class="stat-value amber" style="font-size:24px;" id="countNoob">0</div>
+            <div class="stat-change up">Sin datos aún</div>
           </div>
           <div class="stat-card cyan">
             <div class="stat-label">Plan Intermedio</div>
-            <div class="stat-value cyan" style="font-size:24px;" id="countInter">193</div>
-            <div class="stat-change up">15% del total</div>
+            <div class="stat-value cyan" style="font-size:24px;" id="countInter">0</div>
+            <div class="stat-change up">Sin datos aún</div>
           </div>
           <div class="stat-card purple">
             <div class="stat-label">Plan Pro</div>
-            <div class="stat-value purple" style="font-size:24px;" id="countPro">65</div>
-            <div class="stat-change up">5% del total</div>
+            <div class="stat-value purple" style="font-size:24px;" id="countPro">0</div>
+            <div class="stat-change up">Sin datos aún</div>
           </div>
         </div>
         <div class="charts-grid">
@@ -567,12 +567,7 @@
           </div>
           <table>
             <thead><tr><th>Usuario</th><th>Email</th><th>Plan</th><th>Registro</th><th>Estado</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Carlos Méndez</strong></td><td style="color:var(--text2)">carlos@gmail.com</td><td><span class="plan-pill plan-pro">PRO</span></td><td style="color:var(--text2)">hace 2 min</td><td><span class="status-dot status-active"></span>Activo</td></tr>
-              <tr><td><strong>Laura Sánchez</strong></td><td style="color:var(--text2)">laura@outlook.com</td><td><span class="plan-pill plan-inter">INTER</span></td><td style="color:var(--text2)">hace 18 min</td><td><span class="status-dot status-active"></span>Activo</td></tr>
-              <tr><td><strong>Miguel Torres</strong></td><td style="color:var(--text2)">miguel@gmail.com</td><td><span class="plan-pill plan-noob">NOOB</span></td><td style="color:var(--text2)">hace 34 min</td><td><span class="status-dot status-active"></span>Activo</td></tr>
-              <tr><td><strong>Ana Ruiz</strong></td><td style="color:var(--text2)">ana@hotmail.com</td><td><span class="plan-pill plan-free">GRATIS</span></td><td style="color:var(--text2)">hace 1h</td><td><span class="status-dot status-active"></span>Activo</td></tr>
-            </tbody>
+            <tbody><tr><td colspan="6" style="text-align:center;color:var(--text3);padding:32px;">No hay transacciones aún</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -580,9 +575,9 @@
       <!-- USERS -->
       <div class="page" id="page-users">
         <div class="stats-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px;">
-          <div class="stat-card purple"><div class="stat-label">Total usuarios</div><div class="stat-value purple">1,284</div><div class="stat-change up">↑ 12 hoy</div></div>
-          <div class="stat-card green"><div class="stat-label">Usuarios de pago</div><div class="stat-value green">642</div><div class="stat-change up">50% conversión</div></div>
-          <div class="stat-card red"><div class="stat-label">Cancelaciones mes</div><div class="stat-value red">18</div><div class="stat-change down">↑ 3 esta semana</div></div>
+          <div class="stat-card purple"><div class="stat-label">Total usuarios</div><div class="stat-value purple">0</div><div class="stat-change up">Sin datos aún</div></div>
+          <div class="stat-card green"><div class="stat-label">Usuarios de pago</div><div class="stat-value green">0</div><div class="stat-change up">Sin datos aún</div></div>
+          <div class="stat-card red"><div class="stat-label">Cancelaciones mes</div><div class="stat-value red">18</div><div class="stat-change down">Sin datos aún</div></div>
         </div>
         <div class="card">
           <div class="card-header">
@@ -599,10 +594,10 @@
       <!-- REVENUE -->
       <div class="page" id="page-revenue">
         <div class="stats-grid">
-          <div class="stat-card green"><div class="stat-label">Ingresos hoy</div><div class="stat-value green">284€</div><div class="stat-change up">↑ 18% vs ayer</div></div>
-          <div class="stat-card green"><div class="stat-label">Ingresos este mes</div><div class="stat-value green">8,432€</div><div class="stat-change up">↑ 8% vs anterior</div></div>
-          <div class="stat-card cyan"><div class="stat-label">MRR</div><div class="stat-value cyan">8,432€</div><div class="stat-change up">↑ 640€ este mes</div></div>
-          <div class="stat-card purple"><div class="stat-label">ARR estimado</div><div class="stat-value purple">101K€</div><div class="stat-change up">↑ tendencia positiva</div></div>
+          <div class="stat-card green"><div class="stat-label">Ingresos hoy</div><div class="stat-value green">0€</div><div class="stat-change up">Sin datos aún</div></div>
+          <div class="stat-card green"><div class="stat-label">Ingresos este mes</div><div class="stat-value green">0€</div><div class="stat-change up">Sin datos aún</div></div>
+          <div class="stat-card cyan"><div class="stat-label">MRR</div><div class="stat-value cyan">0€</div><div class="stat-change up">Sin datos aún</div></div>
+          <div class="stat-card purple"><div class="stat-label">ARR estimado</div><div class="stat-value purple">0€</div><div class="stat-change up">Sin datos aún</div></div>
         </div>
         <div class="charts-grid">
           <div class="card">
@@ -614,10 +609,10 @@
           <div class="card">
             <div class="card-header"><div class="card-title">Ingresos por plan</div></div>
             <div class="donut-wrap" style="margin-top:8px;">
-              <div class="donut-row"><div class="donut-color" style="background:var(--amber)"></div><div class="donut-name">Noob (7€ × 384)</div><div class="donut-bar-bg"><div class="donut-bar-fill" style="width:32%;background:var(--amber)"></div></div><div class="donut-pct" style="color:var(--amber)">2,688€</div></div>
-              <div class="donut-row"><div class="donut-color" style="background:var(--cyan)"></div><div class="donut-name">Inter (13€ × 193)</div><div class="donut-bar-bg"><div class="donut-bar-fill" style="width:30%;background:var(--cyan)"></div></div><div class="donut-pct" style="color:var(--cyan)">2,509€</div></div>
-              <div class="donut-row"><div class="donut-color" style="background:var(--accent2)"></div><div class="donut-name">Pro (21€ × 65)</div><div class="donut-bar-bg"><div class="donut-bar-fill" style="width:16%;background:var(--accent2)"></div></div><div class="donut-pct" style="color:var(--accent2)">1,365€</div></div>
-              <div class="donut-row"><div class="donut-color" style="background:var(--green)"></div><div class="donut-name">Créditos extra</div><div class="donut-bar-bg"><div class="donut-bar-fill" style="width:22%;background:var(--green)"></div></div><div class="donut-pct" style="color:var(--green)">1,870€</div></div>
+              <div class="donut-row"><div class="donut-color" style="background:var(--amber)"></div><div class="donut-name">Noob (7€ × 384)</div><div class="donut-bar-bg"><div class="donut-bar-fill" style="width:32%;background:var(--amber)"></div></div><div class="donut-pct" style="color:var(--amber)">0€</div></div>
+              <div class="donut-row"><div class="donut-color" style="background:var(--cyan)"></div><div class="donut-name">Inter (13€ × 193)</div><div class="donut-bar-bg"><div class="donut-bar-fill" style="width:30%;background:var(--cyan)"></div></div><div class="donut-pct" style="color:var(--cyan)">0€</div></div>
+              <div class="donut-row"><div class="donut-color" style="background:var(--accent2)"></div><div class="donut-name">Pro (21€ × 65)</div><div class="donut-bar-bg"><div class="donut-bar-fill" style="width:16%;background:var(--accent2)"></div></div><div class="donut-pct" style="color:var(--accent2)">0€</div></div>
+              <div class="donut-row"><div class="donut-color" style="background:var(--green)"></div><div class="donut-name">Créditos extra</div><div class="donut-bar-bg"><div class="donut-bar-fill" style="width:22%;background:var(--green)"></div></div><div class="donut-pct" style="color:var(--green)">0€</div></div>
             </div>
           </div>
         </div>
@@ -638,10 +633,10 @@
       <!-- VIDEOS -->
       <div class="page" id="page-videos">
         <div class="stats-grid">
-          <div class="stat-card cyan"><div class="stat-label">Vídeos hoy</div><div class="stat-value cyan">347</div><div class="stat-change up">↑ 23% vs ayer</div></div>
-          <div class="stat-card purple"><div class="stat-label">Total generados</div><div class="stat-value purple">102,841</div><div class="stat-change up">desde el inicio</div></div>
-          <div class="stat-card amber"><div class="stat-label">Gasto API hoy</div><div class="stat-value amber">3.47€</div><div class="stat-change" style="color:var(--text3);">0.01€ por vídeo</div></div>
-          <div class="stat-card green"><div class="stat-label">Subidos a redes</div><div class="stat-value green">218</div><div class="stat-change up">63% de los generados</div></div>
+          <div class="stat-card cyan"><div class="stat-label">Vídeos hoy</div><div class="stat-value cyan">0</div><div class="stat-change up">Sin datos aún</div></div>
+          <div class="stat-card purple"><div class="stat-label">Total generados</div><div class="stat-value purple">0</div><div class="stat-change up">Sin datos aún</div></div>
+          <div class="stat-card amber"><div class="stat-label">Gasto API hoy</div><div class="stat-value amber">0€</div><div class="stat-change" style="color:var(--text3);">Sin datos aún</div></div>
+          <div class="stat-card green"><div class="stat-label">Subidos a redes</div><div class="stat-value green">0</div><div class="stat-change up">Sin datos aún</div></div>
         </div>
         <div class="grid2" style="margin-bottom:16px;">
           <div class="card">
@@ -674,8 +669,8 @@
       <div class="page" id="page-tickets">
         <div class="stats-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px;">
           <div class="stat-card amber"><div class="stat-label">Tickets abiertos</div><div class="stat-value amber">3</div></div>
-          <div class="stat-card green"><div class="stat-label">Resueltos hoy</div><div class="stat-value green">7</div></div>
-          <div class="stat-card cyan"><div class="stat-label">Tiempo medio respuesta</div><div class="stat-value cyan">2.4h</div></div>
+          <div class="stat-card green"><div class="stat-label">Resueltos hoy</div><div class="stat-value green">0</div></div>
+          <div class="stat-card cyan"><div class="stat-label">Tiempo medio respuesta</div><div class="stat-value cyan">-</div></div>
         </div>
         <div class="card">
           <div class="card-header"><div class="card-title">Tickets de soporte</div></div>
@@ -790,7 +785,7 @@
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ===================== CREDENTIALS =====================
 // CAMBIA ESTO CON TU EMAIL Y CONTRASEÑA REAL
 const ADMIN_EMAIL = "elalce010@gmail.com";
@@ -847,9 +842,9 @@ function initApp(){
 
 // CHARTS
 const days=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
-const videoData=[280,310,295,340,328,380,347];
-const revenueData=[820,940,780,1100,980,1240,1080];
-const apiData=[2.8,3.1,2.95,3.4,3.28,3.8,3.47];
+const videoData=[0,0,0,0,0,0,0];
+const revenueData=[0,0,0,0,0,0,0];
+const apiData=[0,0,0,0,0,0,0];
 
 function buildChart(containerId,data,color,prefix,suffix){
   const c=document.getElementById(containerId);
@@ -882,19 +877,9 @@ function buildCharts(){
 }
 
 // USERS
-const usersData=[
-  {name:'Carlos Méndez',email:'carlos@gmail.com',plan:'pro',videos:284,reg:'hace 2 min',status:'active'},
-  {name:'Laura Sánchez',email:'laura@outlook.com',plan:'inter',videos:142,reg:'hace 18 min',status:'active'},
-  {name:'Miguel Torres',email:'miguel@gmail.com',plan:'noob',videos:67,reg:'hace 34 min',status:'active'},
-  {name:'Ana Ruiz',email:'ana@hotmail.com',plan:'free',videos:12,reg:'hace 1h',status:'active'},
-  {name:'Pedro Jiménez',email:'pedro@gmail.com',plan:'pro',videos:531,reg:'hace 2h',status:'active'},
-  {name:'María López',email:'maria@gmail.com',plan:'inter',videos:89,reg:'hace 3h',status:'active'},
-  {name:'Roberto Gómez',email:'roberto@outlook.com',plan:'noob',videos:34,reg:'hace 5h',status:'inactive'},
-  {name:'Elena Martín',email:'elena@hotmail.com',plan:'free',videos:3,reg:'hace 8h',status:'active'},
-  {name:'David García',email:'david@gmail.com',plan:'pro',videos:892,reg:'hace 1d',status:'active'},
-  {name:'Sara Fernández',email:'sara@gmail.com',plan:'inter',videos:178,reg:'hace 2d',status:'active'},
-];
-let filteredUsers=[...usersData];
+const usersData=[];
+let filteredUsers=[];
+
 
 function buildUsers(){
   const tb=document.getElementById('usersTbody');
@@ -933,31 +918,16 @@ function suspendUser(name,btn){
 }
 
 // TICKETS
-const ticketsData=[
-  {name:'Carlos Méndez',email:'carlos@gmail.com',msg:'No me aparece la opción de conectar mi cuenta de TikTok. He seguido los pasos pero el botón no hace nada.',time:'hace 5 min',status:'open'},
-  {name:'Laura Sánchez',email:'laura@outlook.com',msg:'¿Es posible cambiar el idioma del vídeo después de generarlo? No encuentro esa opción en la edición.',time:'hace 1h',status:'open'},
-  {name:'Pedro Jiménez',email:'pedro@gmail.com',msg:'El vídeo automático de hoy no se subió a YouTube a la hora programada. Tenía programado las 18:00.',time:'hace 2h',status:'open'},
-  {name:'Ana Ruiz',email:'ana@hotmail.com',msg:'Quiero cancelar mi suscripción pero no encuentro el botón. ¿Dónde está la opción de cancelar?',time:'hace 4h',status:'replied'},
-  {name:'Miguel Torres',email:'miguel@gmail.com',msg:'Muy buen servicio, solo quería preguntar si habrá más voces en español próximamente.',time:'hace 1d',status:'closed'},
-];
+const ticketsData=[];
 
 function buildTickets(){
   const tl=document.getElementById('ticketList');
   tl.innerHTML='';
+  if(!ticketsData.length){tl.innerHTML='<div style="text-align:center;padding:40px;color:var(--text3)">No hay tickets aún</div>';return;}
   ticketsData.forEach((t,i)=>{
     const statusMap={open:'ts-open ABIERTO',replied:'ts-replied RESPONDIDO',closed:'ts-closed CERRADO'};
     const [sc,st]=statusMap[t.status].split(' ');
-    tl.innerHTML+=`<div class="ticket-item" onclick="openReply(${i})">
-      <div class="ticket-avatar">${t.name[0]}</div>
-      <div class="ticket-body">
-        <div class="ticket-header">
-          <span class="ticket-name">${t.name}</span>
-          <span class="ticket-time">${t.time}</span>
-        </div>
-        <div class="ticket-msg">${t.msg}</div>
-      </div>
-      <span class="ticket-status ${sc}">${st}</span>
-    </div>`;
+    tl.innerHTML+=`<div class="ticket-item" onclick="openReply(${i})"><div class="ticket-avatar">${t.name[0]}</div><div class="ticket-body"><div class="ticket-header"><span class="ticket-name">${t.name}</span><span class="ticket-time">${t.time}</span></div><div class="ticket-msg">${t.msg}</div></div><span class="ticket-status ${sc}">${st}</span></div>`;
   });
 }
 
@@ -977,28 +947,14 @@ function sendReply(){
 }
 
 // ACTIVITY
-const activityBase=[
-  {icon:'👤',cls:'ai-purple',text:'<strong>Carlos Méndez</strong> se ha registrado con plan Pro',time:'hace 2 min'},
-  {icon:'🎬',cls:'ai-cyan',text:'<strong>Laura Sánchez</strong> generó un vídeo de Terror y misterio (62 seg)',time:'hace 4 min'},
-  {icon:'📤',cls:'ai-green',text:'<strong>Pedro Jiménez</strong> subió un vídeo a YouTube automáticamente',time:'hace 7 min'},
-  {icon:'💳',cls:'ai-purple',text:'<strong>Miguel Torres</strong> actualizó de Noob a Intermedio',time:'hace 12 min'},
-  {icon:'🎫',cls:'ai-amber',text:'<strong>Ana Ruiz</strong> abrió un ticket de soporte',time:'hace 18 min'},
-  {icon:'🎬',cls:'ai-cyan',text:'<strong>David García</strong> generó un vídeo de Finanzas personales (5 min)',time:'hace 24 min'},
-  {icon:'📤',cls:'ai-green',text:'<strong>Sara Fernández</strong> subió a TikTok e Instagram',time:'hace 31 min'},
-  {icon:'❌',cls:'ai-red',text:'<strong>Roberto Gómez</strong> canceló su suscripción Noob',time:'hace 45 min'},
-  {icon:'💳',cls:'ai-purple',text:'<strong>Elena Martín</strong> compró créditos extra (10 vídeos)',time:'hace 1h'},
-  {icon:'👤',cls:'ai-purple',text:'<strong>Nuevo usuario</strong> se registró en plan Gratis',time:'hace 1h 15min'},
-];
+const activityBase=[];
 
 function buildActivity(){
   const al=document.getElementById('activityList');
   al.innerHTML='';
+  if(!activityBase.length){al.innerHTML='<div style="text-align:center;padding:40px;color:var(--text3)">No hay actividad aún</div>';return;}
   activityBase.forEach(a=>{
-    al.innerHTML+=`<div class="activity-item">
-      <div class="activity-icon ${a.cls}">${a.icon}</div>
-      <div class="activity-text">${a.text}</div>
-      <div class="activity-time">${a.time}</div>
-    </div>`;
+    al.innerHTML+=`<div class="activity-item"><div class="activity-icon ${a.cls}">${a.icon}</div><div class="activity-text">${a.text}</div><div class="activity-time">${a.time}</div></div>`;
   });
 }
 
@@ -1021,20 +977,3 @@ function deleteCoupon(btn){
 // LIVE UPDATES
 function startLiveUpdates(){
   setInterval(()=>{
-    const u=parseInt(document.getElementById('statUsers').textContent.replace(',',''))||1284;
-    const rand=Math.random();
-    if(rand>0.7){
-      document.getElementById('statUsers').textContent=(u+1).toLocaleString('es-ES');
-      const v=parseInt(document.getElementById('statVideos').textContent)||347;
-      document.getElementById('statVideos').textContent=v+1;
-    }
-  },8000);
-}
-
-// CLOSE MODAL ON OUTSIDE CLICK
-document.getElementById('replyModal').addEventListener('click',e=>{
-  if(e.target===document.getElementById('replyModal'))closeReply();
-});
-</script>
-</body>
-</html>
