@@ -219,6 +219,7 @@
   .coupon-result{font-size:12px;margin-top:8px;display:none;}
   .advisor-btn{position:fixed;top:76px;left:16px;z-index:90;padding:8px 16px;background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(6,182,212,0.1));border:1px solid rgba(124,58,237,0.3);border-radius:100px;font-size:12px;font-weight:600;color:var(--accent3);display:flex;align-items:center;gap:6px;cursor:pointer;transition:all 0.2s;backdrop-filter:blur(10px);}
   .advisor-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;}
+  *:not(input):not(textarea):not(select){caret-color:transparent;}
   .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s,transform 0.6s;}
   .reveal.visible{opacity:1;transform:translateY(0);}
   @media(max-width:900px){.features-grid{grid-template-columns:1fr 1fr;}.plans{grid-template-columns:1fr 1fr;}.steps{grid-template-columns:1fr 1fr;}.topics-grid{grid-template-columns:1fr 1fr;}.styles-grid{grid-template-columns:repeat(3,1fr);}nav{padding:0 20px;}.nav-links{display:none;}.panel-sidebar{display:none;}.panel-main{margin-left:0;}.stats-row{grid-template-columns:1fr 1fr;}.history-grid{grid-template-columns:1fr 1fr;}.gen-row{grid-template-columns:1fr;}}
@@ -439,18 +440,22 @@
           <div class="gen-row">
             <div>
               <label class="gen-label">Estilo visual</label>
-              <select class="gen-select" id="estiloVisual">
-                <option>📸 Fotos reales</option>
-                <option>✍️ Texto animado</option>
-                <option>🎨 Ilustración simple</option>
-                <option>💬 Estilo cómic</option>
-                <option>⚡ Minimalista</option>
-                <option>📋 Estilo pizarra</option>
-                <option>🧱 Estilo Lego 3D</option>
-                <option>⛩️ Anime / Manga</option>
-                <option>👾 Pixel art retro</option>
-                <option>🌊 Acuarela digital</option>
+              <select class="gen-select" id="estiloVisual" onchange="updateStylePreview()">
+                <option value="0">📸 Fotos reales</option>
+                <option value="1">✍️ Texto animado</option>
+                <option value="2">🎨 Ilustración simple</option>
+                <option value="3">💬 Estilo cómic</option>
+                <option value="4">⚡ Minimalista</option>
+                <option value="5">📋 Estilo pizarra</option>
+                <option value="6">🧱 Estilo Lego 3D</option>
+                <option value="7">⛩️ Anime / Manga</option>
+                <option value="8">👾 Pixel art retro</option>
+                <option value="9">🌊 Acuarela digital</option>
               </select>
+              <div id="stylePreviewBox" style="margin-top:10px;border-radius:10px;overflow:hidden;border:1px solid var(--border);display:block;">
+                <img id="stylePreviewImg" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" style="width:100%;height:140px;object-fit:cover;display:block;"/>
+                <div style="padding:8px 10px;background:var(--bg3);font-size:11px;color:var(--text2);" id="stylePreviewDesc">📸 Fotos reales — Imágenes fotográficas auténticas de alta calidad</div>
+              </div>
             </div>
             <div>
               <label class="gen-label">Duración</label>
@@ -475,14 +480,20 @@
             </div>
             <div>
               <label class="gen-label">Voz</label>
-              <select class="gen-select">
-                <option>Voz 1 — Masculina grave</option>
-                <option>Voz 2 — Femenina suave</option>
-                <option>Voz 3 — Neutral joven</option>
-                <option>Voz 4 — Masculina media</option>
-                <option>Voz 5 — Femenina dinámica</option>
-                <option>Voz 6 — Narrativa épica</option>
-              </select>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <select class="gen-select" id="voiceSelect" onchange="updateVoicePreview()" style="flex:1;">
+                  <option value="0">Marco — Masculina grave</option>
+                  <option value="1">Sofía — Femenina suave</option>
+                  <option value="2">Alex — Neutral joven</option>
+                  <option value="3">Carlos — Masculina media</option>
+                  <option value="4">Elena — Femenina dinámica</option>
+                  <option value="5">Orión — Narrativa épica</option>
+                </select>
+                <button onclick="playVoicePreview()" style="padding:10px 14px;border:none;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer;font-size:16px;flex-shrink:0;" title="Escuchar voz">▶️</button>
+              </div>
+              <div id="voicePreviewBox" style="margin-top:8px;padding:8px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--text2);display:none;">
+                🎙️ <span id="voicePreviewText">Hola, soy Marco, tu narrador épico</span>
+              </div>
             </div>
           </div>
           <button class="btn-generate" onclick="generateVideo()">🚀 Generar vídeo</button>
@@ -936,6 +947,59 @@ function sendAdvisor(){
   input.value='';
 }
 document.getElementById('advisorInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendAdvisor();});
+
+const VOCES = [
+  {nombre:"Marco", frase:"Hola, soy Marco, tu narrador épico", pitch:0.8, rate:0.9},
+  {nombre:"Sofía", frase:"Hola, soy Sofía, tu voz suave y clara", pitch:1.4, rate:0.85},
+  {nombre:"Alex", frase:"Hola, soy Alex, joven y dinámico", pitch:1.1, rate:1.1},
+  {nombre:"Carlos", frase:"Hola, soy Carlos, voz profunda y segura", pitch:0.7, rate:0.95},
+  {nombre:"Elena", frase:"Hola, soy Elena, enérgica y motivadora", pitch:1.3, rate:1.05},
+  {nombre:"Orión", frase:"Hola, soy Orión, la voz del universo", pitch:0.6, rate:0.8}
+];
+
+const ESTILOS = [
+  {img:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80", desc:"📸 Fotos reales — Imágenes fotográficas auténticas de alta calidad"},
+  {img:"https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80", desc:"✍️ Texto animado — Tipografía dinámica sobre fondos de color"},
+  {img:"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80", desc:"🎨 Ilustración simple — Dibujos digitales coloridos y expresivos"},
+  {img:"https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=600&q=80", desc:"💬 Estilo cómic — Viñetas con estilo Marvel/DC y bocadillos"},
+  {img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", desc:"⚡ Minimalista — Diseño limpio con formas geométricas simples"},
+  {img:"https://images.unsplash.com/photo-1580983218765-f663bec55b0b?w=600&q=80", desc:"📋 Estilo pizarra — Animaciones dibujadas a mano sobre pizarra"},
+  {img:"https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80", desc:"🧱 Estilo Lego 3D — Todo recreado con bloques de colores brillantes"},
+  {img:"https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&q=80", desc:"⛩️ Anime / Manga — Personajes y escenas estilo japonés animado"},
+  {img:"https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80", desc:"👾 Pixel art retro — Gráficos estilo videojuego de los 80s y 90s"},
+  {img:"https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80", desc:"🌊 Acuarela digital — Pinturas suaves con colores difuminados"}
+];
+
+function updateVoicePreview(){
+  const idx = parseInt(document.getElementById('voiceSelect').value)||0;
+  const v = VOCES[idx];
+  document.getElementById('voicePreviewText').textContent = v.frase;
+  document.getElementById('voicePreviewBox').style.display='block';
+}
+
+function playVoicePreview(){
+  const idx = parseInt(document.getElementById('voiceSelect').value)||0;
+  const v = VOCES[idx];
+  document.getElementById('voicePreviewBox').style.display='block';
+  document.getElementById('voicePreviewText').textContent = v.frase;
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(v.frase);
+  u.lang='es-ES';
+  u.pitch=v.pitch;
+  u.rate=v.rate;
+  const voices = window.speechSynthesis.getVoices().filter(x=>x.lang.startsWith('es'));
+  if(voices.length) u.voice=voices[idx%voices.length];
+  window.speechSynthesis.speak(u);
+}
+
+function updateStylePreview(){
+  const idx = parseInt(document.getElementById('estiloVisual').value)||0;
+  const e = ESTILOS[idx];
+  document.getElementById('stylePreviewImg').src = e.img;
+  document.getElementById('stylePreviewDesc').textContent = e.desc;
+}
+
 document.getElementById('coupon-input').addEventListener('input',function(){});
 
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
