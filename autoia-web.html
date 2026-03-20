@@ -866,7 +866,7 @@ async function doLogin(){
 }
 
 function applyCoupon(){
-  const code=document.getElementById('coupon-input').value.trim().toUpperCase();
+  const code=document.getElementById('coupon-input').value.trim();
   const result=document.getElementById('coupon-result');
   if(COUPONS[code]){
     appliedCoupon=COUPONS[code];
@@ -936,7 +936,7 @@ function sendAdvisor(){
   input.value='';
 }
 document.getElementById('advisorInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendAdvisor();});
-document.getElementById('coupon-input').addEventListener('input',function(){this.value=this.value.toUpperCase();});
+document.getElementById('coupon-input').addEventListener('input',function(){});
 
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
