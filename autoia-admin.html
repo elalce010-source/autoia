@@ -3,412 +3,534 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AutoIA Admin</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<title>AutoIA — Crea y publica contenido con IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--bg:#080808;--bg2:#0f0f0f;--bg3:#161616;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#f0f0f0;--text2:#888;--text3:#555;--accent:#7c3aed;--accent2:#a855f7;--accent3:#c084fc;--cyan:#06b6d4;--green:#10b981;--amber:#f59e0b;--red:#ef4444;--glow:rgba(124,58,237,0.15);--r:10px;--r2:16px;}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;}
-#loginScreen{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;align-items:center;justify-content:center;}
-.login-box{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;padding:48px 40px;width:100%;max-width:420px;text-align:center;}
-.login-logo{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;background:linear-gradient(135deg,#a855f7,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
-.login-sub{font-size:13px;color:var(--text3);margin-bottom:12px;}
-.login-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);font-size:11px;font-weight:600;color:var(--red);margin-bottom:24px;letter-spacing:1px;}
-.form-group{margin-bottom:16px;text-align:left;}
-.form-label{display:block;font-size:12px;color:var(--text2);margin-bottom:6px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;}
-.form-input{width:100%;padding:11px 14px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;}
-.form-input:focus{border-color:var(--accent);}
-.btn-login{width:100%;padding:12px;border:none;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.2s;margin-top:8px;}
-.btn-login:hover{transform:translateY(-1px);}
-.login-error{font-size:13px;color:var(--red);margin-top:12px;display:none;padding:10px;background:rgba(239,68,68,0.08);border-radius:8px;border:1px solid rgba(239,68,68,0.15);}
-#adminApp{display:none;}
-.sidebar{position:fixed;top:0;left:0;bottom:0;width:240px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:50;}
-.sidebar-logo{padding:20px 24px;border-bottom:1px solid var(--border);font-family:'Syne',sans-serif;font-size:18px;font-weight:800;background:linear-gradient(135deg,#a855f7,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.sidebar-logo span{font-size:11px;color:var(--red);font-weight:600;-webkit-text-fill-color:var(--red);display:block;letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
-.sidebar-nav{flex:1;padding:16px 12px;overflow-y:auto;}
-.nav-section{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);padding:12px 12px 6px;}
-.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:14px;color:var(--text2);cursor:pointer;transition:all 0.2s;margin-bottom:2px;border:1px solid transparent;}
-.nav-item:hover{background:var(--bg3);color:var(--text);}
-.nav-item.active{background:rgba(124,58,237,0.12);color:var(--accent3);border-color:rgba(124,58,237,0.2);}
-.nav-icon{font-size:16px;width:20px;text-align:center;}
-.nav-badge{margin-left:auto;font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;background:rgba(239,68,68,0.15);color:var(--red);}
-.sidebar-footer{padding:16px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px;}
-.admin-avatar{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;}
-.admin-info{flex:1;min-width:0;}
-.admin-name{font-size:13px;font-weight:600;}
-.admin-role{font-size:11px;color:var(--red);font-weight:600;}
-.logout-btn{width:28px;height:28px;border-radius:6px;background:var(--bg3);border:1px solid var(--border);color:var(--text3);font-size:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;flex-shrink:0;}
-.logout-btn:hover{color:var(--red);border-color:var(--red);}
-.main{margin-left:240px;min-height:100vh;}
-.topbar{height:60px;padding:0 32px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,8,0.9);backdrop-filter:blur(10px);position:sticky;top:0;z-index:40;}
-.topbar-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;}
-.topbar-right{display:flex;align-items:center;gap:12px;}
-.live-badge{display:flex;align-items:center;gap:6px;padding:5px 12px;border-radius:100px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);font-size:12px;font-weight:600;color:var(--green);}
-.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.3);}}
-.time-display{font-size:13px;color:var(--text2);}
-.content{padding:32px;}
-.page{display:none;}
-.page.active{display:block;}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
-.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:22px 24px;transition:border-color 0.2s,transform 0.2s;}
-.stat-card:hover{border-color:var(--accent);transform:translateY(-2px);}
-.stat-label{font-size:12px;color:var(--text3);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:10px;}
-.stat-value{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;line-height:1;margin-bottom:6px;}
-.sv-purple{color:var(--accent2);}
-.sv-cyan{color:var(--cyan);}
-.sv-green{color:var(--green);}
-.sv-amber{color:var(--amber);}
-.stat-change{font-size:12px;color:var(--text3);}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;margin-bottom:20px;}
-.card-header{padding:18px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
-.card-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;}
-table{width:100%;border-collapse:collapse;}
-th{padding:10px 20px;text-align:left;font-size:11px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;color:var(--text3);background:var(--bg3);border-bottom:1px solid var(--border);}
-td{padding:14px 20px;font-size:14px;border-bottom:1px solid var(--border);vertical-align:middle;}
-tr:last-child td{border-bottom:none;}
-tr:hover td{background:rgba(255,255,255,0.02);}
-.plan-pill{padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;}
-.plan-free{background:rgba(255,255,255,0.06);color:var(--text2);}
-.plan-noob{background:rgba(245,158,11,0.12);color:var(--amber);}
-.plan-inter{background:rgba(6,182,212,0.12);color:var(--cyan);}
-.plan-pro{background:rgba(168,85,247,0.12);color:var(--accent3);}
-.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;}
-.s-active{background:var(--green);}
-.action-btn{padding:5px 12px;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s;border:1px solid var(--border2);background:transparent;color:var(--text2);}
-.action-btn:hover{border-color:var(--accent);color:var(--accent2);}
-.search-input{padding:8px 14px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;width:220px;}
-.ticket-list{display:flex;flex-direction:column;}
-.ticket-item{padding:16px 24px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:14px;cursor:pointer;}
-.ticket-item:hover{background:rgba(255,255,255,0.02);}
-.ticket-avatar{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;color:#fff;}
-.ticket-body{flex:1;min-width:0;}
-.ticket-name{font-size:14px;font-weight:600;}
-.ticket-time{font-size:11px;color:var(--text3);margin-left:8px;}
-.ticket-msg{font-size:13px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px;}
-.ts-open{background:rgba(245,158,11,0.12);color:var(--amber);padding:3px 9px;border-radius:100px;font-size:10px;font-weight:700;}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
-.setting-row{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(--border);}
-.setting-label{font-size:14px;}
-.setting-sub{font-size:12px;color:var(--text3);margin-top:2px;}
-.toggle{width:42px;height:24px;border-radius:12px;background:var(--bg3);border:1px solid var(--border2);position:relative;cursor:pointer;transition:background 0.2s;}
-.toggle.on{background:var(--accent);}
-.toggle-knob{position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform 0.2s;}
-.toggle.on .toggle-knob{transform:translateX(18px);}
-.btn-create{padding:10px 18px;border:none;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;}
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(8px);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.2s;}
-.modal-overlay.open{opacity:1;pointer-events:all;}
-.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r2);width:100%;max-width:520px;padding:32px;position:relative;}
-.modal-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:7px;background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;}
-.modal h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:16px;}
-.reply-original{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:16px;font-size:13px;color:var(--text2);}
-textarea.form-input{resize:vertical;min-height:100px;}
-.btn-send{padding:10px 20px;border:none;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;margin-top:12px;}
-.empty-state{text-align:center;padding:40px;color:var(--text3);}
-::-webkit-scrollbar{width:6px;}
-::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px;}
-@media(max-width:900px){.sidebar{width:60px;}.sidebar-logo span,.nav-item span,.admin-info,.nav-section{display:none;}.main{margin-left:60px;}.stats-grid{grid-template-columns:1fr 1fr;}.grid2,.grid3{grid-template-columns:1fr;}}
+  :root{--bg:#080808;--bg2:#0f0f0f;--bg3:#161616;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#f0f0f0;--text2:#888;--text3:#555;--accent:#7c3aed;--accent2:#a855f7;--accent3:#c084fc;--cyan:#06b6d4;--pink:#ec4899;--green:#10b981;--amber:#f59e0b;--glow:rgba(124,58,237,0.15);--r:12px;--r2:20px;}
+  [data-theme="light"]{--bg:#f8f8f8;--bg2:#fff;--bg3:#f0f0f0;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#111;--text2:#555;--text3:#999;}
+  [data-theme="purple"]{--bg:#0d0a1a;--bg2:#130f24;--bg3:#1a1430;--border:rgba(168,85,247,0.1);--border2:rgba(168,85,247,0.2);}
+  [data-theme="ocean"]{--bg:#020c14;--bg2:#041525;--bg3:#071e30;--border:rgba(6,182,212,0.1);--border2:rgba(6,182,212,0.2);--accent:#0891b2;--accent2:#06b6d4;--accent3:#67e8f9;}
+  [data-theme="forest"]{--bg:#040d08;--bg2:#071510;--bg3:#0b1f16;--border:rgba(16,185,129,0.1);--border2:rgba(16,185,129,0.2);--accent:#059669;--accent2:#10b981;--accent3:#6ee7b7;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;transition:background 0.3s,color 0.3s;}
+  body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black 0%,transparent 70%);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,8,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+  .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;background:linear-gradient(135deg,var(--accent2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+  .nav-links a{color:var(--text2);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-right{display:flex;align-items:center;gap:12px;}
+  .btn-ghost{padding:8px 20px;border:1px solid var(--border2);border-radius:8px;background:transparent;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-flex;align-items:center;}
+  .btn-ghost:hover{background:var(--bg3);border-color:var(--accent);}
+  .btn-primary{padding:8px 20px;border:none;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-flex;align-items:center;box-shadow:0 0 20px var(--glow);}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 0 30px rgba(124,58,237,0.3);}
+  .theme-switcher{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:4px;}
+  .theme-btn{width:20px;height:20px;border-radius:6px;border:2px solid transparent;cursor:pointer;transition:all 0.2s;}
+  .theme-btn.active{border-color:var(--accent2);}
+  .theme-btn[data-t="dark"]{background:#111;}
+  .theme-btn[data-t="light"]{background:#f0f0f0;}
+  .theme-btn[data-t="purple"]{background:linear-gradient(135deg,#1a1430,#7c3aed);}
+  .theme-btn[data-t="ocean"]{background:linear-gradient(135deg,#041525,#06b6d4);}
+  .theme-btn[data-t="forest"]{background:linear-gradient(135deg,#071510,#10b981);}
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 40px 80px;z-index:1;}
+  .hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(124,58,237,0.2) 0%,transparent 70%);pointer-events:none;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid rgba(124,58,237,0.3);border-radius:100px;background:rgba(124,58,237,0.1);font-size:13px;color:var(--accent3);margin-bottom:28px;animation:fadeUp 0.6s ease both;}
+  .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent2);animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.3);}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  .hero h1{font-family:'Syne',sans-serif;font-size:clamp(42px,7vw,88px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:24px;animation:fadeUp 0.6s 0.1s ease both;}
+  .hero h1 span{background:linear-gradient(135deg,var(--accent2) 0%,var(--cyan) 50%,var(--pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .hero p{font-size:18px;color:var(--text2);max-width:560px;margin:0 auto 40px;font-weight:300;animation:fadeUp 0.6s 0.2s ease both;}
+  .hero-cta{display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.6s 0.3s ease both;}
+  .btn-lg{padding:14px 32px;font-size:16px;font-weight:600;border-radius:10px;}
+  .hero-stats{display:flex;align-items:center;gap:40px;justify-content:center;margin-top:60px;padding-top:40px;border-top:1px solid var(--border);animation:fadeUp 0.6s 0.4s ease both;}
+  .stat-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;background:linear-gradient(135deg,var(--accent2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .stat-label{font-size:13px;color:var(--text3);}
+  section{position:relative;z-index:1;padding:100px 40px;}
+  .container{max-width:1100px;margin:0 auto;}
+  .section-label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:16px;}
+  .section-title{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.1;}
+  .section-sub{font-size:17px;color:var(--text2);max-width:500px;font-weight:300;}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;margin-top:60px;}
+  .feature-card{background:var(--bg2);padding:36px 32px;transition:background 0.2s;position:relative;overflow:hidden;}
+  .feature-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--glow),transparent);opacity:0;transition:opacity 0.3s;}
+  .feature-card:hover::before{opacity:1;}
+  .feature-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;box-shadow:0 0 20px var(--glow);}
+  .feature-card h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px;}
+  .feature-card p{font-size:14px;color:var(--text2);line-height:1.7;}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;}
+  .step{text-align:center;padding:32px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);position:relative;transition:border-color 0.2s,transform 0.2s;}
+  .step:hover{border-color:var(--accent);transform:translateY(-4px);}
+  .step-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:18px;margin:0 auto 20px;box-shadow:0 0 24px var(--glow);}
+  .step h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;}
+  .step p{font-size:13px;color:var(--text2);}
+  /* STYLES GRID */
+  .styles-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px;}
+  .style-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px 12px;text-align:center;transition:all 0.2s;cursor:default;position:relative;}
+  .style-card:hover{border-color:var(--accent2);background:rgba(124,58,237,0.05);transform:translateY(-2px);}
+  .style-icon{font-size:28px;margin-bottom:8px;}
+  .style-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px;}
+  .style-plan{font-size:10px;font-weight:700;letter-spacing:0.5px;padding:2px 8px;border-radius:100px;display:inline-block;}
+  .sp-noob{background:rgba(245,158,11,0.15);color:var(--amber);}
+  .sp-mid{background:rgba(6,182,212,0.15);color:var(--cyan);}
+  .sp-pro{background:rgba(168,85,247,0.15);color:var(--accent3);}
+  /* PLANS */
+  .plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:60px;align-items:start;}
+  .plan-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:28px 24px;transition:all 0.3s;position:relative;overflow:hidden;}
+  .plan-card:hover{border-color:var(--accent);transform:translateY(-4px);}
+  .plan-card.popular{border-color:var(--accent);background:linear-gradient(160deg,rgba(124,58,237,0.08),var(--bg2));}
+  .plan-card.popular::before{content:'MÁS POPULAR';position:absolute;top:16px;right:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--accent3);background:rgba(124,58,237,0.15);padding:4px 10px;border-radius:100px;border:1px solid rgba(124,58,237,0.2);}
+  .plan-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:12px;}
+  .plan-price{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:4px;}
+  .plan-price span{font-size:16px;font-weight:400;color:var(--text2);}
+  .plan-price-sub{font-size:12px;color:var(--text3);margin-bottom:20px;}
+  .plan-divider{height:1px;background:var(--border);margin:20px 0;}
+  .plan-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+  .plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text2);line-height:1.5;}
+  .check{width:16px;height:16px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;margin-top:2px;color:var(--green);}
+  .cross{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;margin-top:2px;color:var(--text3);}
+  .plan-more{font-size:12px;color:var(--accent3);margin-bottom:16px;font-style:italic;}
+  .plan-btn{width:100%;padding:12px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;border:none;}
+  .plan-btn-outline{background:transparent;border:1px solid var(--border2);color:var(--text);}
+  .plan-btn-outline:hover{border-color:var(--accent);color:var(--accent2);}
+  .plan-btn-filled{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 0 20px var(--glow);}
+  .billing-toggle{display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:40px;}
+  .toggle-label{font-size:14px;color:var(--text2);}
+  .toggle-label.active{color:var(--text);font-weight:600;}
+  .toggle-switch{width:48px;height:26px;border-radius:13px;background:var(--bg3);border:1px solid var(--border2);position:relative;cursor:pointer;transition:background 0.2s;}
+  .toggle-switch.on{background:var(--accent);}
+  .toggle-knob{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform 0.2s;}
+  .toggle-switch.on .toggle-knob{transform:translateX(22px);}
+  .annual-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--green);background:rgba(16,185,129,0.1);padding:3px 10px;border-radius:100px;border:1px solid rgba(16,185,129,0.2);}
+  .topics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px;}
+  .topic-tag{padding:14px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);font-size:13px;display:flex;align-items:center;gap:10px;transition:all 0.2s;}
+  .topic-tag:hover{border-color:var(--accent2);background:rgba(124,58,237,0.05);}
+  .topic-plan{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:0.5px;padding:2px 8px;border-radius:100px;}
+  .tp-noob{background:rgba(245,158,11,0.15);color:var(--amber);}
+  .tp-mid{background:rgba(6,182,212,0.15);color:var(--cyan);}
+  .tp-pro{background:rgba(168,85,247,0.15);color:var(--accent3);}
+  .lang-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;}
+  .lang-tag{padding:8px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text2);transition:all 0.2s;}
+  .lang-tag:hover{border-color:var(--accent);color:var(--text);}
+  .cta-section{text-align:center;padding:100px 40px;position:relative;z-index:1;}
+  .cta-box{max-width:700px;margin:0 auto;padding:60px 40px;background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(6,182,212,0.05));border:1px solid rgba(124,58,237,0.2);border-radius:var(--r2);position:relative;overflow:hidden;}
+  footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+  .footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+  .footer-links a{font-size:13px;color:var(--text3);text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--text);}
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+  .modal-overlay.open{opacity:1;pointer-events:all;}
+  .modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r2);width:100%;max-width:480px;padding:40px;transform:translateY(20px);transition:transform 0.2s;position:relative;max-height:90vh;overflow-y:auto;}
+  .modal-overlay.open .modal{transform:translateY(0);}
+  .modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:16px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;}
+  .modal-close:hover{color:var(--text);border-color:var(--accent);}
+  .modal h2{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;margin-bottom:6px;}
+  .modal p{font-size:14px;color:var(--text2);margin-bottom:28px;}
+  .modal-tabs{display:flex;gap:0;background:var(--bg3);border-radius:10px;padding:4px;margin-bottom:24px;}
+  .modal-tab{flex:1;padding:8px;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--text2);cursor:pointer;border-radius:8px;transition:all 0.2s;}
+  .modal-tab.active{background:var(--bg2);color:var(--text);border:1px solid var(--border2);}
+  .form-group{margin-bottom:16px;}
+  .form-label{display:block;font-size:13px;color:var(--text2);margin-bottom:6px;font-weight:500;}
+  .form-input{width:100%;padding:11px 14px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;}
+  .form-input:focus{border-color:var(--accent);}
+  .form-select{width:100%;padding:11px 14px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;cursor:pointer;appearance:none;}
+  .divider-text{text-align:center;font-size:12px;color:var(--text3);position:relative;margin:16px 0;}
+  .divider-text::before,.divider-text::after{content:'';position:absolute;top:50%;width:44%;height:1px;background:var(--border);}
+  .divider-text::before{left:0;}.divider-text::after{right:0;}
+  .form-footer{text-align:center;font-size:12px;color:var(--text3);margin-top:16px;}
+  .form-footer a{color:var(--accent2);text-decoration:none;}
+  .msg-success{padding:10px 14px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);border-radius:8px;font-size:13px;color:var(--green);margin-top:12px;display:none;}
+  .msg-error{padding:10px 14px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);border-radius:8px;font-size:13px;color:#ef4444;margin-top:12px;display:none;}
+  .coupon-box{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);border-radius:8px;padding:12px 14px;margin-bottom:16px;}
+  .coupon-box label{font-size:12px;color:var(--accent3);font-weight:600;display:block;margin-bottom:6px;}
+  .coupon-row{display:flex;gap:8px;}
+  .btn-coupon{padding:11px 16px;border:none;border-radius:8px;background:var(--accent);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;}
+  .coupon-result{font-size:12px;margin-top:8px;display:none;}
+  .advisor-btn{position:fixed;top:76px;left:16px;z-index:90;padding:8px 16px;background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(6,182,212,0.1));border:1px solid rgba(124,58,237,0.3);border-radius:100px;font-size:12px;font-weight:600;color:var(--accent3);display:flex;align-items:center;gap:6px;cursor:pointer;transition:all 0.2s;backdrop-filter:blur(10px);}
+  .advisor-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s,transform 0.6s;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:900px){.features-grid{grid-template-columns:1fr 1fr;}.plans{grid-template-columns:1fr 1fr;}.steps{grid-template-columns:1fr 1fr;}.topics-grid{grid-template-columns:1fr 1fr;}.styles-grid{grid-template-columns:repeat(3,1fr);}nav{padding:0 20px;}.nav-links{display:none;}}
+  @media(max-width:600px){.features-grid,.plans,.steps,.topics-grid{grid-template-columns:1fr;}.styles-grid{grid-template-columns:repeat(2,1fr);}section{padding:60px 20px;}.hero{padding:100px 20px 60px;}.hero-stats{gap:24px;}footer{flex-direction:column;text-align:center;}}
 </style>
 </head>
-<body>
+<body data-theme="dark">
 
-<div id="loginScreen">
-  <div class="login-box">
-    <div class="login-logo">AutoIA</div>
-    <div class="login-sub">Panel de administración</div>
-    <div class="login-badge">🔒 ACCESO RESTRINGIDO</div>
-    <div class="form-group">
-      <label class="form-label">Usuario</label>
-      <input type="text" class="form-input" id="adminUser" placeholder="admin"/>
+<button class="advisor-btn" onclick="document.getElementById('advisorModal').classList.add('open')">
+  <span class="advisor-dot"></span>✨ Asesor IA
+</button>
+
+<nav>
+  <div class="logo">AutoIA</div>
+  <ul class="nav-links">
+    <li><a href="#features">Funciones</a></li>
+    <li><a href="#styles">Estilos</a></li>
+    <li><a href="#howit">Cómo funciona</a></li>
+    <li><a href="#plans">Planes</a></li>
+    <li><a href="#topics">Temas</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="theme-switcher">
+      <div class="theme-btn active" data-t="dark" onclick="setTheme('dark',this)"></div>
+      <div class="theme-btn" data-t="light" onclick="setTheme('light',this)"></div>
+      <div class="theme-btn" data-t="purple" onclick="setTheme('purple',this)"></div>
+      <div class="theme-btn" data-t="ocean" onclick="setTheme('ocean',this)"></div>
+      <div class="theme-btn" data-t="forest" onclick="setTheme('forest',this)"></div>
     </div>
-    <div class="form-group">
-      <label class="form-label">Contraseña</label>
-      <input type="password" class="form-input" id="adminPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"/>
-    </div>
-    <button class="btn-login" onclick="doLogin()">Acceder al panel</button>
-    <div class="login-error" id="loginError">Usuario o contraseña incorrectos</div>
+    <button class="btn-ghost" onclick="openModal('login')">Iniciar sesión</button>
+    <button class="btn-primary" onclick="openModal('register')">Empezar gratis</button>
   </div>
-</div>
+</nav>
 
-<div id="adminApp">
-  <div class="sidebar">
-    <div class="sidebar-logo">AutoIA <span>ADMIN</span></div>
-    <nav class="sidebar-nav">
-      <div class="nav-section">Principal</div>
-      <div class="nav-item active" onclick="showPage('dashboard',this)"><span class="nav-icon">📊</span><span>Dashboard</span></div>
-      <div class="nav-item" onclick="showPage('users',this)"><span class="nav-icon">👥</span><span>Usuarios</span></div>
-      <div class="nav-item" onclick="showPage('revenue',this)"><span class="nav-icon">💰</span><span>Ingresos</span></div>
-      <div class="nav-item" onclick="showPage('videos',this)"><span class="nav-icon">🎬</span><span>Vídeos</span></div>
-      <div class="nav-section">Soporte</div>
-      <div class="nav-item" onclick="showPage('tickets',this)"><span class="nav-icon">🎫</span><span>Tickets</span><span class="nav-badge" id="ticketBadge">0</span></div>
-      <div class="nav-item" onclick="showPage('activity',this)"><span class="nav-icon">⚡</span><span>Actividad</span></div>
-      <div class="nav-section">Gestión</div>
-      <div class="nav-item" onclick="showPage('coupons',this)"><span class="nav-icon">🏷️</span><span>Cupones</span></div>
-      <div class="nav-item" onclick="showPage('settings',this)"><span class="nav-icon">⚙️</span><span>Configuración</span></div>
-    </nav>
-    <div class="sidebar-footer">
-      <div class="admin-avatar">A</div>
-      <div class="admin-info"><div class="admin-name" id="adminName">Admin</div><div class="admin-role">SUPERADMIN</div></div>
-      <div class="logout-btn" onclick="doLogout()" title="Salir">↩</div>
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div>
+    <div class="hero-badge"><span class="badge-dot"></span>Generación de contenido con IA — Automatizado al 100%</div>
+    <h1>Crea y publica<br/><span>contenido viral</span><br/>con IA</h1>
+    <p>Genera vídeos e imágenes con IA en 20 estilos visuales únicos y súbelos automáticamente a YouTube, TikTok e Instagram.</p>
+    <div class="hero-cta">
+      <button class="btn-primary btn-lg" onclick="openModal('register')">Empieza gratis — sin tarjeta</button>
+      <button class="btn-ghost btn-lg" onclick="document.getElementById('howit').scrollIntoView({behavior:'smooth'})">Ver cómo funciona →</button>
     </div>
-  </div>
-
-  <div class="main">
-    <div class="topbar">
-      <div class="topbar-title" id="pageTitle">Dashboard</div>
-      <div class="topbar-right">
-        <div class="live-badge"><span class="live-dot"></span>En vivo</div>
-        <div class="time-display" id="clockDisplay">--:--:--</div>
-      </div>
-    </div>
-    <div class="content">
-
-      <div class="page active" id="page-dashboard">
-        <div class="stats-grid">
-          <div class="stat-card"><div class="stat-label">Usuarios totales</div><div class="stat-value sv-purple" id="statUsers">0</div><div class="stat-change">Sin datos aún</div></div>
-          <div class="stat-card"><div class="stat-label">Ingresos del mes</div><div class="stat-value sv-green" id="statRevenue">0€</div><div class="stat-change">Sin datos aún</div></div>
-          <div class="stat-card"><div class="stat-label">Vídeos hoy</div><div class="stat-value sv-cyan" id="statVideos">0</div><div class="stat-change">Sin datos aún</div></div>
-          <div class="stat-card"><div class="stat-label">Tickets abiertos</div><div class="stat-value sv-amber" id="statTickets">0</div><div class="stat-change">Sin datos aún</div></div>
-        </div>
-        <div class="stats-grid">
-          <div class="stat-card"><div class="stat-label">Plan Gratis</div><div class="stat-value" style="color:var(--text2);font-size:24px;" id="countFree">0</div></div>
-          <div class="stat-card"><div class="stat-label">Plan Noob</div><div class="stat-value sv-amber" style="font-size:24px;" id="countNoob">0</div></div>
-          <div class="stat-card"><div class="stat-label">Plan Intermedio</div><div class="stat-value sv-cyan" style="font-size:24px;" id="countInter">0</div></div>
-          <div class="stat-card"><div class="stat-label">Plan Pro</div><div class="stat-value sv-purple" style="font-size:24px;" id="countPro">0</div></div>
-        </div>
-        <div class="card">
-          <div class="card-header"><div class="card-title">Últimos registros</div></div>
-          <table><thead><tr><th>Usuario</th><th>Email</th><th>Plan</th><th>Registro</th><th>Estado</th></tr></thead>
-          <tbody id="dashUsersTbody"><tr><td colspan="5" class="empty-state">No hay usuarios aún</td></tr></tbody></table>
-        </div>
-      </div>
-
-      <div class="page" id="page-users">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">Todos los usuarios</div>
-            <input type="text" class="search-input" placeholder="🔍 Buscar..." oninput="filterUsers(this.value)"/>
-          </div>
-          <table><thead><tr><th>Usuario</th><th>Email</th><th>Plan</th><th>Vídeos</th><th>Registro</th><th>Estado</th><th>Acciones</th></tr></thead>
-          <tbody id="usersTbody"><tr><td colspan="7" class="empty-state">No hay usuarios aún</td></tr></tbody></table>
-        </div>
-      </div>
-
-      <div class="page" id="page-revenue">
-        <div class="stats-grid">
-          <div class="stat-card"><div class="stat-label">Ingresos hoy</div><div class="stat-value sv-green">0€</div></div>
-          <div class="stat-card"><div class="stat-label">Ingresos este mes</div><div class="stat-value sv-green">0€</div></div>
-          <div class="stat-card"><div class="stat-label">MRR</div><div class="stat-value sv-cyan">0€</div></div>
-          <div class="stat-card"><div class="stat-label">ARR estimado</div><div class="stat-value sv-purple">0€</div></div>
-        </div>
-        <div class="card">
-          <div class="card-header"><div class="card-title">Últimas transacciones</div></div>
-          <table><thead><tr><th>Usuario</th><th>Plan</th><th>Importe</th><th>Fecha</th><th>Estado</th></tr></thead>
-          <tbody><tr><td colspan="5" class="empty-state">No hay transacciones aún</td></tr></tbody></table>
-        </div>
-      </div>
-
-      <div class="page" id="page-videos">
-        <div class="stats-grid">
-          <div class="stat-card"><div class="stat-label">Vídeos hoy</div><div class="stat-value sv-cyan">0</div></div>
-          <div class="stat-card"><div class="stat-label">Total generados</div><div class="stat-value sv-purple">0</div></div>
-          <div class="stat-card"><div class="stat-label">Gasto API hoy</div><div class="stat-value sv-amber">0€</div></div>
-          <div class="stat-card"><div class="stat-label">Subidos a redes</div><div class="stat-value sv-green">0</div></div>
-        </div>
-        <div class="card"><div class="card-header"><div class="card-title">Sin datos aún</div></div><div class="empty-state">Los vídeos aparecerán aquí cuando los usuarios empiecen a generar contenido</div></div>
-      </div>
-
-      <div class="page" id="page-tickets">
-        <div class="card">
-          <div class="card-header"><div class="card-title">Tickets de soporte</div></div>
-          <div class="ticket-list" id="ticketList"><div class="empty-state">No hay tickets aún</div></div>
-        </div>
-      </div>
-
-      <div class="page" id="page-activity">
-        <div class="card">
-          <div class="card-header"><div class="card-title">Actividad en tiempo real</div></div>
-          <div id="activityList"><div class="empty-state">No hay actividad aún</div></div>
-        </div>
-      </div>
-
-      <div class="page" id="page-coupons">
-        <div class="card" style="margin-bottom:16px;">
-          <div class="card-header"><div class="card-title">Crear cupón</div></div>
-          <div style="padding:24px;">
-            <div class="grid3" style="margin-bottom:16px;">
-              <div><label class="form-label">Código</label><input type="text" class="form-input" id="couponCode" placeholder="BLACKFRIDAY50"/></div>
-              <div><label class="form-label">Descuento (%)</label><input type="number" class="form-input" id="couponDiscount" placeholder="50"/></div>
-              <div><label class="form-label">Usos máximos</label><input type="number" class="form-input" id="couponUses" placeholder="100"/></div>
-            </div>
-            <button class="btn-create" onclick="createCoupon()">+ Crear cupón</button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header"><div class="card-title">Cupones activos</div></div>
-          <table><thead><tr><th>Código</th><th>Descuento</th><th>Usos</th><th>Máximo</th><th>Estado</th><th>Acciones</th></tr></thead>
-          <tbody id="couponsTbody"><tr><td colspan="6" class="empty-state">No hay cupones aún</td></tr></tbody></table>
-        </div>
-      </div>
-
-      <div class="page" id="page-settings">
-        <div class="grid2">
-          <div class="card">
-            <div class="card-header"><div class="card-title">Configuración general</div></div>
-            <div class="setting-row"><div><div class="setting-label">Modo mantenimiento</div><div class="setting-sub">Muestra página de mantenimiento</div></div><div class="toggle" onclick="this.classList.toggle('on')"><div class="toggle-knob"></div></div></div>
-            <div class="setting-row"><div><div class="setting-label">Registro de nuevos usuarios</div><div class="setting-sub">Permite crear cuentas nuevas</div></div><div class="toggle on" onclick="this.classList.toggle('on')"><div class="toggle-knob"></div></div></div>
-            <div class="setting-row"><div><div class="setting-label">Plan gratuito activo</div><div class="setting-sub">Permite acceso sin pago</div></div><div class="toggle on" onclick="this.classList.toggle('on')"><div class="toggle-knob"></div></div></div>
-          </div>
-          <div class="card">
-            <div class="card-header"><div class="card-title">Credenciales admin</div></div>
-            <div style="padding:24px;">
-              <div style="margin-bottom:16px;"><label class="form-label">Nuevo usuario</label><input type="text" class="form-input" placeholder="admin"/></div>
-              <div style="margin-bottom:16px;"><label class="form-label">Nueva contraseña</label><input type="password" class="form-input" placeholder="••••••••"/></div>
-              <button class="btn-create" onclick="alert('Para cambiar credenciales edita el archivo HTML')">Guardar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">100K+</div><div class="stat-label">Vídeos generados</div></div>
+      <div class="stat"><div class="stat-num">20</div><div class="stat-label">Estilos visuales</div></div>
+      <div class="stat"><div class="stat-num">20</div><div class="stat-label">Temas automáticos</div></div>
+      <div class="stat"><div class="stat-num">15</div><div class="stat-label">Idiomas</div></div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="modal-overlay" id="replyModal">
+<section id="features"><div class="container">
+  <div class="reveal"><span class="section-label">Funcionalidades</span><h2 class="section-title">Todo lo que necesitas<br/>para crecer en redes</h2><p class="section-sub">Desde la idea hasta publicado en segundos.</p></div>
+  <div class="features-grid reveal">
+    <div class="feature-card"><div class="feature-icon">🎬</div><h3>20 estilos visuales</h3><p>Desde Lego hasta cinematográfico épico. Elige el estilo que mejor encaje con tu marca y audiencia.</p></div>
+    <div class="feature-card"><div class="feature-icon">🤖</div><h3>Modo automático</h3><p>Elige un tema y una hora. La IA genera y publica tu contenido solo, todos los días.</p></div>
+    <div class="feature-card"><div class="feature-icon">📱</div><h3>Publicación directa</h3><p>Conecta YouTube, TikTok e Instagram. El contenido se sube automáticamente.</p></div>
+    <div class="feature-card"><div class="feature-icon">✏️</div><h3>Editor previo</h3><p>Previsualiza tu vídeo antes de publicar. Cambia voz, música, imágenes o subtítulos.</p></div>
+    <div class="feature-card"><div class="feature-icon">🌍</div><h3>15 idiomas</h3><p>Genera contenido en español, inglés, francés, alemán, japonés, árabe y más.</p></div>
+    <div class="feature-card"><div class="feature-icon">📊</div><h3>Asesor IA</h3><p>Analiza tus vídeos y recomienda qué publicar para maximizar vistas.</p></div>
+    <div class="feature-card"><div class="feature-icon">⏱️</div><h3>Duración flexible</h3><p>Desde 30 segundos hasta 10 minutos. El formato exacto para cada red.</p></div>
+    <div class="feature-card"><div class="feature-icon">🎵</div><h3>Voces y música</h3><p>Hasta 20 voces y fondos musicales sin copyright según tu plan.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔄</div><h3>No te gusta, repite</h3><p>Si el vídeo generado no cumple tus expectativas, pulsa "Generar otro" y la IA crea uno completamente diferente al instante.</p></div>
+    <div class="feature-card"><div class="feature-icon">🔒</div><h3>Seguro y privado</h3><p>2FA, historial de sesiones, RGPD completo y filtro de contenido inapropiado.</p></div>
+  </div>
+</div></section>
+
+<!-- ESTILOS VISUALES -->
+<section id="styles" style="background:linear-gradient(180deg,transparent,rgba(124,58,237,0.03),transparent);">
+  <div class="container">
+    <div class="reveal"><span class="section-label">Estilos visuales</span><h2 class="section-title">20 estilos únicos<br/>para tu contenido</h2><p class="section-sub">Cada vídeo con una estética distinta. Elige el que mejor encaje con tu nicho.</p></div>
+    <div class="styles-grid reveal">
+      <div class="style-card"><div class="style-icon">📸</div><div class="style-name">Fotos reales</div><span class="style-plan sp-noob">NOOB</span></div>
+      <div class="style-card"><div class="style-icon">✍️</div><div class="style-name">Texto animado</div><span class="style-plan sp-noob">NOOB</span></div>
+      <div class="style-card"><div class="style-icon">🎨</div><div class="style-name">Ilustración simple</div><span class="style-plan sp-noob">NOOB</span></div>
+      <div class="style-card"><div class="style-icon">💬</div><div class="style-name">Estilo cómic</div><span class="style-plan sp-noob">NOOB</span></div>
+      <div class="style-card"><div class="style-icon">⚡</div><div class="style-name">Minimalista</div><span class="style-plan sp-noob">NOOB</span></div>
+      <div class="style-card"><div class="style-icon">📋</div><div class="style-name">Estilo pizarra</div><span class="style-plan sp-noob">NOOB</span></div>
+      <div class="style-card"><div class="style-icon">🧱</div><div class="style-name">Estilo Lego 3D</div><span class="style-plan sp-mid">INTER</span></div>
+      <div class="style-card"><div class="style-icon">⛩️</div><div class="style-name">Anime / Manga</div><span class="style-plan sp-mid">INTER</span></div>
+      <div class="style-card"><div class="style-icon">👾</div><div class="style-name">Pixel art retro</div><span class="style-plan sp-mid">INTER</span></div>
+      <div class="style-card"><div class="style-icon">🌊</div><div class="style-name">Acuarela digital</div><span class="style-plan sp-mid">INTER</span></div>
+      <div class="style-card"><div class="style-icon">🎭</div><div class="style-name">Cine noir</div><span class="style-plan sp-mid">INTER</span></div>
+      <div class="style-card"><div class="style-icon">🌿</div><div class="style-name">Documental</div><span class="style-plan sp-mid">INTER</span></div>
+      <div class="style-card"><div class="style-icon">📊</div><div class="style-name">Infografía</div><span class="style-plan sp-mid">INTER</span></div>
+      <div class="style-card"><div class="style-icon">🌆</div><div class="style-name">Cyberpunk / Neón</div><span class="style-plan sp-mid">INTER</span></div>
+      <div class="style-card"><div class="style-icon">🏆</div><div class="style-name">Hiperrealismo 3D</div><span class="style-plan sp-pro">PRO</span></div>
+      <div class="style-card"><div class="style-icon">🌸</div><div class="style-name">Studio Ghibli</div><span class="style-plan sp-pro">PRO</span></div>
+      <div class="style-card"><div class="style-icon">🖼️</div><div class="style-name">Pintura al óleo</div><span class="style-plan sp-pro">PRO</span></div>
+      <div class="style-card"><div class="style-icon">💥</div><div class="style-name">Glitch / Arte digital</div><span class="style-plan sp-pro">PRO</span></div>
+      <div class="style-card"><div class="style-icon">🚀</div><div class="style-name">Estilo NASA</div><span class="style-plan sp-pro">PRO</span></div>
+      <div class="style-card"><div class="style-icon">🎬</div><div class="style-name">Cinematográfico épico</div><span class="style-plan sp-pro">PRO</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="howit"><div class="container">
+  <div class="reveal" style="text-align:center;"><span class="section-label">Proceso</span><h2 class="section-title">De cero a publicado<br/>en 4 pasos</h2></div>
+  <div class="steps reveal">
+    <div class="step"><div class="step-num">1</div><h3>Elige el modo</h3><p>Manual o Automático según tu preferencia</p></div>
+    <div class="step"><div class="step-num">2</div><h3>Configura</h3><p>Tema, estilo visual, duración, idioma y voz</p></div>
+    <div class="step"><div class="step-num">3</div><h3>La IA genera</h3><p>En ~120 segundos tienes tu vídeo listo</p></div>
+    <div class="step"><div class="step-num">4</div><h3>Publica</h3><p>Automático a tus redes o descarga directa</p></div>
+  </div>
+</div></section>
+
+<section id="topics"><div class="container">
+  <div class="reveal"><span class="section-label">Temas automáticos</span><h2 class="section-title">20 tipos de contenido<br/>que funcionan</h2></div>
+  <div class="topics-grid reveal">
+    <div class="topic-tag">🗺️ Datos de países <span class="topic-plan tp-noob">NOOB</span></div>
+    <div class="topic-tag">🎮 Videojuegos y cultura pop <span class="topic-plan tp-noob">NOOB</span></div>
+    <div class="topic-tag">🏢 Secretos de empresas <span class="topic-plan tp-noob">NOOB</span></div>
+    <div class="topic-tag">🧪 Retos y experimentos <span class="topic-plan tp-noob">NOOB</span></div>
+    <div class="topic-tag">🏔️ Supervivencia extrema <span class="topic-plan tp-noob">NOOB</span></div>
+    <div class="topic-tag">🦁 Animales y naturaleza <span class="topic-plan tp-noob">NOOB</span></div>
+    <div class="topic-tag">👻 Terror y misterio <span class="topic-plan tp-mid">INTER</span></div>
+    <div class="topic-tag">🔬 Curiosidades científicas <span class="topic-plan tp-mid">INTER</span></div>
+    <div class="topic-tag">📜 Hechos históricos <span class="topic-plan tp-mid">INTER</span></div>
+    <div class="topic-tag">💪 Motivación y mentalidad <span class="topic-plan tp-mid">INTER</span></div>
+    <div class="topic-tag">⚡ Productividad <span class="topic-plan tp-mid">INTER</span></div>
+    <div class="topic-tag">❓ Mitos desmentidos <span class="topic-plan tp-mid">INTER</span></div>
+    <div class="topic-tag">🚀 Curiosidades del espacio <span class="topic-plan tp-mid">INTER</span></div>
+    <div class="topic-tag">🧠 Psicología humana <span class="topic-plan tp-mid">INTER</span></div>
+    <div class="topic-tag">🏆 Historias de éxito <span class="topic-plan tp-pro">PRO</span></div>
+    <div class="topic-tag">🔍 Crímenes reales <span class="topic-plan tp-pro">PRO</span></div>
+    <div class="topic-tag">⭐ Curiosidades celebridades <span class="topic-plan tp-pro">PRO</span></div>
+    <div class="topic-tag">💰 Finanzas personales <span class="topic-plan tp-pro">PRO</span></div>
+    <div class="topic-tag">💭 Frases y filosofía <span class="topic-plan tp-pro">PRO</span></div>
+    <div class="topic-tag">🤖 Tecnología del futuro <span class="topic-plan tp-pro">PRO</span></div>
+  </div>
+</div></section>
+
+<section id="plans"><div class="container">
+  <div class="reveal" style="text-align:center;"><span class="section-label">Precios</span><h2 class="section-title">Elige tu plan</h2><p class="section-sub" style="margin:0 auto 32px;">Sin compromisos. Cancela cuando quieras.</p>
+    <div class="billing-toggle">
+      <span class="toggle-label active" id="lbl-monthly">Mensual</span>
+      <div class="toggle-switch" id="billingToggle" onclick="toggleBilling()"><div class="toggle-knob"></div></div>
+      <span class="toggle-label" id="lbl-annual">Anual</span>
+      <span class="annual-badge">🎁 +3 a 5 meses gratis</span>
+    </div>
+  </div>
+  <div class="plans reveal">
+    <div class="plan-card"><div class="plan-name">Gratis</div><div class="plan-price">0€<span>/mes</span></div><div class="plan-price-sub">Para probar AutoIA</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>1 vídeo cada 3 días</li><li><span class="check">✓</span>Modo manual</li><li><span class="check">✓</span>6 estilos visuales</li><li><span class="check">✓</span>Secuencia de imágenes</li><li><span class="cross">✗</span>Con marca de agua</li><li><span class="cross">✗</span>Sin modo automático</li><li><span class="cross">✗</span>Sin subida automática</li></ul><button class="plan-btn plan-btn-outline" onclick="openModal('register')">Empezar gratis</button></div>
+    <div class="plan-card"><div class="plan-name">Noob</div><div class="plan-price" id="price-noob">7€<span id="period-noob">/mes</span></div><div class="plan-price-sub" id="sub-noob">Facturado mensualmente</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>1 vídeo automático/día</li><li><span class="check">✓</span>5 vídeos manuales/día</li><li><span class="check">✓</span>6 temas automáticos</li><li><span class="check">✓</span>6 estilos visuales</li><li><span class="check">✓</span>6 voces + 6 músicas</li><li><span class="check">✓</span>Hasta 2 cuentas/canales</li><li><span class="check">✓</span>Sin marca de agua</li></ul><button class="plan-btn plan-btn-outline" onclick="openModal('register')">Elegir Noob</button></div>
+    <div class="plan-card popular"><div class="plan-name">Intermedio</div><div class="plan-price" id="price-inter">13€<span id="period-inter">/mes</span></div><div class="plan-price-sub" id="sub-inter">Facturado mensualmente</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>2 vídeos automáticos/día</li><li><span class="check">✓</span>12 vídeos manuales/día</li><li><span class="check">✓</span>14 temas automáticos</li><li><span class="check">✓</span>14 estilos visuales</li><li><span class="check">✓</span>10 voces + 10 músicas</li><li><span class="check">✓</span>Hasta 5 cuentas/canales</li><li><span class="check">✓</span>Calidad HD</li></ul><button class="plan-btn plan-btn-filled" onclick="openModal('register')">Elegir Intermedio</button></div>
+    <div class="plan-card"><div class="plan-name">Pro</div><div class="plan-price" id="price-pro">21€<span id="period-pro">/mes</span></div><div class="plan-price-sub" id="sub-pro">Facturado mensualmente</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>8 vídeos automáticos/día</li><li><span class="check">✓</span>Manuales ilimitados</li><li><span class="check">✓</span>20 temas automáticos</li><li><span class="check">✓</span>20 estilos visuales</li><li><span class="check">✓</span>20 voces + 20 músicas</li><li><span class="check">✓</span>Hasta 10 cuentas/canales</li><li><span class="check">✓</span>HD + generación rápida</li></ul><div class="plan-more">+ voz personalizada, marca propia y más...</div><button class="plan-btn plan-btn-outline" onclick="openModal('register')">Elegir Pro</button></div>
+  </div>
+</div></section>
+
+<section id="languages"><div class="container">
+  <div class="reveal"><span class="section-label">Idiomas</span><h2 class="section-title">Habla el idioma<br/>de tu audiencia</h2></div>
+  <div class="lang-grid reveal">
+    <div class="lang-tag">🇪🇸 Español</div><div class="lang-tag">🇬🇧 Inglés</div><div class="lang-tag">🇫🇷 Francés</div><div class="lang-tag">🇩🇪 Alemán</div><div class="lang-tag">🇮🇹 Italiano</div><div class="lang-tag">🇵🇹 Portugués</div><div class="lang-tag">🇳🇱 Neerlandés</div><div class="lang-tag">🇵🇱 Polaco</div><div class="lang-tag">🇷🇺 Ruso</div><div class="lang-tag">🇯🇵 Japonés</div><div class="lang-tag">🇨🇳 Chino simplificado</div><div class="lang-tag">🇸🇦 Árabe</div><div class="lang-tag">🇮🇳 Hindi</div><div class="lang-tag">🇹🇷 Turco</div><div class="lang-tag">🇰🇷 Coreano</div>
+  </div>
+</div></section>
+
+<div class="cta-section"><div class="cta-box reveal">
+  <span class="section-label">Empieza hoy</span>
+  <h2 class="section-title">Tu primer vídeo<br/>en menos de 5 minutos</h2>
+  <p style="color:var(--text2);margin:16px 0 32px;font-size:17px;font-weight:300;">Sin tarjeta de crédito. Sin configuración técnica.</p>
+  <button class="btn-primary btn-lg" onclick="openModal('register')">Crear cuenta gratis →</button>
+</div></div>
+
+<footer>
+  <div class="logo">AutoIA</div>
+  <div class="footer-links">
+    <a href="#">Inicio</a><a href="#plans">Precios</a><a href="#">Política de privacidad</a><a href="#">Términos de uso</a><a href="#">Aviso legal</a><a href="#">Cookies</a><a href="#">RGPD</a><a href="#">Ayuda</a><a href="#">Estado</a><a href="#">Afiliados</a>
+  </div>
+  <div style="font-size:12px;color:var(--text3);">© 2025 AutoIA. Todos los derechos reservados.</div>
+</footer>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="authModal">
   <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('replyModal').classList.remove('open')">✕</button>
-    <h3>Responder ticket</h3>
-    <div class="reply-original" id="replyOriginal"></div>
-    <label class="form-label">Tu respuesta</label>
-    <textarea class="form-input" id="replyText" placeholder="Escribe tu respuesta..."></textarea>
-    <button class="btn-send" onclick="sendReply()">Enviar →</button>
+    <button class="modal-close" onclick="closeModal('authModal')">✕</button>
+    <h2 id="modal-title">Crear cuenta</h2>
+    <p id="modal-sub">Empieza gratis, sin tarjeta</p>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tab-register" onclick="switchTab('register')">Registrarse</button>
+      <button class="modal-tab" id="tab-login" onclick="switchTab('login')">Iniciar sesión</button>
+    </div>
+    <div id="register-fields">
+      <div class="form-group"><label class="form-label">Nombre completo</label><input type="text" class="form-input" id="reg-nombre" placeholder="Tu nombre"/></div>
+      <div class="form-group"><label class="form-label">Correo electrónico</label><input type="email" class="form-input" id="reg-email" placeholder="tu@email.com"/></div>
+      <div class="form-group"><label class="form-label">Contraseña</label><input type="password" class="form-input" id="reg-pass" placeholder="Mínimo 8 caracteres"/></div>
+      <div class="form-group"><label class="form-label">Idioma preferido</label><select class="form-select form-input" id="reg-idioma"><option>🇪🇸 Español</option><option>🇬🇧 English</option><option>🇫🇷 Français</option><option>🇩🇪 Deutsch</option><option>🇮🇹 Italiano</option><option>🇵🇹 Português</option><option>🇳🇱 Nederlands</option><option>🇵🇱 Polski</option><option>🇷🇺 Русский</option><option>🇯🇵 日本語</option><option>🇨🇳 中文</option><option>🇸🇦 العربية</option><option>🇮🇳 हिन्दी</option><option>🇹🇷 Türkçe</option><option>🇰🇷 한국어</option></select></div>
+      <div class="coupon-box">
+        <label>🏷️ ¿Tienes un código de descuento?</label>
+        <div class="coupon-row">
+          <input type="text" class="form-input" id="coupon-input" placeholder="Ej: Rm3xJ7fW9k" style="text-transform:uppercase;"/>
+          <button class="btn-coupon" onclick="applyCoupon()">Aplicar</button>
+        </div>
+        <div class="coupon-result" id="coupon-result"></div>
+      </div>
+      <button class="btn-primary" style="width:100%;padding:12px;font-size:15px;justify-content:center;" onclick="doRegister()">Crear cuenta gratis</button>
+      <div class="msg-success" id="reg-success">✓ Cuenta creada correctamente. ¡Bienvenido a AutoIA!</div>
+      <div class="msg-error" id="reg-error">Error al crear la cuenta.</div>
+      <div class="form-footer">Al registrarte aceptas los <a href="#">Términos de uso</a></div>
+    </div>
+    <div id="login-fields" style="display:none;">
+      <div class="form-group"><label class="form-label">Correo electrónico</label><input type="email" class="form-input" id="login-email" placeholder="tu@email.com"/></div>
+      <div class="form-group"><label class="form-label">Contraseña</label><input type="password" class="form-input" id="login-pass" placeholder="Tu contraseña"/></div>
+      <button class="btn-primary" style="width:100%;padding:12px;font-size:15px;justify-content:center;" onclick="doLogin()">Iniciar sesión</button>
+      <div class="msg-success" id="login-success">✓ Sesión iniciada correctamente.</div>      <div id="regen-box" style="display:none;margin-top:16px;padding:16px;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.15);border-radius:10px;text-align:center;">
+        <div style="font-size:13px;color:var(--text2);margin-bottom:12px;">¿No te convence el resultado? Genera otro diferente al instante.</div>
+        <button onclick="regenVideo()" style="padding:10px 24px;border:none;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;">🔄 Generar otro vídeo</button>
+        <div id="regen-msg" style="font-size:12px;color:var(--green);margin-top:8px;display:none;">✓ Nuevo vídeo en generación...</div>
+      </div>
+      <div class="msg-error" id="login-error">Email no encontrado.</div>
+      <div class="form-footer"><a href="#">¿Olvidaste tu contraseña?</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADVISOR MODAL -->
+<div class="modal-overlay" id="advisorModal">
+  <div class="modal" style="max-width:500px;">
+    <button class="modal-close" onclick="closeModal('advisorModal')">✕</button>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+      <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:18px;">✨</div>
+      <h2 style="font-size:22px;">Asesor IA</h2>
+    </div>
+    <p>Pregúntame qué tipo de contenido funcionaría mejor para tu canal.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;">
+      <button onclick="askAdvisor(this)" style="padding:6px 12px;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;font-size:12px;color:var(--text2);cursor:pointer;">¿Qué tema está trending?</button>
+      <button onclick="askAdvisor(this)" style="padding:6px 12px;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;font-size:12px;color:var(--text2);cursor:pointer;">¿Qué estilo visual funciona mejor?</button>
+      <button onclick="askAdvisor(this)" style="padding:6px 12px;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;font-size:12px;color:var(--text2);cursor:pointer;">¿Qué duración es mejor?</button>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <input type="text" class="form-input" id="advisorInput" placeholder="Escribe tu pregunta..." style="flex:1;"/>
+      <button class="btn-primary" style="padding:11px 16px;" onclick="sendAdvisor()">→</button>
+    </div>
+    <div id="advisorResponse" style="display:none;margin-top:16px;padding:14px;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);border-radius:10px;font-size:14px;color:var(--text2);line-height:1.7;"></div>
   </div>
 </div>
 
 <script>
-var U = "admin";
-var P = "12037JCAM";
+const SUPA_URL="https://jzywivrjrqrlkiavyylg.supabase.co";
+const SUPA_KEY="sb_publishable_CvSGwFvLlcsAn0f_O--owg_EMLBV_xp";
 
-function doLogin(){
-  var u = document.getElementById('adminUser').value.trim();
-  var p = document.getElementById('adminPass').value;
-  if(u === U && p === P){
-    document.getElementById('loginScreen').style.display='none';
-    document.getElementById('adminApp').style.display='block';
-    document.getElementById('adminName').textContent=u;
-    loadUsers();
+const COUPONS={
+  "xK9mP2qR7n":{discount:10,type:"percent"},
+  "Tz4wB8vL3j":{discount:15,type:"percent"},
+  "Hq6nD1cY5s":{discount:20,type:"percent"},
+  "Rm3xJ7fW9k":{discount:50,type:"percent"},
+  "Vp2tN8bQ4mZx":{discount:100,type:"pro",label:"Acceso Pro GRATIS"}
+};
+
+let appliedCoupon=null;
+
+function applyCoupon(){
+  const code=document.getElementById('coupon-input').value.trim().toUpperCase();
+  const result=document.getElementById('coupon-result');
+  if(COUPONS[code]){
+    appliedCoupon=COUPONS[code];
+    appliedCoupon.code=code;
+    result.style.display='block';
+    if(appliedCoupon.type==='pro'){
+      result.style.color='#a855f7';
+      result.textContent='🎉 ¡Código válido! Acceso Pro completo activado gratuitamente.';
+    } else {
+      result.style.color='#10b981';
+      result.textContent='✓ Código válido — '+appliedCoupon.discount+'% de descuento aplicado.';
+    }
   } else {
-    var err = document.getElementById('loginError');
-    err.style.display='block';
-    setTimeout(function(){err.style.display='none';},3000);
+    result.style.display='block';
+    result.style.color='#ef4444';
+    result.textContent='✗ Código no válido. Inténtalo de nuevo.';
+    appliedCoupon=null;
   }
 }
 
-function doLogout(){
-  document.getElementById('adminApp').style.display='none';
-  document.getElementById('loginScreen').style.display='flex';
-  document.getElementById('adminUser').value='';
-  document.getElementById('adminPass').value='';
+async function supaFetch(path,method,body){
+  const res=await fetch(SUPA_URL+path,{method:method||'GET',headers:{'Content-Type':'application/json','apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY},body:body?JSON.stringify(body):undefined});
+  return res;
 }
 
-setInterval(function(){
-  document.getElementById('clockDisplay').textContent=new Date().toLocaleTimeString('es-ES',{hour12:false});
-},1000);
-
-function showPage(id,el){
-  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
-  document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active');});
-  document.getElementById('page-'+id).classList.add('active');
-  if(el) el.classList.add('active');
-  var titles={dashboard:'Dashboard',users:'Usuarios',revenue:'Ingresos',videos:'Vídeos',tickets:'Tickets',activity:'Actividad',coupons:'Cupones',settings:'Configuración'};
-  document.getElementById('pageTitle').textContent=titles[id]||id;
+async function doRegister(){
+  const nombre=document.getElementById('reg-nombre').value.trim();
+  const email=document.getElementById('reg-email').value.trim();
+  const pass=document.getElementById('reg-pass').value;
+  if(!nombre||!email||!pass){showMsg('reg-error','Rellena todos los campos');return;}
+  if(pass.length<8){showMsg('reg-error','La contraseña debe tener mínimo 8 caracteres');return;}
+  let plan='free';
+  if(appliedCoupon&&appliedCoupon.type==='pro') plan='pro';
+  try{
+    const res=await supaFetch('/rest/v1/usuarios','POST',{nombre,email,plan,videos_generados:0,estado:'active'});
+    if(res.ok||res.status===201){
+      let msg='✓ Cuenta creada correctamente. ¡Bienvenido a AutoIA!';
+      if(plan==='pro') msg='🎉 ¡Cuenta Pro activada! Disfruta de todos los beneficios.';
+      showMsg('reg-success',msg);
+      setTimeout(()=>closeModal('authModal'),2500);
+    } else {
+      const err=await res.json();
+      if(err.code==='23505'){showMsg('reg-error','Este email ya está registrado.');}
+      else{showMsg('reg-error','Error al crear la cuenta.');}
+    }
+  }catch(e){showMsg('reg-error','Error de conexión.');}
 }
 
-var SURL = "https://jzywivrjrqrlkiavyylg.supabase.co";
-var SKEY = "sb_publishable_CvSGwFvLlcsAn0f_O--owg_EMLBV_xp";
-
-function supaGet(path, cb){
-  fetch(SURL+path,{headers:{'apikey':SKEY,'Authorization':'Bearer '+SKEY}})
-  .then(function(r){return r.json();})
-  .then(cb)
-  .catch(function(e){console.log('Error:',e);});
+async function doLogin(){
+  const email=document.getElementById('login-email').value.trim();
+  if(!email){showMsg('login-error','Rellena todos los campos');return;}
+  try{
+    const res=await supaFetch('/rest/v1/usuarios?email=eq.'+encodeURIComponent(email)+'&select=*');
+    const data=await res.json();
+    if(data&&data.length>0){showMsg('login-success','✓ Sesión iniciada correctamente.');setTimeout(()=>closeModal('authModal'),2000);}
+    else{showMsg('login-error','Email no encontrado. ¿Tienes cuenta?');}
+  }catch(e){showMsg('login-error','Error de conexión.');}
 }
 
-var allUsers = [];
-
-function loadUsers(){
-  supaGet('/rest/v1/usuarios?select=*&order=fecha_registro.desc', function(data){
-    if(!Array.isArray(data)) return;
-    allUsers = data;
-    document.getElementById('statUsers').textContent = data.length;
-    var free=0,noob=0,inter=0,pro=0;
-    data.forEach(function(u){
-      if(u.plan==='free') free++;
-      else if(u.plan==='noob') noob++;
-      else if(u.plan==='inter') inter++;
-      else if(u.plan==='pro') pro++;
-    });
-    document.getElementById('countFree').textContent=free;
-    document.getElementById('countNoob').textContent=noob;
-    document.getElementById('countInter').textContent=inter;
-    document.getElementById('countPro').textContent=pro;
-    renderUsers(data);
-    renderDashUsers(data.slice(0,5));
-  });
+function showMsg(id,txt){
+  document.querySelectorAll('.msg-success,.msg-error').forEach(e=>e.style.display='none');
+  const el=document.getElementById(id);
+  if(el){el.textContent=txt;el.style.display='block';}
 }
 
-function renderUsers(data){
-  var tb = document.getElementById('usersTbody');
-  if(!data.length){tb.innerHTML='<tr><td colspan="7" class="empty-state">No hay usuarios aún</td></tr>';return;}
-  tb.innerHTML='';
-  data.forEach(function(u){
-    var planClass={free:'plan-free',noob:'plan-noob',inter:'plan-inter',pro:'plan-pro'}[u.plan]||'plan-free';
-    var planText={free:'GRATIS',noob:'NOOB',inter:'INTER',pro:'PRO'}[u.plan]||'GRATIS';
-    var fecha = u.fecha_registro ? new Date(u.fecha_registro).toLocaleDateString('es-ES') : '-';
-    tb.innerHTML+='<tr><td><strong>'+(u.nombre||'-')+'</strong></td><td style="color:var(--text2)">'+(u.email||'-')+'</td><td><span class="plan-pill '+planClass+'">'+planText+'</span></td><td style="color:var(--text2)">'+(u.videos_generados||0)+'</td><td style="color:var(--text2)">'+fecha+'</td><td><span class="status-dot s-active"></span>'+(u.estado||'activo')+'</td><td><button class="action-btn" onclick="alert(\'Usuario: '+u.email+'\')">Ver</button></td></tr>';
-  });
+function setTheme(t,el){
+  document.body.setAttribute('data-theme',t);
+  document.querySelectorAll('.theme-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  localStorage.setItem('autoia-theme',t);
+}
+const saved=localStorage.getItem('autoia-theme');
+if(saved){document.body.setAttribute('data-theme',saved);const b=document.querySelector(`.theme-btn[data-t="${saved}"]`);if(b){document.querySelectorAll('.theme-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');}}
+
+function openModal(tab){document.getElementById('authModal').classList.add('open');switchTab(tab);}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
+document.querySelectorAll('.modal-overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('open');}));
+function switchTab(tab){
+  const isReg=tab==='register';
+  document.getElementById('tab-register').classList.toggle('active',isReg);
+  document.getElementById('tab-login').classList.toggle('active',!isReg);
+  document.getElementById('register-fields').style.display=isReg?'block':'none';
+  document.getElementById('login-fields').style.display=isReg?'none':'block';
+  document.getElementById('modal-title').textContent=isReg?'Crear cuenta':'Bienvenido de vuelta';
+  document.getElementById('modal-sub').textContent=isReg?'Empieza gratis, sin tarjeta':'Accede a tu cuenta';
 }
 
-function renderDashUsers(data){
-  var tb = document.getElementById('dashUsersTbody');
-  if(!data.length){tb.innerHTML='<tr><td colspan="5" class="empty-state">No hay usuarios aún</td></tr>';return;}
-  tb.innerHTML='';
-  data.forEach(function(u){
-    var planClass={free:'plan-free',noob:'plan-noob',inter:'plan-inter',pro:'plan-pro'}[u.plan]||'plan-free';
-    var planText={free:'GRATIS',noob:'NOOB',inter:'INTER',pro:'PRO'}[u.plan]||'GRATIS';
-    var fecha = u.fecha_registro ? new Date(u.fecha_registro).toLocaleDateString('es-ES') : '-';
-    tb.innerHTML+='<tr><td><strong>'+(u.nombre||'-')+'</strong></td><td style="color:var(--text2)">'+(u.email||'-')+'</td><td><span class="plan-pill '+planClass+'">'+planText+'</span></td><td style="color:var(--text2)">'+fecha+'</td><td><span class="status-dot s-active"></span>'+(u.estado||'activo')+'</td></tr>';
-  });
+let annual=false;
+function toggleBilling(){
+  annual=!annual;
+  document.getElementById('billingToggle').classList.toggle('on',annual);
+  document.getElementById('lbl-monthly').classList.toggle('active',!annual);
+  document.getElementById('lbl-annual').classList.toggle('active',annual);
+  const set=(id,p,sub,per)=>{document.getElementById('price-'+id).childNodes[0].textContent=p;document.getElementById('sub-'+id).textContent=sub;document.getElementById('period-'+id).textContent=per;};
+  if(annual){set('noob','59€','/ año · 3 meses gratis','/año');set('inter','109€','/ año · 3 meses gratis','/año');set('pro','147€','/ año · 5 meses gratis','/año');}
+  else{set('noob','7€','Facturado mensualmente','/mes');set('inter','13€','Facturado mensualmente','/mes');set('pro','21€','Facturado mensualmente','/mes');}
 }
 
-function filterUsers(q){
-  var filtered = q ? allUsers.filter(function(u){return (u.nombre||'').toLowerCase().includes(q.toLowerCase())||(u.email||'').toLowerCase().includes(q.toLowerCase());}) : allUsers;
-  renderUsers(filtered);
+function askAdvisor(btn){document.getElementById('advisorInput').value=btn.textContent;sendAdvisor();}
+function sendAdvisor(){
+  const input=document.getElementById('advisorInput');const resp=document.getElementById('advisorResponse');
+  if(!input.value.trim())return;
+  const q=input.value.toLowerCase();
+  const responses={
+    'trending':'🔥 Los temas más virales ahora: Terror/misterio (+34%), Psicología humana (+28%) y Finanzas personales (+22%). Te recomiendo terror en 60-90 segundos.',
+    'estilo':'🎨 El estilo más efectivo depende de tu nicho. Para entretenimiento: Anime o Lego 3D. Para educación: Infografía o texto animado. Para motivación: Cinematográfico épico.',
+    'duración':'⏱️ Los vídeos de 60-90 segundos tienen un 47% más de retención en TikTok. Para YouTube largo, 7-10 minutos.'
+  };
+  let answer='💡 Te recomiendo empezar con vídeos de 60-90 segundos en estilo Anime o Lego 3D sobre temas de terror o motivación. Son los formatos con mayor tasa de engagement actualmente.';
+  for(const[k,v] of Object.entries(responses)){if(q.includes(k)){answer=v;break;}}
+  resp.style.display='block';resp.textContent='';let i=0;
+  const iv=setInterval(()=>{if(i<answer.length){resp.textContent+=answer[i];i++;}else clearInterval(iv);},15);
+  input.value='';
 }
+document.getElementById('advisorInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendAdvisor();});
 
-function sendReply(){
-  var txt = document.getElementById('replyText').value.trim();
-  if(!txt) return;
-  alert('Respuesta enviada.');
-  document.getElementById('replyModal').classList.remove('open');
+function regenVideo(){
+  const msg=document.getElementById('regen-msg');
+  msg.style.display='block';
+  setTimeout(()=>{msg.style.display='none';},3000);
 }
-
-function createCoupon(){
-  var code = document.getElementById('couponCode').value.trim().toUpperCase();
-  var disc = document.getElementById('couponDiscount').value;
-  var uses = document.getElementById('couponUses').value;
-  if(!code||!disc||!uses){alert('Rellena todos los campos');return;}
-  var tb = document.getElementById('couponsTbody');
-  var empty = tb.querySelector('.empty-state');
-  if(empty) tb.innerHTML='';
-  tb.innerHTML+='<tr><td><strong>'+code+'</strong></td><td style="color:var(--green)">'+disc+'%</td><td>0</td><td>'+uses+'</td><td><span style="color:var(--green);font-size:12px">● Activo</span></td><td><button class="action-btn" onclick="this.closest(\'tr\').remove()">Eliminar</button></td></tr>';
-  document.getElementById('couponCode').value='';
-  document.getElementById('couponDiscount').value='';
-  document.getElementById('couponUses').value='';
+function showRegenBtn(){
+  document.getElementById('regen-box').style.display='block';
 }
+document.getElementById('coupon-input').addEventListener('input',function(){this.value=this.value.toUpperCase();});
 
-setInterval(function(){if(allUsers.length>=0) loadUsers();}, 30000);
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 </body>
 </html>
