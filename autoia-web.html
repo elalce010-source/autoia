@@ -6,6 +6,7 @@
 <title>AutoIA — Crea y publica contenido con IA</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://js.stripe.com/v3/"></script>
 <style>
   :root{--bg:#080808;--bg2:#0f0f0f;--bg3:#161616;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#f0f0f0;--text2:#888;--text3:#555;--accent:#7c3aed;--accent2:#a855f7;--accent3:#c084fc;--cyan:#06b6d4;--pink:#ec4899;--green:#10b981;--amber:#f59e0b;--glow:rgba(124,58,237,0.15);--r:12px;--r2:20px;}
   [data-theme="light"]{--bg:#f8f8f8;--bg2:#fff;--bg3:#f0f0f0;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#111;--text2:#555;--text3:#999;}
@@ -365,9 +366,9 @@
   </div>
   <div class="plans reveal">
     <div class="plan-card"><div class="plan-name">Gratis</div><div class="plan-price">0€<span>/mes</span></div><div class="plan-price-sub">Para probar AutoIA</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>1 vídeo cada 3 días</li><li><span class="check">✓</span>6 estilos visuales</li><li><span class="cross">✗</span>Con marca de agua</li><li><span class="cross">✗</span>Sin modo automático</li></ul><button class="plan-btn plan-btn-outline" onclick="openModal('register')">Empezar gratis</button></div>
-    <div class="plan-card"><div class="plan-name">Noob</div><div class="plan-price" id="price-noob">7€<span id="period-noob">/mes</span></div><div class="plan-price-sub" id="sub-noob">Facturado mensualmente</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>1 vídeo automático/día</li><li><span class="check">✓</span>6 estilos visuales</li><li><span class="check">✓</span>6 voces + músicas</li><li><span class="check">✓</span>Sin marca de agua</li></ul><button class="plan-btn plan-btn-outline" onclick="openModal('register')">Elegir Noob</button></div>
-    <div class="plan-card popular"><div class="plan-name">Intermedio</div><div class="plan-price" id="price-inter">13€<span id="period-inter">/mes</span></div><div class="plan-price-sub" id="sub-inter">Facturado mensualmente</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>2 vídeos automáticos/día</li><li><span class="check">✓</span>14 estilos visuales</li><li><span class="check">✓</span>10 voces + músicas</li><li><span class="check">✓</span>Calidad HD</li></ul><button class="plan-btn plan-btn-filled" onclick="openModal('register')">Elegir Intermedio</button></div>
-    <div class="plan-card"><div class="plan-name">Pro</div><div class="plan-price" id="price-pro">21€<span id="period-pro">/mes</span></div><div class="plan-price-sub" id="sub-pro">Facturado mensualmente</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>8 vídeos automáticos/día</li><li><span class="check">✓</span>20 estilos visuales</li><li><span class="check">✓</span>20 voces + músicas</li><li><span class="check">✓</span>HD + generación rápida</li></ul><div class="plan-more">+ voz personalizada y más...</div><button class="plan-btn plan-btn-outline" onclick="openModal('register')">Elegir Pro</button></div>
+    <div class="plan-card"><div class="plan-name">Noob</div><div class="plan-price" id="price-noob">7€<span id="period-noob">/mes</span></div><div class="plan-price-sub" id="sub-noob">Facturado mensualmente</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>1 vídeo automático/día</li><li><span class="check">✓</span>6 estilos visuales</li><li><span class="check">✓</span>6 voces + músicas</li><li><span class="check">✓</span>Sin marca de agua</li></ul><button class="plan-btn plan-btn-outline" onclick="checkout('noob')">Elegir Noob</button></div>
+    <div class="plan-card popular"><div class="plan-name">Intermedio</div><div class="plan-price" id="price-inter">13€<span id="period-inter">/mes</span></div><div class="plan-price-sub" id="sub-inter">Facturado mensualmente</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>2 vídeos automáticos/día</li><li><span class="check">✓</span>14 estilos visuales</li><li><span class="check">✓</span>10 voces + músicas</li><li><span class="check">✓</span>Calidad HD</li></ul><button class="plan-btn plan-btn-filled" onclick="checkout('inter')">Elegir Intermedio</button></div>
+    <div class="plan-card"><div class="plan-name">Pro</div><div class="plan-price" id="price-pro">21€<span id="period-pro">/mes</span></div><div class="plan-price-sub" id="sub-pro">Facturado mensualmente</div><div class="plan-divider"></div><ul class="plan-features"><li><span class="check">✓</span>8 vídeos automáticos/día</li><li><span class="check">✓</span>20 estilos visuales</li><li><span class="check">✓</span>20 voces + músicas</li><li><span class="check">✓</span>HD + generación rápida</li></ul><div class="plan-more">+ voz personalizada y más...</div><button class="plan-btn plan-btn-outline" onclick="checkout('pro')">Elegir Pro</button></div>
   </div>
 </div></section>
 
@@ -568,7 +569,7 @@
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);">
               <div><div style="font-size:14px;font-weight:600;">Plan actual</div><div style="font-size:13px;color:var(--accent3);" id="settingPlan">GRATIS</div></div>
-              <button class="btn-primary" style="padding:8px 16px;font-size:13px;" onclick="goToLanding();document.getElementById('plans').scrollIntoView({behavior:'smooth'})">Mejorar plan</button>
+              <button class="btn-primary" style="padding:8px 16px;font-size:13px;" onclick="goToLanding();setTimeout(()=>document.getElementById('plans').scrollIntoView({behavior:'smooth'}),300)">Mejorar plan</button>
             </div>
             <div style="margin-top:8px;">
               <button class="btn-ghost" style="color:#ef4444;border-color:#ef4444;" onclick="logout()">Cerrar sesión</button>
@@ -1001,6 +1002,65 @@ function updateStylePreview(){
 }
 
 document.getElementById('coupon-input').addEventListener('input',function(){});
+
+
+// STRIPE
+const STRIPE_PK = "pk_test_51TDBiYQynEHTixxIOMDUVCtE7RkyM0tGyKIfot7qnrUMFFva0zMTAjwWB4JYSyQR2nAztfQM3jN7eHncQl3MqnR200vRaDRjsY";
+
+const PRICE_IDS = {
+  noob_monthly: "price_1TDk3VQynEHTixxIsRj1Y8kD",
+  noob_yearly:  "price_1TDk49QynEHTixxI6k921O6P",
+  inter_monthly: "price_1TDk4iQynEHTixxIg6dkxuMN",
+  inter_yearly:  "price_1TDk5WQynEHTixxI88WahKki",
+  pro_monthly:  "price_1TDk64QynEHTixxIPUmG23rI",
+  pro_yearly:   "price_1TDk6UQynEHTixxIVbQUgcO6"
+};
+
+async function checkout(plan){
+  if(!currentUser){
+    openModal('register');
+    showMsg('reg-error','Crea una cuenta primero para suscribirte.');
+    return;
+  }
+  const isAnnual = document.getElementById('billingToggle') && document.getElementById('billingToggle').classList.contains('on');
+  const key = plan + (isAnnual ? '_yearly' : '_monthly');
+  const priceId = PRICE_IDS[key];
+  if(!priceId){ alert('Error: precio no encontrado'); return; }
+
+  try{
+    const stripe = Stripe(STRIPE_PK);
+    const result = await stripe.redirectToCheckout({
+      lineItems:[{price: priceId, quantity:1}],
+      mode:'subscription',
+      successUrl: window.location.origin + '/autoia-web.html?success=1&plan='+plan,
+      cancelUrl: window.location.origin + '/autoia-web.html?cancel=1',
+      customerEmail: currentUser.email
+    });
+    if(result.error) alert(result.error.message);
+  } catch(e){
+    alert('Error al procesar el pago. Inténtalo de nuevo.');
+    console.error(e);
+  }
+}
+
+// Handle return from Stripe
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.get('success')==='1'){
+  const plan = urlParams.get('plan')||'noob';
+  if(currentUser){
+    currentUser.plan = plan;
+    localStorage.setItem('autoia-user', JSON.stringify(currentUser));
+  }
+  setTimeout(()=>{
+    alert('🎉 ¡Pago completado! Tu plan ha sido activado.');
+    if(currentUser) showUserPanel();
+  }, 500);
+}
+if(urlParams.get('cancel')==='1'){
+  setTimeout(()=>{
+    alert('Pago cancelado. Puedes intentarlo de nuevo cuando quieras.');
+  }, 500);
+}
 
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
