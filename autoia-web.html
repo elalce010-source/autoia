@@ -1004,19 +1004,17 @@ function updateStylePreview(){
 document.getElementById('coupon-input').addEventListener('input',function(){});
 
 
-// STRIPE
-const STRIPE_PK = "pk_test_51TDBiYQynEHTixxIOMDUVCtE7RkyM0tGyKIfot7qnrUMFFva0zMTAjwWB4JYSyQR2nAztfQM3jN7eHncQl3MqnR200vRaDRjsY";
-
-const PRICE_IDS = {
-  noob_monthly: "price_1TDk3VQynEHTixxIsRj1Y8kD",
-  noob_yearly:  "price_1TDk49QynEHTixxI6k921O6P",
-  inter_monthly: "price_1TDk4iQynEHTixxIg6dkxuMN",
-  inter_yearly:  "price_1TDk5WQynEHTixxI88WahKki",
-  pro_monthly:  "price_1TDk64QynEHTixxIPUmG23rI",
-  pro_yearly:   "price_1TDk6UQynEHTixxIVbQUgcO6"
+// STRIPE PAYMENT LINKS
+const PAYMENT_LINKS = {
+  noob_monthly:  "https://buy.stripe.com/test_28EcN7gxn18jb9D1fRbAs00",
+  noob_yearly:   "https://buy.stripe.com/test_9B69AVgxn04fgtX0bNbAs01",
+  inter_monthly: "https://buy.stripe.com/test_7sY5kF2GxcR1gtX1fRbAs02",
+  inter_yearly:  "https://buy.stripe.com/test_5kQ00lgxn9EP0uZ6AbbAs03",
+  pro_monthly:   "https://buy.stripe.com/test_28E9AVbd34kv1z3aQrbAs04",
+  pro_yearly:    "https://buy.stripe.com/test_6oU8wR94V6sD1z3e2DbAs05"
 };
 
-async function checkout(plan){
+function checkout(plan){
   if(!currentUser){
     openModal('register');
     showMsg('reg-error','Crea una cuenta primero para suscribirte.');
@@ -1024,23 +1022,11 @@ async function checkout(plan){
   }
   const isAnnual = document.getElementById('billingToggle') && document.getElementById('billingToggle').classList.contains('on');
   const key = plan + (isAnnual ? '_yearly' : '_monthly');
-  const priceId = PRICE_IDS[key];
-  if(!priceId){ alert('Error: precio no encontrado'); return; }
-
-  try{
-    const stripe = Stripe(STRIPE_PK);
-    const result = await stripe.redirectToCheckout({
-      lineItems:[{price: priceId, quantity:1}],
-      mode:'subscription',
-      successUrl: window.location.origin + '/autoia-web.html?success=1&plan='+plan,
-      cancelUrl: window.location.origin + '/autoia-web.html?cancel=1',
-      customerEmail: currentUser.email
-    });
-    if(result.error) alert(result.error.message);
-  } catch(e){
-    alert('Error al procesar el pago. Inténtalo de nuevo.');
-    console.error(e);
-  }
+  const url = PAYMENT_LINKS[key];
+  if(!url){ alert('Error: enlace de pago no encontrado'); return; }
+  // Añadir email del usuario al enlace
+  const finalUrl = url + '?prefilled_email=' + encodeURIComponent(currentUser.email);
+  window.location.href = finalUrl;
 }
 
 // Handle return from Stripe
