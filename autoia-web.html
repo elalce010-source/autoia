@@ -40,10 +40,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:64px;d
 .lang-select{padding:6px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--text2);font-family:'DM Sans',sans-serif;font-size:12px;outline:none;cursor:pointer;}
 .user-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--cyan));display:none;align-items:center;justify-content:center;font-size:14px;font-weight:700;cursor:pointer;overflow:hidden;flex-shrink:0;}
 .user-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
-/* URGENCY BANNER */
 .urgency-banner{background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(239,68,68,0.1));border-bottom:1px solid rgba(245,158,11,0.2);padding:8px 20px;text-align:center;font-size:13px;color:var(--amber);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;}
 .urgency-timer{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:#fff;}
-/* HERO */
 #landingPage{display:block;}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 40px 80px;z-index:1;}
 .hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(124,58,237,0.18) 0%,transparent 70%);pointer-events:none;}
@@ -51,7 +49,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:64px;d
 .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent2);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.3);}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-@keyframes shimmer{0%{background-position:-200% center;}100%{background-position:200% center;}}
 .hero h1{font-family:'Syne',sans-serif;font-size:clamp(40px,7vw,86px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:24px;animation:fadeUp 0.6s 0.1s ease both;}
 .hero h1 span{background:linear-gradient(135deg,var(--accent2) 0%,var(--cyan) 50%,var(--pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero p{font-size:18px;color:var(--text2);max-width:560px;margin:0 auto 40px;font-weight:300;animation:fadeUp 0.6s 0.2s ease both;}
@@ -60,15 +57,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:64px;d
 .hero-stats{display:flex;align-items:center;gap:40px;justify-content:center;margin-top:60px;padding-top:40px;border-top:1px solid var(--border);animation:fadeUp 0.6s 0.4s ease both;flex-wrap:wrap;}
 .stat-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;background:linear-gradient(135deg,var(--accent2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .stat-label{font-size:13px;color:var(--text3);}
-/* DEMO VIDEO */
 .demo-box{max-width:700px;margin:40px auto 0;border-radius:var(--r2);overflow:hidden;border:1px solid var(--border2);background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(6,182,212,0.05));padding:40px;text-align:center;animation:fadeUp 0.6s 0.5s ease both;}
 .demo-screen{width:100%;height:200px;background:var(--bg3);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:16px;position:relative;overflow:hidden;}
 .demo-bars{display:flex;align-items:flex-end;gap:6px;height:80px;}
 .demo-bar{width:20px;background:linear-gradient(180deg,var(--accent2),var(--cyan));border-radius:4px 4px 0 0;animation:barAnim 1s ease-in-out infinite alternate;}
-.demo-bar:nth-child(2){animation-delay:0.1s;}
-.demo-bar:nth-child(3){animation-delay:0.2s;}
-.demo-bar:nth-child(4){animation-delay:0.3s;}
-.demo-bar:nth-child(5){animation-delay:0.4s;}
+.demo-bar:nth-child(2){animation-delay:0.1s;}.demo-bar:nth-child(3){animation-delay:0.2s;}.demo-bar:nth-child(4){animation-delay:0.3s;}.demo-bar:nth-child(5){animation-delay:0.4s;}
 @keyframes barAnim{from{transform:scaleY(0.3);}to{transform:scaleY(1);}}
 section{position:relative;z-index:1;padding:100px 40px;}
 .container{max-width:1140px;margin:0 auto;}
@@ -82,14 +75,12 @@ section{position:relative;z-index:1;padding:100px 40px;}
 .feature-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px;}
 .feature-card h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;}
 .feature-card p{font-size:13px;color:var(--text2);line-height:1.7;}
-/* MONEY SECTION */
 .money-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px;}
 .money-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:28px;text-align:center;transition:all 0.3s;}
 .money-card:hover{border-color:var(--accent);transform:translateY(-4px);}
 .money-icon{font-size:40px;margin-bottom:16px;}
 .money-num{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--green);margin-bottom:8px;}
 .money-label{font-size:14px;color:var(--text2);}
-/* TESTIMONIALS */
 .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px;}
 .testimonial-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:24px;transition:border-color 0.2s;}
 .testimonial-card:hover{border-color:var(--accent);}
@@ -99,7 +90,6 @@ section{position:relative;z-index:1;padding:100px 40px;}
 .test-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;}
 .test-name{font-size:13px;font-weight:600;}
 .test-handle{font-size:11px;color:var(--text3);}
-/* CHANNELS */
 .channels-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:50px;}
 .channel-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:20px;text-align:center;transition:all 0.3s;}
 .channel-card:hover{border-color:var(--accent);transform:translateY(-3px);}
@@ -107,14 +97,12 @@ section{position:relative;z-index:1;padding:100px 40px;}
 .channel-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:6px;}
 .channel-subs{font-size:22px;font-weight:800;color:var(--green);font-family:'Syne',sans-serif;}
 .channel-time{font-size:11px;color:var(--text3);margin-top:4px;}
-/* STEPS */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;}
 .step{text-align:center;padding:32px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);transition:all 0.2s;}
 .step:hover{border-color:var(--accent);transform:translateY(-4px);}
 .step-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:18px;margin:0 auto 20px;}
 .step h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;}
 .step p{font-size:13px;color:var(--text2);}
-/* STYLES GRID */
 .styles-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:40px;}
 .style-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px 10px;text-align:center;transition:all 0.2s;}
 .style-card:hover{border-color:var(--accent2);background:rgba(124,58,237,0.05);transform:translateY(-2px);}
@@ -157,7 +145,11 @@ section{position:relative;z-index:1;padding:100px 40px;}
 .toggle-switch.on .toggle-knob{transform:translateX(20px);}
 .annual-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--green);background:rgba(16,185,129,0.1);padding:3px 10px;border-radius:100px;border:1px solid rgba(16,185,129,0.2);}
 .iva-note{font-size:11px;color:var(--text3);text-align:center;margin-top:12px;}
-/* TOPICS */
+/* COUPON IN PLANS SECTION */
+.plans-coupon-box{max-width:420px;margin:28px auto 0;background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:10px;padding:14px 16px;}
+.plans-coupon-box label{font-size:12px;color:var(--accent3);font-weight:600;display:block;margin-bottom:8px;}
+.plans-coupon-row{display:flex;gap:8px;}
+.plans-coupon-result{font-size:12px;margin-top:8px;display:none;}
 .topics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:40px;}
 .topic-tag{padding:12px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);font-size:13px;display:flex;align-items:center;gap:8px;transition:all 0.2s;}
 .topic-tag:hover{border-color:var(--accent2);}
@@ -165,7 +157,6 @@ section{position:relative;z-index:1;padding:100px 40px;}
 .tp-noob{background:rgba(245,158,11,0.15);color:var(--amber);}
 .tp-mid{background:rgba(6,182,212,0.15);color:var(--cyan);}
 .tp-pro{background:rgba(168,85,247,0.15);color:var(--accent3);}
-.tp-def{background:rgba(245,158,11,0.2);color:#fbbf24;}
 .lang-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px;}
 .lang-tag{padding:7px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--text2);transition:all 0.2s;}
 .lang-tag:hover{border-color:var(--accent);}
@@ -175,9 +166,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 .footer-links{display:flex;gap:20px;flex-wrap:wrap;}
 .footer-links a{font-size:13px;color:var(--text3);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover{color:var(--text);}
-/* WHATSAPP */
-.wa-btn{position:fixed;bottom:24px;right:24px;z-index:90;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;font-size:26px;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform 0.2s;}
-.wa-btn:hover{transform:scale(1.1);}
 /* PANEL */
 #userPanel{display:none;min-height:100vh;padding-top:64px;background:var(--bg);}
 .panel-layout{display:flex;}
@@ -186,7 +174,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 .panel-nav-item:hover{background:var(--bg3);color:var(--text);}
 .panel-nav-item.active{background:rgba(124,58,237,0.12);color:var(--accent3);}
 .panel-nav-icon{font-size:15px;width:18px;text-align:center;}
-.panel-nav-badge{margin-left:auto;font-size:9px;font-weight:700;padding:2px 6px;border-radius:100px;background:rgba(239,68,68,0.15);color:var(--red);}
 .panel-user{padding:12px;border-top:1px solid var(--border);position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;gap:8px;background:var(--bg2);}
 .panel-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;overflow:hidden;}
 .panel-avatar img{width:100%;height:100%;object-fit:cover;}
@@ -197,7 +184,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 .panel-page{display:none;}
 .panel-page.active{display:block;}
 .panel-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:20px;}
-/* GENERATOR */
 .gen-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:24px;margin-bottom:16px;}
 .gen-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:14px;}
 .gen-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
@@ -228,7 +214,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 .btn-dl{background:var(--bg2);border:1px solid var(--border2);color:var(--text);}
 .btn-dl:hover{border-color:var(--accent);}
 .btn-pub{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#fff;}
-/* PUBLISH SCHEDULE */
 .schedule-grid{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
 .schedule-row{display:flex;align-items:center;gap:10px;padding:12px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);}
 .schedule-net{font-size:18px;}
@@ -238,23 +223,17 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 .schedule-toggle.on{background:var(--accent);}
 .schedule-toggle-knob{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform 0.2s;}
 .schedule-toggle.on .schedule-toggle-knob{transform:translateX(16px);}
-/* HISTORY */
 .history-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 .history-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px;transition:border-color 0.2s;cursor:pointer;}
 .history-card:hover{border-color:var(--accent);}
 .history-thumb{width:100%;height:110px;background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(6,182,212,0.08));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:10px;}
 .history-title{font-size:12px;font-weight:600;margin-bottom:3px;}
 .history-meta{font-size:10px;color:var(--text3);}
-/* STATS */
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px;}
 .stat-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:18px 20px;}
 .stat-box-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
 .stat-box-val{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;}
-.sv-p{color:var(--accent2);}
-.sv-c{color:var(--cyan);}
-.sv-g{color:var(--green);}
-.sv-a{color:var(--amber);}
-/* ONBOARDING */
+.sv-p{color:var(--accent2);}.sv-c{color:var(--cyan);}.sv-g{color:var(--green);}.sv-a{color:var(--amber);}
 .onboarding-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);z-index:300;display:flex;align-items:center;justify-content:center;}
 .onboarding-box{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r2);width:100%;max-width:520px;padding:40px;}
 .onboarding-steps{display:flex;gap:8px;margin-bottom:28px;}
@@ -267,11 +246,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 .ob-option:hover,.ob-option.selected{border-color:var(--accent);background:rgba(124,58,237,0.08);}
 .ob-option-icon{font-size:24px;margin-bottom:6px;}
 .ob-option-label{font-size:13px;font-weight:600;}
-/* REFERRAL */
 .ref-box{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);border-radius:var(--r);padding:16px;margin-bottom:14px;}
 .ref-link{display:flex;gap:8px;margin-top:8px;}
 .ref-input{flex:1;padding:8px 12px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:12px;font-family:'DM Sans',sans-serif;outline:none;}
-/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.2s;}
 .modal-overlay.open{opacity:1;pointer-events:all;}
 .modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r2);width:100%;max-width:480px;padding:36px;transform:translateY(20px);transition:transform 0.2s;position:relative;max-height:90vh;overflow-y:auto;}
@@ -303,12 +280,10 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 .advisor-dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s,transform 0.6s;}
 .reveal.visible{opacity:1;transform:translateY(0);}
-/* ADVISOR CHAT */
 .advisor-messages{max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;margin-bottom:14px;padding:4px;}
 .msg-bubble{padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.6;max-width:90%;}
 .msg-user{background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.2);align-self:flex-end;color:var(--text);}
 .msg-ai{background:var(--bg3);border:1px solid var(--border);align-self:flex-start;color:var(--text2);}
-/* LIMIT BAR */
 .limit-bar-wrap{background:var(--bg3);border-radius:100px;height:6px;overflow:hidden;margin-top:6px;}
 .limit-bar-fill{height:100%;border-radius:100px;transition:width 0.5s;}
 @media(max-width:1100px){.plans{grid-template-columns:repeat(3,1fr);}}
@@ -318,7 +293,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 </head>
 <body data-theme="dark">
 
-<!-- URGENCY BANNER -->
 <div class="urgency-banner" id="urgencyBanner">
   🔥 Oferta de lanzamiento — Termina en: <span class="urgency-timer" id="urgencyTimer">47:59:32</span>
 </div>
@@ -326,8 +300,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 <button class="advisor-btn" id="advisorBtn" onclick="document.getElementById('advisorModal').classList.add('open')">
   <span class="advisor-dot"></span>✨ Asesor IA
 </button>
-
-<div class="wa-btn" onclick="window.open('https://wa.me/34600000000?text=Hola,%20necesito%20ayuda%20con%20AutoIA','_blank')" title="Soporte WhatsApp">💬</div>
 
 <nav>
   <div class="logo" onclick="goToLanding()">AutoIA</div>
@@ -339,12 +311,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
   </ul>
   <div class="nav-right">
     <select class="lang-select" id="langSelect" onchange="changeLang(this.value)">
-      <option value="es">🇪🇸 ES</option>
-      <option value="en">🇬🇧 EN</option>
-      <option value="fr">🇫🇷 FR</option>
-      <option value="de">🇩🇪 DE</option>
-      <option value="pt">🇵🇹 PT</option>
-      <option value="it">🇮🇹 IT</option>
+      <option value="es">🇪🇸 ES</option><option value="en">🇬🇧 EN</option><option value="fr">🇫🇷 FR</option>
+      <option value="de">🇩🇪 DE</option><option value="pt">🇵🇹 PT</option><option value="it">🇮🇹 IT</option>
     </select>
     <div class="theme-switcher">
       <div class="theme-btn active" data-t="dark" onclick="setTheme('dark',this)"></div>
@@ -359,7 +327,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
   </div>
 </nav>
 
-<!-- LANDING -->
 <div id="landingPage">
 <section class="hero">
   <div class="hero-glow"></div>
@@ -381,14 +348,10 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
     <div class="demo-box">
       <div class="demo-screen">
         <div class="demo-bars">
-          <div class="demo-bar" style="height:40px"></div>
-          <div class="demo-bar" style="height:60px"></div>
-          <div class="demo-bar" style="height:80px"></div>
-          <div class="demo-bar" style="height:50px"></div>
-          <div class="demo-bar" style="height:70px"></div>
-          <div class="demo-bar" style="height:45px"></div>
-          <div class="demo-bar" style="height:65px"></div>
-          <div class="demo-bar" style="height:80px"></div>
+          <div class="demo-bar" style="height:40px"></div><div class="demo-bar" style="height:60px"></div>
+          <div class="demo-bar" style="height:80px"></div><div class="demo-bar" style="height:50px"></div>
+          <div class="demo-bar" style="height:70px"></div><div class="demo-bar" style="height:45px"></div>
+          <div class="demo-bar" style="height:65px"></div><div class="demo-bar" style="height:80px"></div>
         </div>
         <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--text3);">🎬 La IA está generando tu vídeo...</div>
       </div>
@@ -405,14 +368,13 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
     <div class="feature-card"><div class="feature-icon">📱</div><h3>Publicación por red y hora</h3><p>Elige una hora para YouTube y otra diferente para TikTok. Control total.</p></div>
     <div class="feature-card"><div class="feature-icon">🎙️</div><h3>Título, descripción y hashtags</h3><p>La IA genera automáticamente todo lo que necesitas para posicionar cada vídeo.</p></div>
     <div class="feature-card"><div class="feature-icon">🧠</div><h3>Asesor IA con memoria</h3><p>Le dices cómo quieres tus vídeos y lo recuerda. Aprende tu estilo y nicho.</p></div>
-    <div class="feature-card"><div class="feature-icon">🎬</div><h3>Resúmenes de películas</h3><p>Plan Definitivo: resume películas en partes con voz encima. Solo para TikTok.</p></div>
+    <div class="feature-card"><div class="feature-icon">🎥</div><h3>Resúmenes de películas</h3><p>Plan Definitivo: resume películas en partes con voz encima.</p></div>
     <div class="feature-card"><div class="feature-icon">🌍</div><h3>15 idiomas</h3><p>Español, inglés, francés, japonés, árabe y más.</p></div>
     <div class="feature-card"><div class="feature-icon">🔗</div><h3>Sistema de referidos</h3><p>Comparte tu enlace único y consigue que tus amigos se unan a AutoIA.</p></div>
     <div class="feature-card"><div class="feature-icon">🔒</div><h3>Seguro y privado</h3><p>RGPD completo, límites por plan y protección avanzada contra abusos.</p></div>
   </div>
 </div></section>
 
-<!-- CÓMO GANAR DINERO -->
 <section id="money" style="background:linear-gradient(180deg,transparent,rgba(16,185,129,0.03),transparent);">
 <div class="container">
   <div class="reveal" style="text-align:center;"><span class="section-label">Monetización</span><h2 class="section-title">Cómo ganar dinero<br/>con AutoIA</h2><p class="section-sub" style="margin:0 auto;">Crea canales automatizados y genera ingresos pasivos mientras duermes.</p></div>
@@ -426,7 +388,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
   </div>
 </div></section>
 
-<!-- CANALES DE EJEMPLO -->
 <section id="channels"><div class="container">
   <div class="reveal"><span class="section-label">Casos reales</span><h2 class="section-title">Creadores que ya<br/>usan AutoIA</h2></div>
   <div class="channels-grid reveal">
@@ -502,19 +463,18 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
   </div>
 </div></section>
 
-<!-- TESTIMONIOS -->
 <section id="testimonials" style="background:linear-gradient(180deg,transparent,rgba(124,58,237,0.02),transparent);">
 <div class="container">
   <div class="reveal" style="text-align:center;"><span class="section-label">Testimonios</span><h2 class="section-title">Lo que dicen<br/>nuestros usuarios</h2></div>
   <div class="testimonials-grid reveal">
-    <div class="testimonial-card"><div class="test-stars">★★★★★</div><div class="test-text">"Llevo 2 meses usando AutoIA y ya tengo 3.200 seguidores en TikTok sin grabar ni un vídeo yo mismo. Es increíble."</div><div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#7c3aed,#06b6d4);">C</div><div><div class="test-name">Carlos M.</div><div class="test-handle">@carlosmisterios · TikTok</div></div></div></div>
-    <div class="testimonial-card"><div class="test-stars">★★★★★</div><div class="test-text">"Tenía miedo de que fuese complicado pero en 10 minutos ya tenía mi primer vídeo subido. El asesor IA es una pasada."</div><div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#ec4899,#f59e0b);">L</div><div><div class="test-name">Laura S.</div><div class="test-handle">@lauracreadora · Instagram</div></div></div></div>
-    <div class="testimonial-card"><div class="test-stars">★★★★★</div><div class="test-text">"Gestiono 4 canales de YouTube con AutoIA. Cada mes gano entre 400-600€ de AdSense sin hacer nada."</div><div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#10b981,#06b6d4);">A</div><div><div class="test-name">Alejandro R.</div><div class="test-handle">@alexcreator · YouTube</div></div></div></div>
+    <div class="testimonial-card"><div class="test-stars">★★★★★</div><div class="test-text">"Llevo 2 meses usando AutoIA y ya tengo 3.200 seguidores en TikTok sin grabar ni un vídeo yo mismo."</div><div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#7c3aed,#06b6d4);">C</div><div><div class="test-name">Carlos M.</div><div class="test-handle">@carlosmisterios · TikTok</div></div></div></div>
+    <div class="testimonial-card"><div class="test-stars">★★★★★</div><div class="test-text">"En 10 minutos ya tenía mi primer vídeo subido. El asesor IA es una pasada."</div><div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#ec4899,#f59e0b);">L</div><div><div class="test-name">Laura S.</div><div class="test-handle">@lauracreadora · Instagram</div></div></div></div>
+    <div class="testimonial-card"><div class="test-stars">★★★★★</div><div class="test-text">"Gestiono 4 canales de YouTube con AutoIA. Cada mes gano entre 400-600€ de AdSense."</div><div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#10b981,#06b6d4);">A</div><div><div class="test-name">Alejandro R.</div><div class="test-handle">@alexcreator · YouTube</div></div></div></div>
   </div>
 </div></section>
 
 <section id="plans"><div class="container">
-  <div class="reveal" style="text-align:center;"><span class="section-label">Precios</span><h2 class="section-title">Elige tu plan</h2><p class="section-sub" style="margin:0 auto 24px;">Sin compromisos. Cancela cuando quieras. IVA incluido en todos los precios.</p>
+  <div class="reveal" style="text-align:center;"><span class="section-label">Precios</span><h2 class="section-title">Elige tu plan</h2><p class="section-sub" style="margin:0 auto 24px;">Sin compromisos. Cancela cuando quieras.</p>
     <div class="billing-toggle">
       <span class="toggle-label active" id="lbl-monthly">Mensual</span>
       <div class="toggle-switch" id="billingToggle" onclick="toggleBilling()"><div class="toggle-knob"></div></div>
@@ -543,10 +503,11 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li><span class="check">✓</span>1 vídeo automático/día</li>
-        <li><span class="check">✓</span>6 estilos visuales</li>
+        <li><span class="check">✓</span>5 vídeos manuales/día</li>
+        <li><span class="check">✓</span>6 temas · 6 estilos</li>
         <li><span class="check">✓</span>6 voces + músicas</li>
         <li><span class="check">✓</span>Sin marca de agua</li>
-        <li><span class="check">✓</span>Publicación por red y hora</li>
+        <li><span class="check">✓</span>Hasta 2 canales</li>
       </ul>
       <button class="plan-btn plan-btn-outline" onclick="checkout('noob')">Elegir Noob</button>
     </div>
@@ -557,10 +518,11 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li><span class="check">✓</span>2 vídeos automáticos/día</li>
-        <li><span class="check">✓</span>14 estilos visuales</li>
+        <li><span class="check">✓</span>12 vídeos manuales/día</li>
+        <li><span class="check">✓</span>14 temas · 14 estilos</li>
         <li><span class="check">✓</span>10 voces + músicas</li>
         <li><span class="check">✓</span>Calidad HD</li>
-        <li><span class="check">✓</span>Estadísticas avanzadas</li>
+        <li><span class="check">✓</span>Hasta 5 canales</li>
       </ul>
       <button class="plan-btn plan-btn-filled" onclick="checkout('inter')">Elegir Intermedio</button>
     </div>
@@ -571,7 +533,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li><span class="check">✓</span>8 vídeos automáticos/día</li>
-        <li><span class="check">✓</span>20 estilos visuales</li>
+        <li><span class="check">✓</span>Manuales ilimitados</li>
+        <li><span class="check">✓</span>20 temas · 20 estilos</li>
         <li><span class="check">✓</span>20 voces + músicas</li>
         <li><span class="check">✓</span>HD + generación rápida</li>
         <li><span class="check">✓</span>Hasta 10 canales</li>
@@ -589,13 +552,22 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
         <li><span class="check">✓</span>Modo películas/resúmenes</li>
         <li><span class="check">✓</span>Vídeos e imágenes ilimitados</li>
         <li><span class="check">✓</span>Películas conocidas automáticas</li>
-        <li><span class="check">✓</span>Subida exclusiva TikTok</li>
+        <li><span class="check">✓</span>3 meses gratis al pagar anual</li>
       </ul>
       <div class="plan-more">El plan más completo de AutoIA</div>
       <button class="plan-btn plan-btn-gold" onclick="checkout('def')">Elegir Definitivo ✨</button>
     </div>
   </div>
-  <p class="iva-note">* Todos los precios incluyen IVA. Al hacer clic en "Elegir plan" serás redirigido al pago seguro de Stripe donde verás el desglose completo.</p>
+  <!-- CÓDIGO DE DESCUENTO EN PLANES -->
+  <div class="plans-coupon-box reveal">
+    <label>🏷️ ¿Tienes un código de descuento? Aplícalo aquí antes de pagar</label>
+    <div class="plans-coupon-row">
+      <input type="text" class="form-input" id="plans-coupon-input" placeholder="Tu código" maxlength="30" style="flex:1;"/>
+      <button class="btn-coupon" onclick="applyPlansCoupon()">Aplicar</button>
+    </div>
+    <div class="plans-coupon-result" id="plans-coupon-result"></div>
+  </div>
+  <p class="iva-note">* Precios sin IVA. El IVA (21%) se añade automáticamente al finalizar el pago en Stripe.</p>
 </div></section>
 
 <section id="languages"><div class="container">
@@ -617,7 +589,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
   <div class="footer-links">
     <a href="#">Inicio</a><a href="#plans">Precios</a><a href="#">Privacidad</a><a href="#">Términos</a><a href="#">Ayuda</a><a href="#">Afiliados</a>
   </div>
-  <div style="font-size:11px;color:var(--text3);">© 2025 AutoIA. Todos los derechos reservados. IVA incluido en todos los precios.</div>
+  <div style="font-size:11px;color:var(--text3);">© 2025 AutoIA. Todos los derechos reservados.</div>
 </footer>
 </div>
 
@@ -642,11 +614,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       </div>
     </div>
     <div class="panel-main">
-
       <!-- GENERADOR -->
       <div class="panel-page active" id="pp-generator">
         <div class="panel-title">🎬 Crear vídeo</div>
-        <!-- LIMIT BAR -->
         <div id="limitBar" style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:14px;">
           <div style="flex:1;">
             <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;"><span style="color:var(--text2);">Vídeos este mes</span><span id="limitText" style="font-weight:600;">0 / 3</span></div>
@@ -661,10 +631,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
         <div class="gen-card">
           <div id="manual-fields">
             <div class="form-group"><label class="gen-label">Describe tu vídeo</label><textarea class="gen-textarea" id="videoDesc" placeholder="Ej: Un vídeo sobre los 5 datos más curiosos del espacio..." maxlength="500"></textarea></div>
-            <!-- ADVISOR STYLE MEMORY -->
-            <div id="styleMemoryBox" style="display:none;padding:10px 12px;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.15);border-radius:8px;margin-bottom:12px;font-size:12px;color:var(--accent3);">
-              💡 <span id="styleMemoryText"></span>
-            </div>
+            <div id="styleMemoryBox" style="display:none;padding:10px 12px;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.15);border-radius:8px;margin-bottom:12px;font-size:12px;color:var(--accent3);">💡 <span id="styleMemoryText"></span></div>
           </div>
           <div id="auto-fields" style="display:none;">
             <div class="gen-row">
@@ -695,26 +662,20 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
                 <div style="padding:6px 10px;background:var(--bg3);font-size:10px;color:var(--text2);" id="stylePreviewDesc">📸 Fotos reales — Imágenes fotográficas auténticas</div>
               </div>
             </div>
-            <div>
-              <label class="gen-label">Duración</label>
+            <div><label class="gen-label">Duración</label>
               <select class="gen-select"><option>30 - 60 segundos</option><option>60 - 90 segundos</option><option>3 - 5 minutos</option><option>7 - 10 minutos</option></select>
             </div>
           </div>
           <div class="gen-row">
-            <div>
-              <label class="gen-label">Idioma</label>
+            <div><label class="gen-label">Idioma</label>
               <select class="gen-select"><option>🇪🇸 Español</option><option>🇬🇧 Inglés</option><option>🇫🇷 Francés</option><option>🇩🇪 Alemán</option><option>🇯🇵 Japonés</option></select>
             </div>
-            <div>
-              <label class="gen-label">Voz</label>
+            <div><label class="gen-label">Voz</label>
               <div style="display:flex;gap:6px;align-items:center;">
                 <select class="gen-select" id="voiceSelect" onchange="updateVoicePreview()" style="flex:1;">
-                  <option value="0">Marco — Masculina grave</option>
-                  <option value="1">Sofía — Femenina suave</option>
-                  <option value="2">Alex — Neutral joven</option>
-                  <option value="3">Carlos — Masculina media</option>
-                  <option value="4">Elena — Femenina dinámica</option>
-                  <option value="5">Orión — Narrativa épica</option>
+                  <option value="0">Marco — Masculina grave</option><option value="1">Sofía — Femenina suave</option>
+                  <option value="2">Alex — Neutral joven</option><option value="3">Carlos — Masculina media</option>
+                  <option value="4">Elena — Femenina dinámica</option><option value="5">Orión — Narrativa épica</option>
                 </select>
                 <button onclick="playVoicePreview()" style="padding:8px 12px;border:none;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer;font-size:14px;">▶️</button>
               </div>
@@ -723,27 +684,11 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
               </div>
             </div>
           </div>
-          <!-- PUBLICACIÓN POR RED Y HORA -->
           <label class="gen-label" style="margin-bottom:8px;">Programar publicación por red</label>
           <div class="schedule-grid">
-            <div class="schedule-row">
-              <span class="schedule-net">▶️</span>
-              <span class="schedule-label">YouTube</span>
-              <input type="time" class="schedule-time" value="18:00"/>
-              <div class="schedule-toggle" onclick="this.classList.toggle('on')"><div class="schedule-toggle-knob"></div></div>
-            </div>
-            <div class="schedule-row">
-              <span class="schedule-net">🎵</span>
-              <span class="schedule-label">TikTok</span>
-              <input type="time" class="schedule-time" value="20:00"/>
-              <div class="schedule-toggle" onclick="this.classList.toggle('on')"><div class="schedule-toggle-knob"></div></div>
-            </div>
-            <div class="schedule-row">
-              <span class="schedule-net">📸</span>
-              <span class="schedule-label">Instagram</span>
-              <input type="time" class="schedule-time" value="19:00"/>
-              <div class="schedule-toggle" onclick="this.classList.toggle('on')"><div class="schedule-toggle-knob"></div></div>
-            </div>
+            <div class="schedule-row"><span class="schedule-net">▶️</span><span class="schedule-label">YouTube</span><input type="time" class="schedule-time" value="18:00"/><div class="schedule-toggle" onclick="this.classList.toggle('on')"><div class="schedule-toggle-knob"></div></div></div>
+            <div class="schedule-row"><span class="schedule-net">🎵</span><span class="schedule-label">TikTok</span><input type="time" class="schedule-time" value="20:00"/><div class="schedule-toggle" onclick="this.classList.toggle('on')"><div class="schedule-toggle-knob"></div></div></div>
+            <div class="schedule-row"><span class="schedule-net">📸</span><span class="schedule-label">Instagram</span><input type="time" class="schedule-time" value="19:00"/><div class="schedule-toggle" onclick="this.classList.toggle('on')"><div class="schedule-toggle-knob"></div></div></div>
           </div>
           <button class="btn-generate" onclick="generateVideo()">🚀 Generar vídeo</button>
           <div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
@@ -766,11 +711,11 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
         </div>
       </div>
 
-      <!-- MODO PELÍCULAS (DEFINITIVO) -->
+      <!-- MODO PELÍCULAS -->
       <div class="panel-page" id="pp-movies">
         <div class="panel-title">🎥 Modo Películas</div>
         <div class="gen-card">
-          <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px;color:var(--amber);">✨ Exclusivo plan Definitivo — Solo para TikTok (sin problemas de copyright)</div>
+          <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px;color:var(--amber);">✨ Exclusivo plan Definitivo</div>
           <div class="mode-tabs">
             <button class="mode-tab active" onclick="setMovieMode('auto',this)">🤖 Película automática</button>
             <button class="mode-tab" onclick="setMovieMode('manual',this)">📁 Subir mi vídeo</button>
@@ -789,8 +734,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
               <div><label class="gen-label">Número de partes</label>
                 <select class="gen-select" id="movieParts">
                   <option value="2">2 partes</option><option value="3">3 partes</option>
-                  <option value="4">4 partes</option><option value="5">5 partes</option>
-                  <option value="10">10 partes</option>
+                  <option value="4">4 partes</option><option value="5">5 partes</option><option value="10">10 partes</option>
                 </select>
               </div>
             </div>
@@ -804,9 +748,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
                 </select>
               </div>
               <div><label class="gen-label">Duración por parte</label>
-                <select class="gen-select">
-                  <option>30 - 60 segundos</option><option>60 - 90 segundos</option><option>2 - 3 minutos</option>
-                </select>
+                <select class="gen-select"><option>30 - 60 segundos</option><option>60 - 90 segundos</option><option>2 - 3 minutos</option></select>
               </div>
             </div>
           </div>
@@ -818,17 +760,13 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
             </div>
           </div>
           <div class="gen-row">
-            <div>
-              <label class="gen-label">Voz narradora</label>
+            <div><label class="gen-label">Voz narradora</label>
               <div style="display:flex;gap:6px;">
                 <select class="gen-select" id="movieVoice" style="flex:1;"><option value="0">Marco — Épico</option><option value="1">Sofía — Suave</option><option value="2">Alex — Joven</option><option value="3">Carlos — Dramático</option><option value="4">Elena — Energética</option><option value="5">Orión — Profundo</option></select>
                 <button onclick="playMovieVoice()" style="padding:8px 12px;border:none;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer;">▶️</button>
               </div>
             </div>
             <div><label class="gen-label">Idioma</label><select class="gen-select"><option>🇪🇸 Español</option><option>🇬🇧 Inglés</option></select></div>
-          </div>
-          <div style="padding:12px;background:var(--bg3);border-radius:8px;margin-bottom:12px;font-size:12px;color:var(--text2);">
-            ℹ️ El vídeo de la película se reproducirá de fondo mientras la voz narra el resumen. Solo se puede publicar en TikTok.
           </div>
           <button class="btn-generate" style="background:linear-gradient(135deg,#d97706,#f59e0b);" onclick="generateMovie()">🎬 Generar resumen</button>
           <div class="progress-bar" id="movieProgressBar"><div class="progress-fill" id="movieProgressFill"></div></div>
@@ -866,7 +804,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
           <div class="stat-box"><div class="stat-box-label">Vistas totales</div><div class="stat-box-val sv-g" id="statVistas">0</div></div>
           <div class="stat-box"><div class="stat-box-label">Tu plan</div><div class="stat-box-val sv-a" id="statPlan">GRATIS</div></div>
         </div>
-        <div class="gen-card"><p style="color:var(--text2);text-align:center;padding:20px;">Conecta tus redes sociales para ver estadísticas reales de vistas y engagement.</p></div>
+        <div class="gen-card"><p style="color:var(--text2);text-align:center;padding:20px;">Conecta tus redes sociales para ver estadísticas reales.</p></div>
       </div>
 
       <!-- REDES SOCIALES -->
@@ -876,18 +814,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
           <h3>Conecta tus cuentas</h3>
           <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">Cada red puede publicar a una hora diferente.</p>
           <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);">
-              <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">▶️</span><div><div style="font-weight:600;font-size:14px;">YouTube</div><div style="font-size:11px;color:var(--text3);">No conectado</div></div></div>
-              <button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="alert('Próximamente')">Conectar</button>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);">
-              <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">🎵</span><div><div style="font-weight:600;font-size:14px;">TikTok</div><div style="font-size:11px;color:var(--text3);">No conectado</div></div></div>
-              <button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="alert('Próximamente')">Conectar</button>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);">
-              <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">📸</span><div><div style="font-weight:600;font-size:14px;">Instagram</div><div style="font-size:11px;color:var(--text3);">No conectado</div></div></div>
-              <button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="alert('Próximamente')">Conectar</button>
-            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">▶️</span><div><div style="font-weight:600;font-size:14px;">YouTube</div><div style="font-size:11px;color:var(--text3);">No conectado</div></div></div><button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="alert('Próximamente')">Conectar</button></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">🎵</span><div><div style="font-weight:600;font-size:14px;">TikTok</div><div style="font-size:11px;color:var(--text3);">No conectado</div></div></div><button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="alert('Próximamente')">Conectar</button></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">📸</span><div><div style="font-weight:600;font-size:14px;">Instagram</div><div style="font-size:11px;color:var(--text3);">No conectado</div></div></div><button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="alert('Próximamente')">Conectar</button></div>
           </div>
         </div>
       </div>
@@ -918,19 +847,10 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
         <div class="gen-card">
           <h3>Mi cuenta</h3>
           <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);">
-              <div><div style="font-size:13px;font-weight:600;">Nombre</div><div style="font-size:12px;color:var(--text2);" id="settingName">-</div></div>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);">
-              <div><div style="font-size:13px;font-weight:600;">Email</div><div style="font-size:12px;color:var(--text2);" id="settingEmail">-</div></div>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);">
-              <div><div style="font-size:13px;font-weight:600;">Plan actual</div><div style="font-size:12px;color:var(--accent3);font-weight:600;" id="settingPlan">GRATIS</div></div>
-              <button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="goToLanding();setTimeout(()=>document.getElementById('plans').scrollIntoView({behavior:'smooth'}),300)">Mejorar plan</button>
-            </div>
-            <div style="margin-top:8px;display:flex;gap:10px;">
-              <button class="btn-ghost" style="color:#ef4444;border-color:#ef4444;font-size:13px;" onclick="logout()">Cerrar sesión</button>
-            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);"><div><div style="font-size:13px;font-weight:600;">Nombre</div><div style="font-size:12px;color:var(--text2);" id="settingName">-</div></div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);"><div><div style="font-size:13px;font-weight:600;">Email</div><div style="font-size:12px;color:var(--text2);" id="settingEmail">-</div></div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);"><div><div style="font-size:13px;font-weight:600;">Plan actual</div><div style="font-size:12px;color:var(--accent3);font-weight:600;" id="settingPlan">GRATIS</div></div><button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="goToLanding();setTimeout(()=>document.getElementById('plans').scrollIntoView({behavior:'smooth'}),300)">Mejorar plan</button></div>
+            <div style="margin-top:8px;"><button class="btn-ghost" style="color:#ef4444;border-color:#ef4444;font-size:13px;" onclick="logout()">Cerrar sesión</button></div>
           </div>
         </div>
       </div>
@@ -942,14 +862,11 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 <div class="onboarding-overlay" id="onboardingOverlay" style="display:none;">
   <div class="onboarding-box">
     <div class="onboarding-steps">
-      <div class="ob-step active" id="obs1"></div>
-      <div class="ob-step" id="obs2"></div>
-      <div class="ob-step" id="obs3"></div>
+      <div class="ob-step active" id="obs1"></div><div class="ob-step" id="obs2"></div><div class="ob-step" id="obs3"></div>
     </div>
     <div id="ob-step-1">
       <div class="ob-title">¡Bienvenido a AutoIA! 🎉</div>
-      <div class="ob-sub">Cuéntanos sobre ti para personalizar tu experiencia.</div>
-      <div class="ob-sub" style="margin-bottom:14px;">¿Qué tipo de contenido quieres crear?</div>
+      <div class="ob-sub">¿Qué tipo de contenido quieres crear?</div>
       <div class="ob-options">
         <div class="ob-option" onclick="selectOb(this,'content','misterio')"><div class="ob-option-icon">👻</div><div class="ob-option-label">Misterio/Terror</div></div>
         <div class="ob-option" onclick="selectOb(this,'content','motivacion')"><div class="ob-option-icon">💪</div><div class="ob-option-label">Motivación</div></div>
@@ -970,8 +887,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <button class="btn-primary" style="width:100%;padding:12px;margin-top:20px;" onclick="nextOb(3)">Continuar →</button>
     </div>
     <div id="ob-step-3" style="display:none;">
-      <div class="ob-title">Tu nicho 🎯</div>
-      <div class="ob-sub" style="margin-bottom:14px;">¿Tienes algo especial que quieras en tus vídeos?</div>
+      <div class="ob-title">Tu estilo 🎯</div>
+      <div class="ob-sub" style="margin-bottom:14px;">¿Algo especial que quieras en tus vídeos?</div>
       <textarea class="form-input" id="obNicho" placeholder="Ej: Quiero que mis vídeos hablen con un tono épico y siempre digan 'sígueme para más' al final..." style="min-height:90px;resize:none;"></textarea>
       <button class="btn-primary" style="width:100%;padding:12px;margin-top:16px;" onclick="finishOb()">¡Empezar a crear! 🚀</button>
     </div>
@@ -999,7 +916,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
         <label>🏷️ ¿Tienes un código de descuento?</label>
         <div class="coupon-row">
           <input type="text" class="form-input" id="coupon-input" placeholder="Tu código" maxlength="30"/>
-          <button class="btn-coupon" onclick="applyCoupon()">Aplicar</button>
+          <button class="btn-coupon" onclick="applyCoupon('modal')">Aplicar</button>
         </div>
         <div class="coupon-result" id="coupon-result"></div>
       </div>
@@ -1028,7 +945,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div><h2 style="font-size:20px;">Asesor IA</h2><p style="font-size:12px;color:var(--text3);margin:0;">Tu asistente personal de creación</p></div>
     </div>
     <div class="advisor-messages" id="advisorMessages">
-      <div class="msg-bubble msg-ai">¡Hola! Soy tu Asesor IA. Puedo ayudarte a crear mejores vídeos, recordar tu estilo preferido y sugerirte qué publicar. ¿En qué te ayudo?</div>
+      <div class="msg-bubble msg-ai">¡Hola! Soy tu Asesor IA. Puedo ayudarte a crear mejores vídeos y recordar tu estilo. ¿En qué te ayudo?</div>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
       <button onclick="askAdvisor(this.textContent)" style="padding:5px 10px;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;font-size:11px;color:var(--text2);cursor:pointer;">¿Qué tema está trending?</button>
@@ -1048,13 +965,31 @@ const SUPA_URL="https://jzywivrjrqrlkiavyylg.supabase.co";
 const SUPA_KEY="sb_publishable_CvSGwFvLlcsAn0f_O--owg_EMLBV_xp";
 const GOOGLE_CLIENT_ID="1027787744444-57gra3a5tn3h9ag00t6d7jg9ne66586c.apps.googleusercontent.com";
 
-const COUPONS={
-  "xK9mP2qR7n":{discount:10,type:"percent"},
-  "Tz4wB8vL3j":{discount:15,type:"percent"},
-  "Hq6nD1cY5s":{discount:20,type:"percent"},
-  "Rm3xJ7fW9k":{discount:50,type:"percent"},
-  "Vp2tN8bQ4mZx":{discount:100,type:"definitivo",label:"Acceso Definitivo GRATIS"}
+// COUPONS con tipo: 'single' = un solo uso, 'unlimited' = ilimitado
+// Los de un solo uso se marcan en localStorage cuando se usan
+const COUPONS_DEF={
+  "xK9mP2qR7n":{discount:10,type:"percent",uses:"unlimited"},
+  "Tz4wB8vL3j":{discount:15,type:"percent",uses:"unlimited"},
+  "Hq6nD1cY5s":{discount:20,type:"percent",uses:"unlimited"},
+  "Rm3xJ7fW9k":{discount:50,type:"percent",uses:"unlimited"},
+  "Vp2tN8bQ4mZx":{discount:100,type:"definitivo",uses:"unlimited"}
 };
+
+function getCoupons(){
+  // Permite que el admin añada cupones desde localStorage
+  const extra=localStorage.getItem('autoia-admin-coupons');
+  if(extra){try{return Object.assign({},COUPONS_DEF,JSON.parse(extra));}catch(e){}}
+  return COUPONS_DEF;
+}
+
+function isCouponUsed(code){
+  const used=JSON.parse(localStorage.getItem('autoia-used-coupons')||'[]');
+  return used.includes(code);
+}
+function markCouponUsed(code){
+  const used=JSON.parse(localStorage.getItem('autoia-used-coupons')||'[]');
+  if(!used.includes(code)){used.push(code);localStorage.setItem('autoia-used-coupons',JSON.stringify(used));}
+}
 
 const PAYMENT_LINKS={
   noob_monthly:"https://buy.stripe.com/14A8wQ3nxghQ1GN6jd18c05",
@@ -1070,6 +1005,7 @@ const PAYMENT_LINKS={
 const PLAN_LIMITS={free:3,noob:9999,inter:9999,pro:9999,definitivo:9999};
 
 let appliedCoupon=null;
+let plansCoupon=null;
 let currentUser=null;
 let videoCount=0;
 let obData={};
@@ -1090,29 +1026,19 @@ let advisorMemory=[];
   },1000);
 })();
 
-// GOOGLE
 window.onload=function(){
-  if(window.google){
-    google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:handleGoogleSignin,auto_select:false});
-    renderGoogleBtn();
-  }
+  if(window.google){google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:handleGoogleSignin,auto_select:false});renderGoogleBtn();}
   const saved=localStorage.getItem('autoia-user');
   if(saved){currentUser=JSON.parse(saved);showUserPanel();}
   const ref=new URLSearchParams(window.location.search).get('ref');
   if(ref)localStorage.setItem('autoia-ref',ref);
   const savedTheme=localStorage.getItem('autoia-theme');
   if(savedTheme){document.body.setAttribute('data-theme',savedTheme);const b=document.querySelector(`.theme-btn[data-t="${savedTheme}"]`);if(b){document.querySelectorAll('.theme-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');}}
-  // Load advisor memory
   const mem=localStorage.getItem('autoia-advisor-memory');
   if(mem)advisorMemory=JSON.parse(mem);
   updateStyleMemoryBox();
-  // Handle Stripe return
   const params=new URLSearchParams(window.location.search);
-  if(params.get('success')==='1'){
-    const plan=params.get('plan')||'noob';
-    if(currentUser){currentUser.plan=plan;localStorage.setItem('autoia-user',JSON.stringify(currentUser));}
-    setTimeout(()=>{alert('🎉 ¡Pago completado! Tu plan '+plan.toUpperCase()+' ha sido activado.');if(currentUser)showUserPanel();},500);
-  }
+  if(params.get('success')==='1'){const plan=params.get('plan')||'noob';if(currentUser){currentUser.plan=plan;localStorage.setItem('autoia-user',JSON.stringify(currentUser));}setTimeout(()=>{alert('🎉 ¡Pago completado! Tu plan '+plan.toUpperCase()+' ha sido activado.');if(currentUser)showUserPanel();},500);}
   if(params.get('cancel')==='1')setTimeout(()=>alert('Pago cancelado. Puedes intentarlo cuando quieras.'),500);
 };
 
@@ -1140,10 +1066,9 @@ async function saveUser(userData){
   try{
     const check=await supaFetch('/rest/v1/usuarios?email=eq.'+encodeURIComponent(userData.email)+'&select=*');
     const exists=await check.json();
-    if(!exists||!exists.length){
-      await supaFetch('/rest/v1/usuarios','POST',{nombre:userData.nombre,email:userData.email,plan:userData.plan||'free',videos_generados:0,estado:'active'});
-    } else {userData.plan=exists[0].plan;}
-  }catch(e){console.log('saveUser error',e);}
+    if(!exists||!exists.length){await supaFetch('/rest/v1/usuarios','POST',{nombre:userData.nombre,email:userData.email,plan:userData.plan||'free',videos_generados:0,estado:'active'});}
+    else{userData.plan=exists[0].plan;}
+  }catch(e){}
 }
 
 function checkOnboarding(){
@@ -1152,35 +1077,16 @@ function checkOnboarding(){
   else{showUserPanel();}
 }
 
-function selectOb(el,key,val){
-  el.closest('.ob-options').querySelectorAll('.ob-option').forEach(o=>o.classList.remove('selected'));
-  el.classList.add('selected');
-  obData[key]=val;
-}
-
-function nextOb(step){
-  document.getElementById('ob-step-'+(step-1)).style.display='none';
-  document.getElementById('ob-step-'+step).style.display='block';
-  document.querySelectorAll('.ob-step').forEach((s,i)=>{s.classList.toggle('active',i<step);});
-}
-
+function selectOb(el,key,val){el.closest('.ob-options').querySelectorAll('.ob-option').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');obData[key]=val;}
+function nextOb(step){document.getElementById('ob-step-'+(step-1)).style.display='none';document.getElementById('ob-step-'+step).style.display='block';document.querySelectorAll('.ob-step').forEach((s,i)=>{s.classList.toggle('active',i<step);});}
 function finishOb(){
   const nicho=document.getElementById('obNicho').value.trim();
-  if(nicho){
-    advisorMemory.push({type:'style',text:'El usuario quiere: '+nicho});
-    localStorage.setItem('autoia-advisor-memory',JSON.stringify(advisorMemory));
-  }
-  obData.nicho=nicho;
-  localStorage.setItem('autoia-ob-done','1');
-  localStorage.setItem('autoia-ob-data',JSON.stringify(obData));
-  document.getElementById('onboardingOverlay').style.display='none';
-  showUserPanel();
-  updateStyleMemoryBox();
+  if(nicho){advisorMemory.push({type:'style',text:nicho});localStorage.setItem('autoia-advisor-memory',JSON.stringify(advisorMemory));}
+  obData.nicho=nicho;localStorage.setItem('autoia-ob-done','1');localStorage.setItem('autoia-ob-data',JSON.stringify(obData));
+  document.getElementById('onboardingOverlay').style.display='none';showUserPanel();updateStyleMemoryBox();
 }
-
 function updateStyleMemoryBox(){
-  const box=document.getElementById('styleMemoryBox');
-  const txt=document.getElementById('styleMemoryText');
+  const box=document.getElementById('styleMemoryBox');const txt=document.getElementById('styleMemoryText');
   if(!box||!txt)return;
   const styles=advisorMemory.filter(m=>m.type==='style');
   if(styles.length>0){box.style.display='block';txt.textContent='El asesor recuerda: "'+styles[styles.length-1].text+'"';}
@@ -1193,27 +1099,20 @@ function showUserPanel(){
   document.getElementById('btnLogin').style.display='none';
   document.getElementById('btnRegister').style.display='none';
   document.getElementById('navLinks').style.display='none';
-  const av=document.getElementById('userAvatarNav');
-  av.style.display='flex';
-  if(currentUser.foto){av.innerHTML=`<img src="${currentUser.foto}">`;}
-  else{av.textContent=(currentUser.nombre||'U')[0].toUpperCase();}
+  const av=document.getElementById('userAvatarNav');av.style.display='flex';
+  if(currentUser.foto){av.innerHTML=`<img src="${currentUser.foto}">`;}else{av.textContent=(currentUser.nombre||'U')[0].toUpperCase();}
   const plan=(currentUser.plan||'free');
-  const planUpper=plan.toUpperCase();
   document.getElementById('panelUserName').textContent=currentUser.nombre||currentUser.email;
-  document.getElementById('panelUserPlan').textContent=planUpper;
-  document.getElementById('statPlan').textContent=planUpper;
+  document.getElementById('panelUserPlan').textContent=plan.toUpperCase();
+  document.getElementById('statPlan').textContent=plan.toUpperCase();
   document.getElementById('settingName').textContent=currentUser.nombre||'-';
   document.getElementById('settingEmail').textContent=currentUser.email||'-';
-  document.getElementById('settingPlan').textContent=planUpper;
+  document.getElementById('settingPlan').textContent=plan.toUpperCase();
   const panelAv=document.getElementById('panelAvatar');
-  if(currentUser.foto){panelAv.innerHTML=`<img src="${currentUser.foto}">`;}
-  else{panelAv.textContent=(currentUser.nombre||'U')[0].toUpperCase();}
-  // Show movies nav for definitivo
+  if(currentUser.foto){panelAv.innerHTML=`<img src="${currentUser.foto}">`;}else{panelAv.textContent=(currentUser.nombre||'U')[0].toUpperCase();}
   const moviesNav=document.getElementById('nav-movies');
   if(moviesNav)moviesNav.style.display=plan==='definitivo'?'flex':'none';
-  // Update limit bar
   updateLimitBar();
-  // Set ref link
   const refEl=document.getElementById('refLink');
   if(refEl)refEl.value='https://autoia-rouge.vercel.app?ref='+(currentUser.nombre||'user').replace(/\s/g,'');
   updateStyleMemoryBox();
@@ -1221,182 +1120,29 @@ function showUserPanel(){
 
 function updateLimitBar(){
   if(!currentUser)return;
-  const plan=currentUser.plan||'free';
-  const limit=PLAN_LIMITS[plan]||3;
-  const used=videoCount;
-  const pct=Math.min(100,(used/Math.max(limit,1))*100);
-  const fill=document.getElementById('limitFill');
-  const text=document.getElementById('limitText');
+  const plan=currentUser.plan||'free';const limit=PLAN_LIMITS[plan]||3;const used=videoCount;const pct=Math.min(100,(used/Math.max(limit,1))*100);
+  const fill=document.getElementById('limitFill');const text=document.getElementById('limitText');
   if(!fill||!text)return;
   if(limit>100){text.textContent='Ilimitado';fill.style.width='10%';fill.style.background='var(--green)';return;}
-  text.textContent=used+' / '+limit;
-  fill.style.width=pct+'%';
-  fill.style.background=pct>80?'var(--red)':pct>50?'var(--amber)':'var(--green)';
+  text.textContent=used+' / '+limit;fill.style.width=pct+'%';fill.style.background=pct>80?'var(--red)':pct>50?'var(--amber)':'var(--green)';
 }
 
 function goToLanding(){
-  document.getElementById('landingPage').style.display='block';
-  document.getElementById('userPanel').style.display='none';
-  if(currentUser){
-    document.getElementById('btnLogin').style.display='none';
-    document.getElementById('btnRegister').style.display='none';
-    document.getElementById('navLinks').style.display='none';
-    document.getElementById('userAvatarNav').style.display='flex';
-  } else {
-    document.getElementById('btnLogin').style.display='';
-    document.getElementById('btnRegister').style.display='';
-    document.getElementById('navLinks').style.display='flex';
-    document.getElementById('userAvatarNav').style.display='none';
-  }
+  document.getElementById('landingPage').style.display='block';document.getElementById('userPanel').style.display='none';
+  if(currentUser){document.getElementById('btnLogin').style.display='none';document.getElementById('btnRegister').style.display='none';document.getElementById('navLinks').style.display='none';document.getElementById('userAvatarNav').style.display='flex';}
+  else{document.getElementById('btnLogin').style.display='';document.getElementById('btnRegister').style.display='';document.getElementById('navLinks').style.display='flex';document.getElementById('userAvatarNav').style.display='none';}
 }
-
 function goToPanel(){if(currentUser)showUserPanel();}
+function logout(){currentUser=null;localStorage.removeItem('autoia-user');document.getElementById('userPanel').style.display='none';document.getElementById('landingPage').style.display='block';document.getElementById('btnLogin').style.display='';document.getElementById('btnRegister').style.display='';document.getElementById('navLinks').style.display='flex';document.getElementById('userAvatarNav').style.display='none';if(window.google)google.accounts.id.disableAutoSelect();}
+function showPanelPage(id,el){document.querySelectorAll('.panel-page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.panel-nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('pp-'+id).classList.add('active');if(el)el.classList.add('active');}
+function setMode(mode,el){document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.getElementById('manual-fields').style.display=mode==='manual'?'block':'none';document.getElementById('auto-fields').style.display=mode==='auto'?'block':'none';}
+function setMovieMode(mode,el){document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.getElementById('movie-auto-fields').style.display=mode==='auto'?'block':'none';document.getElementById('movie-manual-fields').style.display=mode==='manual'?'block':'none';}
 
-function logout(){
-  currentUser=null;
-  localStorage.removeItem('autoia-user');
-  document.getElementById('userPanel').style.display='none';
-  document.getElementById('landingPage').style.display='block';
-  document.getElementById('btnLogin').style.display='';
-  document.getElementById('btnRegister').style.display='';
-  document.getElementById('navLinks').style.display='flex';
-  document.getElementById('userAvatarNav').style.display='none';
-  if(window.google)google.accounts.id.disableAutoSelect();
-}
-
-function showPanelPage(id,el){
-  document.querySelectorAll('.panel-page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.panel-nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById('pp-'+id).classList.add('active');
-  if(el)el.classList.add('active');
-}
-
-function setMode(mode,el){
-  document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('manual-fields').style.display=mode==='manual'?'block':'none';
-  document.getElementById('auto-fields').style.display=mode==='auto'?'block':'none';
-}
-
-function setMovieMode(mode,el){
-  document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('movie-auto-fields').style.display=mode==='auto'?'block':'none';
-  document.getElementById('movie-manual-fields').style.display=mode==='manual'?'block':'none';
-}
-
-// VIDEO GENERATION
-const VIDEO_TITLES=['5 secretos que nadie te cuenta','Lo que la ciencia descubrió recientemente','Esto cambiará tu forma de ver el mundo','El misterio que tiene en vilo a millones','Datos que te dejarán sin palabras'];
-const VIDEO_DESCS=['Descubre en este vídeo los datos más sorprendentes que raramente se mencionan. Síguenos para más contenido así cada día.','La ciencia ha revelado algo que pocos conocen. En este vídeo te lo explicamos todo de forma sencilla y entretenida.','¿Sabías que existe información que cambia completamente tu perspectiva? Hoy te lo contamos todo.'];
-const HASHTAGS=[['#viral','#curioso','#sabias','#aprendeentiktok','#contenido','#trending'],['#misterio','#terror','#miedo','#viral','#parted2','#yt'],['#ciencia','#curiosidades','#datos','#aprender','#educacion','#viral']];
-
-function generateVideo(){
-  const plan=currentUser?currentUser.plan||'free':'free';
-  const limit=PLAN_LIMITS[plan]||3;
-  if(videoCount>=limit&&limit<=100){
-    alert('Has alcanzado el límite de tu plan ('+limit+' vídeos/mes). ¡Mejora tu plan para seguir creando!');
-    return;
-  }
-  const bar=document.getElementById('progressBar');
-  const fill=document.getElementById('progressFill');
-  const text=document.getElementById('progressText');
-  const preview=document.getElementById('videoPreview');
-  bar.style.display='block';text.style.display='block';preview.style.display='none';fill.style.width='0%';
-  const messages=['🤖 Analizando tu descripción...','🎨 Generando imágenes con IA...','🎙️ Añadiendo narración y música...','✨ Aplicando efectos finales...','📝 Creando título y descripción...'];
-  let p=0,msgIdx=0;
-  const iv=setInterval(()=>{
-    p+=Math.random()*2.5;
-    if(p>=100){p=100;clearInterval(iv);
-      setTimeout(()=>{
-        bar.style.display='none';text.style.display='none';
-        preview.style.display='block';
-        videoCount++;
-        document.getElementById('statCreados').textContent=videoCount;
-        updateLimitBar();
-        const title=VIDEO_TITLES[Math.floor(Math.random()*VIDEO_TITLES.length)];
-        const desc=VIDEO_DESCS[Math.floor(Math.random()*VIDEO_DESCS.length)];
-        const tags=HASHTAGS[Math.floor(Math.random()*HASHTAGS.length)];
-        document.getElementById('genTitle').textContent=title;
-        document.getElementById('genDesc').textContent=desc;
-        const tagsEl=document.getElementById('genTags');
-        tagsEl.innerHTML='';
-        tags.forEach(t=>{const s=document.createElement('span');s.className='video-tag';s.textContent=t;tagsEl.appendChild(s);});
-        addToHistory(title);
-      },400);
-    }
-    fill.style.width=p+'%';
-    if(p>msgIdx*25&&msgIdx<messages.length){text.textContent=messages[msgIdx];msgIdx++;}
-  },100);
-}
-
-function generateMovie(){
-  const bar=document.getElementById('movieProgressBar');
-  const fill=document.getElementById('movieProgressFill');
-  const text=document.getElementById('movieProgressText');
-  const preview=document.getElementById('moviePreview');
-  bar.style.display='block';text.style.display='block';preview.style.display='none';fill.style.width='0%';
-  const movie=document.getElementById('movieSelect').value.replace('🎬 ','');
-  const parts=document.getElementById('movieParts').value;
-  const msgs=['🎬 Analizando la película...','✂️ Dividiendo en '+parts+' partes...','🎙️ Añadiendo narración...','✨ Mezclando audio y vídeo...'];
-  let p=0,mi=0;
-  const iv=setInterval(()=>{
-    p+=Math.random()*2;
-    if(p>=100){p=100;clearInterval(iv);
-      setTimeout(()=>{
-        bar.style.display='none';text.style.display='none';preview.style.display='block';
-        document.getElementById('movieTitle').textContent=movie+' | Parte 1 — Resumen completo';
-        document.getElementById('movieDesc').textContent='Resumen de '+movie+' en '+parts+' partes. Dale like para ver la parte 2. Sígueme para no perderte nada.';
-        const tags=['#'+movie.replace(/\s/g,'').toLowerCase(),'#pelicula','#resumen','#parte1','#viral','#tiktok'];
-        const t=document.getElementById('movieTags');t.innerHTML='';
-        tags.forEach(tag=>{const s=document.createElement('span');s.className='video-tag';s.textContent=tag;t.appendChild(s);});
-      },400);
-    }
-    fill.style.width=p+'%';
-    if(p>mi*25&&mi<msgs.length){text.textContent=msgs[mi];mi++;}
-  },120);
-}
-
-function regenVideo(){document.getElementById('videoPreview').style.display='none';generateVideo();}
-function regenMovie(){document.getElementById('moviePreview').style.display='none';generateMovie();}
-
-function addToHistory(title){
-  const grid=document.getElementById('historyGrid');
-  const empty=grid.querySelector('[style*="grid-column"]');
-  if(empty)empty.remove();
-  const card=document.createElement('div');
-  card.className='history-card';
-  card.innerHTML=`<div class="history-thumb">🎬</div><div class="history-title">${title||'Vídeo generado'}</div><div class="history-meta">Hace unos segundos</div>`;
-  grid.prepend(card);
-}
-
-function copyText(id){
-  const el=document.getElementById(id);
-  if(!el)return;
-  navigator.clipboard.writeText(el.textContent).then(()=>showToast('¡Copiado!'));
-}
-
-function copyAllTags(){
-  const tags=Array.from(document.getElementById('genTags').querySelectorAll('.video-tag')).map(t=>t.textContent).join(' ');
-  navigator.clipboard.writeText(tags).then(()=>showToast('¡Hashtags copiados!'));
-}
-
-function copyRefLink(){
-  const el=document.getElementById('refLink');
-  if(!el)return;
-  navigator.clipboard.writeText(el.value).then(()=>showToast('¡Enlace copiado!'));
-}
-
-function showToast(msg){
-  const t=document.createElement('div');
-  t.style.cssText='position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;z-index:999;animation:fadeUp 0.3s ease;';
-  t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),2000);
-}
-
-// REGISTER / LOGIN
+// REGISTRO / LOGIN
 let regAttempts=0;
 async function doRegister(){
   regAttempts++;
-  if(regAttempts>10){showMsg('reg-error','Demasiados intentos. Espera un momento.');return;}
+  if(regAttempts>10){showMsg('reg-error','Demasiados intentos.');return;}
   const nombre=document.getElementById('reg-nombre').value.trim();
   const email=document.getElementById('reg-email').value.trim();
   const pass=document.getElementById('reg-pass').value;
@@ -1406,11 +1152,12 @@ async function doRegister(){
   let plan='free';
   if(appliedCoupon&&appliedCoupon.type==='definitivo')plan='definitivo';
   else if(appliedCoupon&&appliedCoupon.type==='pro')plan='pro';
+  // Marcar cupón de un solo uso
+  if(appliedCoupon&&appliedCoupon.uses==='single')markCouponUsed(appliedCoupon.code);
   try{
     const res=await supaFetch('/rest/v1/usuarios','POST',{nombre,email,plan,videos_generados:0,estado:'active'});
     if(res.ok||res.status===201){
-      currentUser={nombre,email,plan};
-      localStorage.setItem('autoia-user',JSON.stringify(currentUser));
+      currentUser={nombre,email,plan};localStorage.setItem('autoia-user',JSON.stringify(currentUser));
       showMsg('reg-success','✓ ¡Bienvenido a AutoIA!');
       setTimeout(()=>{closeModal('authModal');checkOnboarding();},1200);
     } else {
@@ -1429,46 +1176,53 @@ async function doLogin(){
   try{
     const res=await supaFetch('/rest/v1/usuarios?email=eq.'+encodeURIComponent(email)+'&select=*');
     const data=await res.json();
-    if(data&&data.length>0){
-      currentUser={nombre:data[0].nombre,email:data[0].email,plan:data[0].plan};
-      localStorage.setItem('autoia-user',JSON.stringify(currentUser));
-      loginAttempts=0;
-      showMsg('login-success','✓ Sesión iniciada.');
-      setTimeout(()=>{closeModal('authModal');showUserPanel();},900);
-    } else showMsg('login-error','Email no encontrado. ¿Tienes cuenta?');
+    if(data&&data.length>0){currentUser={nombre:data[0].nombre,email:data[0].email,plan:data[0].plan};localStorage.setItem('autoia-user',JSON.stringify(currentUser));loginAttempts=0;showMsg('login-success','✓ Sesión iniciada.');setTimeout(()=>{closeModal('authModal');showUserPanel();},900);}
+    else showMsg('login-error','Email no encontrado. ¿Tienes cuenta?');
   }catch(e){showMsg('login-error','Error de conexión.');}
 }
 
-function applyCoupon(){
-  const code=document.getElementById('coupon-input').value.trim();
-  const result=document.getElementById('coupon-result');
-  // Sanitize input
-  const clean=code.replace(/[<>"']/g,'');
-  if(COUPONS[clean]){
-    appliedCoupon=COUPONS[clean];
-    result.style.display='block';
-    if(appliedCoupon.type==='definitivo'){result.style.color='#f59e0b';result.textContent='🎉 Código válido — Acceso Definitivo activado gratuitamente.';}
-    else if(appliedCoupon.type==='pro'){result.style.color='#a855f7';result.textContent='🎉 Código válido — Acceso Pro activado.';}
-    else{result.style.color='#10b981';result.textContent='✓ '+appliedCoupon.discount+'% de descuento aplicado.';}
+// CUPONES - validación unificada
+function validateCouponCode(code){
+  const clean=code.replace(/[<>"']/g,'').trim();
+  const coupons=getCoupons();
+  const c=coupons[clean];
+  if(!c)return{valid:false,msg:'✗ Código no válido.'};
+  if(c.uses==='single'&&isCouponUsed(clean))return{valid:false,msg:'✗ Este código ya ha sido utilizado.'};
+  return{valid:true,coupon:{...c,code:clean}};
+}
+
+function applyCoupon(ctx){
+  const inputId=ctx==='plans'?'plans-coupon-input':'coupon-input';
+  const resultId=ctx==='plans'?'plans-coupon-result':'coupon-result';
+  const code=document.getElementById(inputId).value.trim();
+  const result=document.getElementById(resultId);
+  const check=validateCouponCode(code);
+  result.style.display='block';
+  if(check.valid){
+    if(ctx==='plans'){plansCoupon=check.coupon;}else{appliedCoupon=check.coupon;}
+    const c=check.coupon;
+    if(c.type==='definitivo'){result.style.color='#f59e0b';result.textContent='🎉 Código válido — Acceso Definitivo activado gratuitamente.';}
+    else if(c.type==='pro'){result.style.color='#a855f7';result.textContent='🎉 Código válido — Acceso Pro activado.';}
+    else{result.style.color='#10b981';result.textContent='✓ '+c.discount+'% de descuento aplicado'+(c.uses==='single'?' (uso único)':'')+'.';}
   } else {
-    result.style.display='block';result.style.color='#ef4444';
-    result.textContent='✗ Código no válido.';appliedCoupon=null;
+    result.style.color='#ef4444';result.textContent=check.msg;
+    if(ctx==='plans'){plansCoupon=null;}else{appliedCoupon=null;}
   }
 }
 
-function showMsg(id,txt){
-  document.querySelectorAll('.msg-success,.msg-error').forEach(e=>e.style.display='none');
-  const el=document.getElementById(id);
-  if(el){el.textContent=txt;el.style.display='block';}
-}
+function applyPlansCoupon(){applyCoupon('plans');}
 
-// STRIPE
+function showMsg(id,txt){document.querySelectorAll('.msg-success,.msg-error').forEach(e=>e.style.display='none');const el=document.getElementById(id);if(el){el.textContent=txt;el.style.display='block';}}
+
+// STRIPE CHECKOUT
 function checkout(plan){
   if(!currentUser){openModal('register');showMsg('reg-error','Crea una cuenta primero.');return;}
   const isAnnual=document.getElementById('billingToggle').classList.contains('on');
   const key=plan+(isAnnual?'_yearly':'_monthly');
   const url=PAYMENT_LINKS[key];
   if(!url){alert('Enlace de pago no disponible.');return;}
+  // Si hay cupón aplicado en planes, marcarlo como usado si es de uso único
+  if(plansCoupon&&plansCoupon.uses==='single')markCouponUsed(plansCoupon.code);
   window.location.href=url+'?prefilled_email='+encodeURIComponent(currentUser.email);
 }
 
@@ -1480,31 +1234,24 @@ function toggleBilling(){
   document.getElementById('lbl-monthly').classList.toggle('active',!annual);
   document.getElementById('lbl-annual').classList.toggle('active',annual);
   if(annual){
-    setPrice('noob','59€','/año','/ año · 3 meses gratis · IVA incl.');
-    setPrice('inter','109€','/año','/ año · 3 meses gratis · IVA incl.');
-    setPrice('pro','147€','/año','/ año · 5 meses gratis · IVA incl.');
-    setPrice('def','199,95€','/año','/ año · 3 meses gratis · IVA incl.');
+    setPrice('noob','59€','/año','/ año · 3 meses gratis · IVA excl.');
+    setPrice('inter','109€','/año','/ año · 3 meses gratis · IVA excl.');
+    setPrice('pro','147€','/año','/ año · 5 meses gratis · IVA excl.');
+    setPrice('def','199,95€','/año','/ año · 3 meses gratis · IVA excl.');
   } else {
-    setPrice('noob','7€','/mes','Facturado mensualmente · IVA incl.');
-    setPrice('inter','13€','/mes','Facturado mensualmente · IVA incl.');
-    setPrice('pro','21€','/mes','Facturado mensualmente · IVA incl.');
-    setPrice('def','39,99€','/mes','Facturado mensualmente · IVA incl.');
+    setPrice('noob','7€','/mes','Facturado mensualmente · IVA excl.');
+    setPrice('inter','13€','/mes','Facturado mensualmente · IVA excl.');
+    setPrice('pro','21€','/mes','Facturado mensualmente · IVA excl.');
+    setPrice('def','39,99€','/mes','Facturado mensualmente · IVA excl.');
   }
 }
 function setPrice(id,price,period,sub){
-  const pe=document.getElementById('price-'+id);
-  if(pe){pe.childNodes[0].textContent=price;document.getElementById('period-'+id).textContent=period;}
-  const se=document.getElementById('sub-'+id);
-  if(se)se.textContent=sub;
+  const pe=document.getElementById('price-'+id);if(pe){pe.childNodes[0].textContent=price;document.getElementById('period-'+id).textContent=period;}
+  const se=document.getElementById('sub-'+id);if(se)se.textContent=sub;
 }
 
 // THEME
-function setTheme(t,el){
-  document.body.setAttribute('data-theme',t);
-  document.querySelectorAll('.theme-btn').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');
-  localStorage.setItem('autoia-theme',t);
-}
+function setTheme(t,el){document.body.setAttribute('data-theme',t);document.querySelectorAll('.theme-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');localStorage.setItem('autoia-theme',t);}
 
 // MODAL
 function openModal(tab){document.getElementById('authModal').classList.add('open');switchTab(tab);setTimeout(renderGoogleBtn,100);}
@@ -1522,15 +1269,11 @@ function switchTab(tab){
 
 // LANG
 const I18N={es:{cta_free:'Crear mi primer vídeo gratis'},en:{cta_free:'Create my first video free'},fr:{cta_free:'Créer ma première vidéo gratuite'},de:{cta_free:'Mein erstes Video erstellen'},pt:{cta_free:'Criar meu primeiro vídeo grátis'},it:{cta_free:'Crea il mio primo video gratis'}};
-function changeLang(lang){
-  const t=I18N[lang]||I18N.es;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');if(t[key])el.textContent=t[key];});
-  localStorage.setItem('autoia-lang',lang);
-}
+function changeLang(lang){const t=I18N[lang]||I18N.es;document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');if(t[key])el.textContent=t[key];});localStorage.setItem('autoia-lang',lang);}
 const savedLang=localStorage.getItem('autoia-lang');
 if(savedLang){document.getElementById('langSelect').value=savedLang;changeLang(savedLang);}
 
-// VOICES
+// VOCES & ESTILOS
 const VOCES=[
   {nombre:"Marco",frase:"Hola, soy Marco, tu narrador épico",pitch:0.8,rate:0.9},
   {nombre:"Sofía",frase:"Hola, soy Sofía, tu voz suave y clara",pitch:1.4,rate:0.85},
@@ -1551,85 +1294,72 @@ const ESTILOS=[
   {img:"https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",desc:"👾 Pixel art retro — Gráficos estilo años 80s"},
   {img:"https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80",desc:"🌊 Acuarela digital — Colores difuminados"}
 ];
-function updateVoicePreview(){
-  const idx=parseInt(document.getElementById('voiceSelect').value)||0;
-  const v=VOCES[idx];
-  document.getElementById('voicePreviewText').textContent=v.frase;
-  document.getElementById('voicePreviewBox').style.display='block';
-}
-function playVoicePreview(){
-  const idx=parseInt(document.getElementById('voiceSelect').value)||0;
-  speakVoice(VOCES[idx]);
-  document.getElementById('voicePreviewBox').style.display='block';
-  document.getElementById('voicePreviewText').textContent=VOCES[idx].frase;
-}
-function playMovieVoice(){
-  const idx=parseInt(document.getElementById('movieVoice').value)||0;
-  speakVoice(VOCES[idx]);
-}
-function speakVoice(v){
-  if(!window.speechSynthesis)return;
-  window.speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(v.frase);
-  u.lang='es-ES';u.pitch=v.pitch;u.rate=v.rate;
-  const voices=window.speechSynthesis.getVoices().filter(x=>x.lang.startsWith('es'));
-  if(voices.length)u.voice=voices[0];
-  window.speechSynthesis.speak(u);
-}
-function updateStylePreview(){
-  const idx=parseInt(document.getElementById('estiloVisual').value)||0;
-  const e=ESTILOS[idx];
-  if(!e)return;
-  document.getElementById('stylePreviewImg').src=e.img;
-  document.getElementById('stylePreviewDesc').textContent=e.desc;
+function updateVoicePreview(){const idx=parseInt(document.getElementById('voiceSelect').value)||0;const v=VOCES[idx];document.getElementById('voicePreviewText').textContent=v.frase;document.getElementById('voicePreviewBox').style.display='block';}
+function playVoicePreview(){const idx=parseInt(document.getElementById('voiceSelect').value)||0;speakVoice(VOCES[idx]);document.getElementById('voicePreviewBox').style.display='block';document.getElementById('voicePreviewText').textContent=VOCES[idx].frase;}
+function playMovieVoice(){const idx=parseInt(document.getElementById('movieVoice').value)||0;speakVoice(VOCES[idx]);}
+function speakVoice(v){if(!window.speechSynthesis)return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(v.frase);u.lang='es-ES';u.pitch=v.pitch;u.rate=v.rate;const voices=window.speechSynthesis.getVoices().filter(x=>x.lang.startsWith('es'));if(voices.length)u.voice=voices[0];window.speechSynthesis.speak(u);}
+function updateStylePreview(){const idx=parseInt(document.getElementById('estiloVisual').value)||0;const e=ESTILOS[idx];if(!e)return;document.getElementById('stylePreviewImg').src=e.img;document.getElementById('stylePreviewDesc').textContent=e.desc;}
+
+// VIDEO GENERATION
+const VIDEO_TITLES=['5 secretos que nadie te cuenta','Lo que la ciencia descubrió recientemente','Esto cambiará tu forma de ver el mundo','El misterio que tiene en vilo a millones','Datos que te dejarán sin palabras'];
+const VIDEO_DESCS=['Descubre en este vídeo los datos más sorprendentes que raramente se mencionan. Síguenos para más contenido así cada día.','La ciencia ha revelado algo que pocos conocen. En este vídeo te lo explicamos todo de forma sencilla.','¿Sabías que existe información que cambia completamente tu perspectiva? Hoy te lo contamos todo.'];
+const HASHTAGS=[['#viral','#curioso','#sabias','#aprendeentiktok','#contenido','#trending'],['#misterio','#terror','#miedo','#viral','#parted2','#yt'],['#ciencia','#curiosidades','#datos','#aprender','#educacion','#viral']];
+
+function generateVideo(){
+  const plan=currentUser?currentUser.plan||'free':'free';const limit=PLAN_LIMITS[plan]||3;
+  if(videoCount>=limit&&limit<=100){alert('Has alcanzado el límite de tu plan ('+limit+' vídeos/mes). ¡Mejora tu plan!');return;}
+  const bar=document.getElementById('progressBar');const fill=document.getElementById('progressFill');const text=document.getElementById('progressText');const preview=document.getElementById('videoPreview');
+  bar.style.display='block';text.style.display='block';preview.style.display='none';fill.style.width='0%';
+  const messages=['🤖 Analizando tu descripción...','🎨 Generando imágenes con IA...','🎙️ Añadiendo narración y música...','✨ Aplicando efectos finales...','📝 Creando título y descripción...'];
+  let p=0,msgIdx=0;
+  const iv=setInterval(()=>{p+=Math.random()*2.5;if(p>=100){p=100;clearInterval(iv);setTimeout(()=>{bar.style.display='none';text.style.display='none';preview.style.display='block';videoCount++;document.getElementById('statCreados').textContent=videoCount;updateLimitBar();const title=VIDEO_TITLES[Math.floor(Math.random()*VIDEO_TITLES.length)];const desc=VIDEO_DESCS[Math.floor(Math.random()*VIDEO_DESCS.length)];const tags=HASHTAGS[Math.floor(Math.random()*HASHTAGS.length)];document.getElementById('genTitle').textContent=title;document.getElementById('genDesc').textContent=desc;const tagsEl=document.getElementById('genTags');tagsEl.innerHTML='';tags.forEach(t=>{const s=document.createElement('span');s.className='video-tag';s.textContent=t;tagsEl.appendChild(s);});addToHistory(title);},400);}fill.style.width=p+'%';if(p>msgIdx*25&&msgIdx<messages.length){text.textContent=messages[msgIdx];msgIdx++;}},100);
 }
 
-// ADVISOR IA CON MEMORIA
-function askAdvisor(q){
-  document.getElementById('advisorInput').value=q;
-  sendAdvisor();
+function generateMovie(){
+  const bar=document.getElementById('movieProgressBar');const fill=document.getElementById('movieProgressFill');const text=document.getElementById('movieProgressText');const preview=document.getElementById('moviePreview');
+  bar.style.display='block';text.style.display='block';preview.style.display='none';fill.style.width='0%';
+  const movie=document.getElementById('movieSelect').value.replace('🎬 ','');const parts=document.getElementById('movieParts').value;
+  const msgs=['🎬 Analizando la película...','✂️ Dividiendo en '+parts+' partes...','🎙️ Añadiendo narración...','✨ Mezclando audio y vídeo...'];
+  let p=0,mi=0;
+  const iv=setInterval(()=>{p+=Math.random()*2;if(p>=100){p=100;clearInterval(iv);setTimeout(()=>{bar.style.display='none';text.style.display='none';preview.style.display='block';document.getElementById('movieTitle').textContent=movie+' | Parte 1 — Resumen completo';document.getElementById('movieDesc').textContent='Resumen de '+movie+' en '+parts+' partes. Dale like para ver la parte 2.';const tags=['#'+movie.replace(/\s/g,'').toLowerCase(),'#pelicula','#resumen','#parte1','#viral','#tiktok'];const t=document.getElementById('movieTags');t.innerHTML='';tags.forEach(tag=>{const s=document.createElement('span');s.className='video-tag';s.textContent=tag;t.appendChild(s);});},400);}fill.style.width=p+'%';if(p>mi*25&&mi<msgs.length){text.textContent=msgs[mi];mi++;}},120);
 }
+
+function regenVideo(){document.getElementById('videoPreview').style.display='none';generateVideo();}
+function regenMovie(){document.getElementById('moviePreview').style.display='none';generateMovie();}
+
+function addToHistory(title){
+  const grid=document.getElementById('historyGrid');const empty=grid.querySelector('[style*="grid-column"]');if(empty)empty.remove();
+  const card=document.createElement('div');card.className='history-card';
+  card.innerHTML=`<div class="history-thumb">🎬</div><div class="history-title">${title||'Vídeo generado'}</div><div class="history-meta">Hace unos segundos</div>`;
+  grid.prepend(card);
+}
+
+function copyText(id){const el=document.getElementById(id);if(!el)return;navigator.clipboard.writeText(el.textContent).then(()=>showToast('¡Copiado!'));}
+function copyAllTags(){const tags=Array.from(document.getElementById('genTags').querySelectorAll('.video-tag')).map(t=>t.textContent).join(' ');navigator.clipboard.writeText(tags).then(()=>showToast('¡Hashtags copiados!'));}
+function copyRefLink(){const el=document.getElementById('refLink');if(!el)return;navigator.clipboard.writeText(el.value).then(()=>showToast('¡Enlace copiado!'));}
+function showToast(msg){const t=document.createElement('div');t.style.cssText='position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;z-index:999;';t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),2000);}
+
+// ADVISOR IA
+function askAdvisor(q){document.getElementById('advisorInput').value=q;sendAdvisor();}
 function sendAdvisor(){
-  const input=document.getElementById('advisorInput');
-  const q=input.value.trim();
-  if(!q)return;
-  // Sanitize
-  const safeQ=q.replace(/[<>"']/g,'').substring(0,300);
-  addMsg(safeQ,'user');
-  input.value='';
-  // Save style preferences
+  const input=document.getElementById('advisorInput');const q=input.value.trim();if(!q)return;
+  const safeQ=q.replace(/[<>"']/g,'').substring(0,300);addMsg(safeQ,'user');input.value='';
   if(safeQ.toLowerCase().includes('quiero')&&(safeQ.toLowerCase().includes('vídeo')||safeQ.toLowerCase().includes('video')||safeQ.toLowerCase().includes('digan')||safeQ.toLowerCase().includes('estilo'))){
-    advisorMemory.push({type:'style',text:safeQ});
-    if(advisorMemory.length>10)advisorMemory=advisorMemory.slice(-10);
-    localStorage.setItem('autoia-advisor-memory',JSON.stringify(advisorMemory));
-    updateStyleMemoryBox();
+    advisorMemory.push({type:'style',text:safeQ});if(advisorMemory.length>10)advisorMemory=advisorMemory.slice(-10);
+    localStorage.setItem('autoia-advisor-memory',JSON.stringify(advisorMemory));updateStyleMemoryBox();
   }
-  setTimeout(()=>{
-    const resp=generateAdvisorResponse(safeQ.toLowerCase());
-    addMsg(resp,'ai');
-  },600);
+  setTimeout(()=>{addMsg(generateAdvisorResponse(safeQ.toLowerCase()),'ai');},600);
 }
-function addMsg(text,type){
-  const msgs=document.getElementById('advisorMessages');
-  const div=document.createElement('div');
-  div.className='msg-bubble msg-'+type;
-  div.textContent=text;
-  msgs.appendChild(div);
-  msgs.scrollTop=msgs.scrollHeight;
-}
+function addMsg(text,type){const msgs=document.getElementById('advisorMessages');const div=document.createElement('div');div.className='msg-bubble msg-'+type;div.textContent=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
 function generateAdvisorResponse(q){
-  if(q.includes('trending')||q.includes('viral'))return '🔥 Los temas más virales ahora: Terror/misterio (+34%), Psicología (+28%) y Finanzas (+22%). Te recomiendo terror en 60-90s con estilo Anime.';
-  if(q.includes('estilo'))return '🎨 Para entretenimiento: Anime o Lego 3D. Para educación: Infografía. Para motivación: Cinematográfico épico. Para misterio: Cine noir.';
-  if(q.includes('duración')||q.includes('duracion'))return '⏱️ 60-90 segundos tiene 47% más retención en TikTok. Para YouTube, 7-10 minutos si quieres monetizar con AdSense.';
-  if(q.includes('recuerda')||q.includes('memoria')){
-    const styles=advisorMemory.filter(m=>m.type==='style');
-    if(styles.length>0)return '📝 Recuerdo que me dijiste: "'+styles[styles.length-1].text+'". Lo tendré en cuenta al sugerirte contenido.';
-    return '🤔 Aún no me has dicho tu estilo preferido. Cuéntame cómo quieres tus vídeos.';
-  }
-  if(q.includes('quiero')&&(q.includes('video')||q.includes('vídeo')||q.includes('digan')))return '✅ ¡Perfecto! He guardado tus preferencias. Las recordaré cuando generes vídeos. ¿Quieres que te sugiera un tema con ese estilo?';
-  if(q.includes('crea')||q.includes('ayuda'))return '💡 Para crear un buen vídeo necesitas: 1) Tema gancho (misterio/motivación funcionan mejor), 2) Duración 60-90s, 3) Estilo Anime o Lego 3D, 4) Frase de acción al final. ¿Quieres que te genere un guión?';
-  if(q.includes('dinero')||q.includes('ganar'))return '💰 Con 3 canales automatizados en YouTube (10K subs c/u) puedes generar 1.500€/mes de AdSense. Más TikTok Creator Fund. AutoIA gestiona todo automáticamente.';
-  return '💡 Entendido. Basándome en las tendencias actuales, te recomiendo crear vídeos de 60-90 segundos sobre terror o psicología en estilo Anime. ¿Te genero las ideas para esta semana?';
+  if(q.includes('trending')||q.includes('viral'))return '🔥 Trending ahora: Terror/misterio (+34%), Psicología (+28%) y Finanzas (+22%). Te recomiendo terror en 60-90s con estilo Anime.';
+  if(q.includes('estilo'))return '🎨 Entretenimiento: Anime o Lego 3D. Educación: Infografía. Motivación: Cinematográfico épico. Misterio: Cine noir.';
+  if(q.includes('duración')||q.includes('duracion'))return '⏱️ 60-90 segundos: 47% más retención en TikTok. Para monetizar en YouTube: 7-10 minutos.';
+  if(q.includes('recuerda')||q.includes('memoria')){const styles=advisorMemory.filter(m=>m.type==='style');if(styles.length>0)return '📝 Recuerdo que dijiste: "'+styles[styles.length-1].text+'". Lo tengo en cuenta.';return '🤔 Aún no me has dicho tu estilo. Cuéntame cómo quieres tus vídeos.';}
+  if(q.includes('quiero')&&(q.includes('video')||q.includes('vídeo')||q.includes('digan')))return '✅ ¡Guardado! Recordaré tus preferencias. ¿Quieres que sugiera un tema con ese estilo?';
+  if(q.includes('crea')||q.includes('ayuda'))return '💡 Para un buen vídeo: 1) Tema gancho (misterio/motivación), 2) 60-90s, 3) Estilo Anime o Lego 3D, 4) Frase de acción al final.';
+  if(q.includes('dinero')||q.includes('ganar'))return '💰 Con 3 canales (10K subs c/u) puedes generar 1.500€/mes de AdSense + TikTok Creator Fund. AutoIA lo gestiona solo.';
+  return '💡 Te recomiendo vídeos de 60-90s sobre terror o psicología en estilo Anime. Son los formatos con mayor engagement ahora mismo.';
 }
 document.getElementById('advisorInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendAdvisor();});
 
