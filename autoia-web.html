@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AutoIA — Crea y publica contenido viral con IA</title>
-<meta name="description" content="Genera vídeos con IA en 20 estilos y publícalos automáticamente en YouTube, TikTok e Instagram."/>
+<title>AutoIA — Automatiza tu contenido con IA</title>
+<meta name="description" content="Automatiza tu estrategia de contenido con IA. Genera guiones, hashtags, descripciones y publica en YouTube, TikTok e Instagram automáticamente."/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="https://js.stripe.com/v3/"></script>
@@ -57,12 +57,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:64px;d
 .hero-stats{display:flex;align-items:center;gap:40px;justify-content:center;margin-top:60px;padding-top:40px;border-top:1px solid var(--border);animation:fadeUp 0.6s 0.4s ease both;flex-wrap:wrap;}
 .stat-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;background:linear-gradient(135deg,var(--accent2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .stat-label{font-size:13px;color:var(--text3);}
-.demo-box{max-width:700px;margin:40px auto 0;border-radius:var(--r2);overflow:hidden;border:1px solid var(--border2);background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(6,182,212,0.05));padding:40px;text-align:center;animation:fadeUp 0.6s 0.5s ease both;}
-.demo-screen{width:100%;height:200px;background:var(--bg3);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:16px;position:relative;overflow:hidden;}
-.demo-bars{display:flex;align-items:flex-end;gap:6px;height:80px;}
-.demo-bar{width:20px;background:linear-gradient(180deg,var(--accent2),var(--cyan));border-radius:4px 4px 0 0;animation:barAnim 1s ease-in-out infinite alternate;}
-.demo-bar:nth-child(2){animation-delay:0.1s;}.demo-bar:nth-child(3){animation-delay:0.2s;}.demo-bar:nth-child(4){animation-delay:0.3s;}.demo-bar:nth-child(5){animation-delay:0.4s;}
-@keyframes barAnim{from{transform:scaleY(0.3);}to{transform:scaleY(1);}}
 section{position:relative;z-index:1;padding:100px 40px;}
 .container{max-width:1140px;margin:0 auto;}
 .section-label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:16px;}
@@ -113,7 +107,6 @@ section{position:relative;z-index:1;padding:100px 40px;}
 .sp-mid{background:rgba(6,182,212,0.15);color:var(--cyan);}
 .sp-pro{background:rgba(168,85,247,0.15);color:var(--accent3);}
 .sp-def{background:rgba(245,158,11,0.2);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);}
-/* PLANS */
 .plans{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:60px;align-items:start;}
 .plan-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:24px 20px;transition:all 0.3s;position:relative;overflow:hidden;}
 .plan-card:hover{border-color:var(--accent);transform:translateY(-4px);}
@@ -145,7 +138,6 @@ section{position:relative;z-index:1;padding:100px 40px;}
 .toggle-switch.on .toggle-knob{transform:translateX(20px);}
 .annual-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--green);background:rgba(16,185,129,0.1);padding:3px 10px;border-radius:100px;border:1px solid rgba(16,185,129,0.2);}
 .iva-note{font-size:11px;color:var(--text3);text-align:center;margin-top:12px;}
-/* COUPON IN PLANS SECTION */
 .plans-coupon-box{max-width:420px;margin:28px auto 0;background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:10px;padding:14px 16px;}
 .plans-coupon-box label{font-size:12px;color:var(--accent3);font-weight:600;display:block;margin-bottom:8px;}
 .plans-coupon-row{display:flex;gap:8px;}
@@ -186,34 +178,21 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 .panel-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:20px;}
 .gen-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:24px;margin-bottom:16px;}
 .gen-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:14px;}
-.gen-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
-.gen-label{font-size:12px;color:var(--text2);margin-bottom:5px;font-weight:500;}
-.gen-select{width:100%;padding:9px 12px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;cursor:pointer;appearance:none;}
-.gen-textarea{width:100%;padding:10px 12px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;resize:vertical;min-height:90px;}
-.gen-input{width:100%;padding:9px 12px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;}
-.gen-textarea:focus,.gen-select:focus,.gen-input:focus{border-color:var(--accent);}
-.mode-tabs{display:flex;background:var(--bg3);border-radius:10px;padding:4px;margin-bottom:18px;width:fit-content;gap:4px;}
-.mode-tab{padding:7px 16px;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;border-radius:8px;transition:all 0.2s;}
-.mode-tab.active{background:var(--bg2);color:var(--text);border:1px solid var(--border2);}
-.btn-generate{width:100%;padding:13px;border:none;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.2s;margin-top:6px;}
-.btn-generate:hover{transform:translateY(-1px);}
-.progress-bar{height:4px;background:var(--bg3);border-radius:2px;margin-top:14px;overflow:hidden;display:none;}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--cyan));border-radius:2px;width:0%;transition:width 0.3s;}
-.progress-text{font-size:12px;color:var(--text2);margin-top:8px;text-align:center;display:none;}
-.video-preview{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-top:14px;display:none;}
-.video-thumb{width:100%;max-width:400px;height:200px;background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(6,182,212,0.1));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:44px;margin:0 auto 14px;}
-.video-meta{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-top:14px;}
-.video-meta-title{font-size:14px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;}
-.video-meta-desc{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:10px;}
-.video-meta-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.video-tag{padding:3px 10px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);border-radius:100px;font-size:11px;color:var(--accent3);}
-.copy-btn{padding:4px 10px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;font-size:11px;color:var(--text2);cursor:pointer;transition:all 0.2s;}
-.copy-btn:hover{border-color:var(--accent);color:var(--accent2);}
-.video-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
-.btn-action{padding:9px 18px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;}
-.btn-dl{background:var(--bg2);border:1px solid var(--border2);color:var(--text);}
-.btn-dl:hover{border-color:var(--accent);}
-.btn-pub{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#fff;}
+/* COMING SOON */
+.coming-soon-box{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 40px;text-align:center;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);}
+.coming-soon-icon{font-size:56px;margin-bottom:20px;animation:float 3s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.coming-soon-title{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:10px;}
+.coming-soon-sub{font-size:14px;color:var(--text2);max-width:380px;line-height:1.7;margin-bottom:24px;}
+.coming-soon-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border:1px solid rgba(124,58,237,0.3);border-radius:100px;background:rgba(124,58,237,0.1);font-size:13px;color:var(--accent3);font-weight:600;}
+.coming-soon-badge .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent2);animation:pulse 2s infinite;}
+.coming-soon-features{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:24px 0;width:100%;max-width:420px;}
+.cs-feat{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;text-align:left;font-size:12px;color:var(--text2);display:flex;align-items:center;gap:8px;}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px;}
+.stat-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:18px 20px;}
+.stat-box-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+.stat-box-val{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;}
+.sv-p{color:var(--accent2);}.sv-c{color:var(--cyan);}.sv-g{color:var(--green);}.sv-a{color:var(--amber);}
 .schedule-grid{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
 .schedule-row{display:flex;align-items:center;gap:10px;padding:12px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);}
 .schedule-net{font-size:18px;}
@@ -229,11 +208,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 .history-thumb{width:100%;height:110px;background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(6,182,212,0.08));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:10px;}
 .history-title{font-size:12px;font-weight:600;margin-bottom:3px;}
 .history-meta{font-size:10px;color:var(--text3);}
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px;}
-.stat-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:18px 20px;}
-.stat-box-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
-.stat-box-val{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;}
-.sv-p{color:var(--accent2);}.sv-c{color:var(--cyan);}.sv-g{color:var(--green);}.sv-a{color:var(--amber);}
 .onboarding-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);z-index:300;display:flex;align-items:center;justify-content:center;}
 .onboarding-box{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r2);width:100%;max-width:520px;padding:40px;}
 .onboarding-steps{display:flex;gap:8px;margin-bottom:28px;}
@@ -287,8 +261,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 .limit-bar-wrap{background:var(--bg3);border-radius:100px;height:6px;overflow:hidden;margin-top:6px;}
 .limit-bar-fill{height:100%;border-radius:100px;transition:width 0.5s;}
 @media(max-width:1100px){.plans{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:900px){.features-grid,.money-grid,.testimonials-grid{grid-template-columns:1fr 1fr;}.plans{grid-template-columns:1fr 1fr;}.steps{grid-template-columns:1fr 1fr;}.topics-grid{grid-template-columns:1fr 1fr;}.styles-grid{grid-template-columns:repeat(3,1fr);}.channels-grid{grid-template-columns:1fr 1fr;}nav{padding:0 16px;}.nav-links{display:none;}.panel-sidebar{display:none;}.panel-main{margin-left:0;}.stats-row{grid-template-columns:1fr 1fr;}.history-grid{grid-template-columns:1fr 1fr;}.gen-row{grid-template-columns:1fr;}}
-@media(max-width:600px){.features-grid,.plans,.steps,.topics-grid,.money-grid,.testimonials-grid,.channels-grid{grid-template-columns:1fr;}.styles-grid{grid-template-columns:repeat(2,1fr);}section{padding:60px 20px;}.hero{padding:100px 20px 60px;}.hero-stats{gap:20px;}footer{flex-direction:column;text-align:center;}.stats-row,.history-grid{grid-template-columns:1fr;}}
+@media(max-width:900px){.features-grid,.money-grid,.testimonials-grid{grid-template-columns:1fr 1fr;}.plans{grid-template-columns:1fr 1fr;}.steps{grid-template-columns:1fr 1fr;}.topics-grid{grid-template-columns:1fr 1fr;}.styles-grid{grid-template-columns:repeat(3,1fr);}.channels-grid{grid-template-columns:1fr 1fr;}nav{padding:0 16px;}.nav-links{display:none;}.panel-sidebar{display:none;}.panel-main{margin-left:0;}.stats-row{grid-template-columns:1fr 1fr;}.history-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.features-grid,.plans,.steps,.topics-grid,.money-grid,.testimonials-grid,.channels-grid{grid-template-columns:1fr;}.styles-grid{grid-template-columns:repeat(2,1fr);}section{padding:60px 20px;}.hero{padding:100px 20px 60px;}.hero-stats{gap:20px;}footer{flex-direction:column;text-align:center;}.stats-row,.history-grid{grid-template-columns:1fr;}.coming-soon-features{grid-template-columns:1fr;}}
 </style>
 </head>
 <body data-theme="dark">
@@ -322,7 +296,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div class="theme-btn" data-t="forest" onclick="setTheme('forest',this)"></div>
     </div>
     <button class="btn-ghost" id="btnLogin" onclick="openModal('login')">Iniciar sesión</button>
-    <button class="btn-primary" id="btnRegister" onclick="openModal('register')" data-i18n="cta_free">Crear mi primer vídeo gratis</button>
+    <button class="btn-primary" id="btnRegister" onclick="openModal('register')" data-i18n="cta_free">Comenzar gratis</button>
     <div class="user-avatar" id="userAvatarNav" onclick="goToPanel()"></div>
   </div>
 </nav>
@@ -331,31 +305,19 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 <section class="hero">
   <div class="hero-glow"></div>
   <div>
-    <div class="hero-badge"><span class="badge-dot"></span>Generación de contenido con IA — Automatizado al 100%</div>
-    <h1>Crea y publica<br/><span>contenido viral</span><br/>con IA</h1>
-    <p>Genera vídeos e imágenes con IA en 20 estilos visuales únicos y súbelos automáticamente a YouTube, TikTok e Instagram.</p>
+    <div class="hero-badge"><span class="badge-dot"></span>Automatización de contenido con IA — 100% automático</div>
+    <h1>Automatiza tu<br/><span>contenido viral</span><br/>con IA</h1>
+    <p>Genera guiones, títulos, hashtags y descripciones con IA en 20 estilos únicos y programa tu publicación automática en YouTube, TikTok e Instagram.</p>
     <div class="hero-cta">
-      <button class="btn-primary btn-lg" onclick="openModal('register')">✨ Crear mi primer vídeo gratis</button>
+      <button class="btn-primary btn-lg" onclick="openModal('register')">✨ Comenzar gratis</button>
       <button class="btn-ghost btn-lg" onclick="document.getElementById('howit').scrollIntoView({behavior:'smooth'})">Ver cómo funciona →</button>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">100K+</div><div class="stat-label">Vídeos generados</div></div>
+      <div class="stat"><div class="stat-num">100K+</div><div class="stat-label">Guiones generados</div></div>
       <div class="stat"><div class="stat-num">20</div><div class="stat-label">Estilos visuales</div></div>
       <div class="stat"><div class="stat-num">20</div><div class="stat-label">Temas automáticos</div></div>
       <div class="stat"><div class="stat-num">15</div><div class="stat-label">Idiomas</div></div>
       <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Valoración media</div></div>
-    </div>
-    <div class="demo-box">
-      <div class="demo-screen">
-        <div class="demo-bars">
-          <div class="demo-bar" style="height:40px"></div><div class="demo-bar" style="height:60px"></div>
-          <div class="demo-bar" style="height:80px"></div><div class="demo-bar" style="height:50px"></div>
-          <div class="demo-bar" style="height:70px"></div><div class="demo-bar" style="height:45px"></div>
-          <div class="demo-bar" style="height:65px"></div><div class="demo-bar" style="height:80px"></div>
-        </div>
-        <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--text3);">🎬 La IA está generando tu vídeo...</div>
-      </div>
-      <p style="font-size:13px;color:var(--text2);">De la idea al vídeo publicado en menos de 2 minutos</p>
     </div>
   </div>
 </section>
@@ -363,14 +325,14 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 <section id="features"><div class="container">
   <div class="reveal"><span class="section-label">Funcionalidades</span><h2 class="section-title">Todo lo que necesitas<br/>para crecer en redes</h2></div>
   <div class="features-grid reveal">
-    <div class="feature-card"><div class="feature-icon">🎬</div><h3>20 estilos visuales</h3><p>Desde Lego hasta cinematográfico épico. Ahora también modo películas con el plan Definitivo.</p></div>
-    <div class="feature-card"><div class="feature-icon">🤖</div><h3>Modo automático</h3><p>La IA genera y publica tu contenido solo, todos los días a la hora que elijas.</p></div>
+    <div class="feature-card"><div class="feature-icon">🤖</div><h3>Modo automático</h3><p>La IA genera y programa tu contenido solo, todos los días a la hora que elijas.</p></div>
     <div class="feature-card"><div class="feature-icon">📱</div><h3>Publicación por red y hora</h3><p>Elige una hora para YouTube y otra diferente para TikTok. Control total.</p></div>
     <div class="feature-card"><div class="feature-icon">🎙️</div><h3>Título, descripción y hashtags</h3><p>La IA genera automáticamente todo lo que necesitas para posicionar cada vídeo.</p></div>
     <div class="feature-card"><div class="feature-icon">🧠</div><h3>Asesor IA con memoria</h3><p>Le dices cómo quieres tus vídeos y lo recuerda. Aprende tu estilo y nicho.</p></div>
-    <div class="feature-card"><div class="feature-icon">🎥</div><h3>Resúmenes de películas</h3><p>Plan Definitivo: resume películas en partes con voz encima.</p></div>
     <div class="feature-card"><div class="feature-icon">🌍</div><h3>15 idiomas</h3><p>Español, inglés, francés, japonés, árabe y más.</p></div>
     <div class="feature-card"><div class="feature-icon">🔗</div><h3>Sistema de referidos</h3><p>Comparte tu enlace único y consigue que tus amigos se unan a AutoIA.</p></div>
+    <div class="feature-card"><div class="feature-icon">🎬</div><h3>20 estilos visuales</h3><p>Desde Lego hasta cinematográfico épico. Configura el estilo de tu canal.</p></div>
+    <div class="feature-card"><div class="feature-icon">📊</div><h3>Estadísticas</h3><p>Monitoriza el rendimiento de tus canales desde un solo panel.</p></div>
     <div class="feature-card"><div class="feature-icon">🔒</div><h3>Seguro y privado</h3><p>RGPD completo, límites por plan y protección avanzada contra abusos.</p></div>
   </div>
 </div></section>
@@ -401,9 +363,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 <section id="howit"><div class="container">
   <div class="reveal" style="text-align:center;"><span class="section-label">Proceso</span><h2 class="section-title">De cero a publicado<br/>en 4 pasos</h2></div>
   <div class="steps reveal">
-    <div class="step"><div class="step-num">1</div><h3>Elige el modo</h3><p>Manual, Automático o Películas (Definitivo)</p></div>
+    <div class="step"><div class="step-num">1</div><h3>Elige el modo</h3><p>Manual o Automático según tus necesidades</p></div>
     <div class="step"><div class="step-num">2</div><h3>Configura</h3><p>Tema, estilo, duración, idioma y hora de publicación por red</p></div>
-    <div class="step"><div class="step-num">3</div><h3>La IA genera</h3><p>Vídeo + título + descripción + hashtags en ~2 minutos</p></div>
+    <div class="step"><div class="step-num">3</div><h3>La IA trabaja</h3><p>Guión + título + descripción + hashtags generados automáticamente</p></div>
     <div class="step"><div class="step-num">4</div><h3>Publica</h3><p>A cada red a su hora exacta, automáticamente</p></div>
   </div>
 </div></section>
@@ -468,7 +430,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
   <div class="reveal" style="text-align:center;"><span class="section-label">Testimonios</span><h2 class="section-title">Lo que dicen<br/>nuestros usuarios</h2></div>
   <div class="testimonials-grid reveal">
     <div class="testimonial-card"><div class="test-stars">★★★★★</div><div class="test-text">"Llevo 2 meses usando AutoIA y ya tengo 3.200 seguidores en TikTok sin grabar ni un vídeo yo mismo."</div><div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#7c3aed,#06b6d4);">C</div><div><div class="test-name">Carlos M.</div><div class="test-handle">@carlosmisterios · TikTok</div></div></div></div>
-    <div class="testimonial-card"><div class="test-stars">★★★★★</div><div class="test-text">"En 10 minutos ya tenía mi primer vídeo subido. El asesor IA es una pasada."</div><div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#ec4899,#f59e0b);">L</div><div><div class="test-name">Laura S.</div><div class="test-handle">@lauracreadora · Instagram</div></div></div></div>
+    <div class="testimonial-card"><div class="test-stars">★★★★★</div><div class="test-text">"En 10 minutos ya tenía mi primer contenido configurado. El asesor IA es una pasada."</div><div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#ec4899,#f59e0b);">L</div><div><div class="test-name">Laura S.</div><div class="test-handle">@lauracreadora · Instagram</div></div></div></div>
     <div class="testimonial-card"><div class="test-stars">★★★★★</div><div class="test-text">"Gestiono 4 canales de YouTube con AutoIA. Cada mes gano entre 400-600€ de AdSense."</div><div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#10b981,#06b6d4);">A</div><div><div class="test-name">Alejandro R.</div><div class="test-handle">@alexcreator · YouTube</div></div></div></div>
   </div>
 </div></section>
@@ -486,15 +448,15 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
     <div class="plan-card">
       <div class="plan-name">Gratis</div>
       <div class="plan-price">0€<span>/mes</span></div>
-      <div class="plan-price-sub">3 vídeos al mes</div>
+      <div class="plan-price-sub">Para empezar</div>
       <div class="plan-divider"></div>
       <ul class="plan-features">
-        <li><span class="check">✓</span>3 vídeos al mes</li>
+        <li><span class="check">✓</span>Acceso al panel</li>
         <li><span class="check">✓</span>6 estilos visuales</li>
-        <li><span class="cross">✗</span>Con marca de agua</li>
+        <li><span class="check">✓</span>Asesor IA</li>
         <li><span class="cross">✗</span>Sin modo automático</li>
       </ul>
-      <button class="plan-btn plan-btn-outline" onclick="openModal('register')">Crear mi primer vídeo gratis</button>
+      <button class="plan-btn plan-btn-outline" onclick="openModal('register')">Comenzar gratis</button>
     </div>
     <div class="plan-card">
       <div class="plan-name">Noob</div>
@@ -502,12 +464,11 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div class="plan-price-sub" id="sub-noob">Facturado mensualmente · IVA incl.</div>
       <div class="plan-divider"></div>
       <ul class="plan-features">
-        <li><span class="check">✓</span>1 vídeo automático/día</li>
-        <li><span class="check">✓</span>5 vídeos manuales/día</li>
+        <li><span class="check">✓</span>1 publicación automática/día</li>
         <li><span class="check">✓</span>6 temas · 6 estilos</li>
-        <li><span class="check">✓</span>6 voces + músicas</li>
-        <li><span class="check">✓</span>Sin marca de agua</li>
+        <li><span class="check">✓</span>6 voces</li>
         <li><span class="check">✓</span>Hasta 2 canales</li>
+        <li><span class="check">✓</span>Sin marca de agua</li>
       </ul>
       <button class="plan-btn plan-btn-outline" onclick="checkout('noob')">Elegir Noob</button>
     </div>
@@ -517,10 +478,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div class="plan-price-sub" id="sub-inter">Facturado mensualmente · IVA incl.</div>
       <div class="plan-divider"></div>
       <ul class="plan-features">
-        <li><span class="check">✓</span>2 vídeos automáticos/día</li>
-        <li><span class="check">✓</span>12 vídeos manuales/día</li>
+        <li><span class="check">✓</span>2 publicaciones automáticas/día</li>
         <li><span class="check">✓</span>14 temas · 14 estilos</li>
-        <li><span class="check">✓</span>10 voces + músicas</li>
+        <li><span class="check">✓</span>10 voces</li>
         <li><span class="check">✓</span>Calidad HD</li>
         <li><span class="check">✓</span>Hasta 5 canales</li>
       </ul>
@@ -532,10 +492,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div class="plan-price-sub" id="sub-pro">Facturado mensualmente · IVA incl.</div>
       <div class="plan-divider"></div>
       <ul class="plan-features">
-        <li><span class="check">✓</span>8 vídeos automáticos/día</li>
-        <li><span class="check">✓</span>Manuales ilimitados</li>
+        <li><span class="check">✓</span>8 publicaciones automáticas/día</li>
         <li><span class="check">✓</span>20 temas · 20 estilos</li>
-        <li><span class="check">✓</span>20 voces + músicas</li>
+        <li><span class="check">✓</span>20 voces</li>
         <li><span class="check">✓</span>HD + generación rápida</li>
         <li><span class="check">✓</span>Hasta 10 canales</li>
       </ul>
@@ -550,7 +509,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <ul class="plan-features">
         <li><span class="check">✓</span>Todo lo de Pro</li>
         <li><span class="check">✓</span>Modo películas/resúmenes</li>
-        <li><span class="check">✓</span>Vídeos e imágenes ilimitados</li>
+        <li><span class="check">✓</span>Contenido ilimitado</li>
         <li><span class="check">✓</span>Películas conocidas automáticas</li>
         <li><span class="check">✓</span>3 meses gratis al pagar anual</li>
       </ul>
@@ -558,7 +517,6 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <button class="plan-btn plan-btn-gold" onclick="checkout('def')">Elegir Definitivo ✨</button>
     </div>
   </div>
-  <!-- CÓDIGO DE DESCUENTO EN PLANES -->
   <div class="plans-coupon-box reveal">
     <label>🏷️ ¿Tienes un código de descuento? Aplícalo aquí antes de pagar</label>
     <div class="plans-coupon-row">
@@ -579,9 +537,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 
 <div class="cta-section"><div class="cta-box reveal">
   <span class="section-label">Empieza hoy</span>
-  <h2 class="section-title">Tu primer vídeo<br/>en menos de 5 minutos</h2>
+  <h2 class="section-title">Tu primer contenido<br/>en menos de 5 minutos</h2>
   <p style="color:var(--text2);margin:16px 0 32px;font-weight:300;">Sin tarjeta de crédito. Sin configuración técnica.</p>
-  <button class="btn-primary btn-lg" onclick="openModal('register')">✨ Crear mi primer vídeo gratis</button>
+  <button class="btn-primary btn-lg" onclick="openModal('register')">✨ Comenzar gratis</button>
 </div></div>
 
 <footer>
@@ -597,9 +555,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
 <div id="userPanel">
   <div class="panel-layout">
     <div class="panel-sidebar">
-      <div class="panel-nav-item active" onclick="showPanelPage('generator',this)"><span class="panel-nav-icon">🎬</span> Crear vídeo</div>
+      <div class="panel-nav-item active" onclick="showPanelPage('generator',this)"><span class="panel-nav-icon">🎬</span> Crear contenido</div>
       <div class="panel-nav-item" onclick="showPanelPage('movies',this)" id="nav-movies" style="display:none;"><span class="panel-nav-icon">🎥</span> Modo Películas</div>
-      <div class="panel-nav-item" onclick="showPanelPage('history',this)"><span class="panel-nav-icon">📁</span> Mis vídeos</div>
+      <div class="panel-nav-item" onclick="showPanelPage('history',this)"><span class="panel-nav-icon">📁</span> Mi historial</div>
       <div class="panel-nav-item" onclick="showPanelPage('stats',this)"><span class="panel-nav-icon">📊</span> Estadísticas</div>
       <div class="panel-nav-item" onclick="showPanelPage('redes',this)"><span class="panel-nav-icon">🔗</span> Redes sociales</div>
       <div class="panel-nav-item" onclick="showPanelPage('referral',this)"><span class="panel-nav-icon">🎁</span> Referidos</div>
@@ -614,184 +572,45 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       </div>
     </div>
     <div class="panel-main">
-      <!-- GENERADOR -->
+
+      <!-- GENERADOR → PRÓXIMAMENTE -->
       <div class="panel-page active" id="pp-generator">
-        <div class="panel-title">🎬 Crear vídeo</div>
-        <div id="limitBar" style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:14px;">
-          <div style="flex:1;">
-            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;"><span style="color:var(--text2);">Vídeos este mes</span><span id="limitText" style="font-weight:600;">0 / 3</span></div>
-            <div class="limit-bar-wrap"><div class="limit-bar-fill" id="limitFill" style="width:0%;background:var(--green);"></div></div>
+        <div class="panel-title">🎬 Crear contenido</div>
+        <div class="coming-soon-box">
+          <div class="coming-soon-icon">🚀</div>
+          <div class="coming-soon-title">Generación de vídeos — Próximamente</div>
+          <div class="coming-soon-sub">Estamos preparando la generación automática de vídeos con IA. Será la función más potente de AutoIA. ¡Serás el primero en tenerla!</div>
+          <div class="coming-soon-features">
+            <div class="cs-feat">🎬 Vídeos generados con IA</div>
+            <div class="cs-feat">🎙️ Voces naturales reales</div>
+            <div class="cs-feat">📱 Subida automática a redes</div>
+            <div class="cs-feat">🎨 20 estilos visuales</div>
+            <div class="cs-feat">🤖 Modo 100% automático</div>
+            <div class="cs-feat">🎥 Modo películas y resúmenes</div>
           </div>
-          <button onclick="goToLanding();setTimeout(()=>document.getElementById('plans').scrollIntoView({behavior:'smooth'}),300)" style="padding:6px 12px;border:none;border-radius:6px;background:var(--accent);color:#fff;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap;">Mejorar plan</button>
-        </div>
-        <div class="mode-tabs">
-          <button class="mode-tab active" onclick="setMode('manual',this)">✍️ Manual</button>
-          <button class="mode-tab" onclick="setMode('auto',this)">🤖 Automático</button>
-        </div>
-        <div class="gen-card">
-          <div id="manual-fields">
-            <div class="form-group"><label class="gen-label">Describe tu vídeo</label><textarea class="gen-textarea" id="videoDesc" placeholder="Ej: Un vídeo sobre los 5 datos más curiosos del espacio..." maxlength="500"></textarea></div>
-            <div id="styleMemoryBox" style="display:none;padding:10px 12px;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.15);border-radius:8px;margin-bottom:12px;font-size:12px;color:var(--accent3);">💡 <span id="styleMemoryText"></span></div>
-          </div>
-          <div id="auto-fields" style="display:none;">
-            <div class="gen-row">
-              <div><label class="gen-label">Tema automático</label>
-                <select class="gen-select" id="autoTema">
-                  <option>🗺️ Datos de países</option><option>🎮 Videojuegos y cultura pop</option>
-                  <option>🏢 Secretos de empresas</option><option>🧪 Retos y experimentos</option>
-                  <option>🏔️ Supervivencia extrema</option><option>🦁 Animales y naturaleza</option>
-                  <option>👻 Terror y misterio</option><option>🔬 Curiosidades científicas</option>
-                  <option>📜 Hechos históricos</option><option>💪 Motivación y mentalidad</option>
-                </select>
-              </div>
-              <div><label class="gen-label">Hora de publicación</label><input type="time" class="gen-select" value="18:00"/></div>
-            </div>
-          </div>
-          <div class="gen-row">
-            <div>
-              <label class="gen-label">Estilo visual</label>
-              <select class="gen-select" id="estiloVisual" onchange="updateStylePreview()">
-                <option value="0">📸 Fotos reales</option><option value="1">✍️ Texto animado</option>
-                <option value="2">🎨 Ilustración simple</option><option value="3">💬 Estilo cómic</option>
-                <option value="4">⚡ Minimalista</option><option value="5">📋 Estilo pizarra</option>
-                <option value="6">🧱 Estilo Lego 3D</option><option value="7">⛩️ Anime / Manga</option>
-                <option value="8">👾 Pixel art retro</option><option value="9">🌊 Acuarela digital</option>
-              </select>
-              <div id="stylePreviewBox" style="margin-top:8px;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-                <img id="stylePreviewImg" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" style="width:100%;height:120px;object-fit:cover;display:block;"/>
-                <div style="padding:6px 10px;background:var(--bg3);font-size:10px;color:var(--text2);" id="stylePreviewDesc">📸 Fotos reales — Imágenes fotográficas auténticas</div>
-              </div>
-            </div>
-            <div><label class="gen-label">Duración</label>
-              <select class="gen-select"><option>30 - 60 segundos</option><option>60 - 90 segundos</option><option>3 - 5 minutos</option><option>7 - 10 minutos</option></select>
-            </div>
-          </div>
-          <div class="gen-row">
-            <div><label class="gen-label">Idioma</label>
-              <select class="gen-select"><option>🇪🇸 Español</option><option>🇬🇧 Inglés</option><option>🇫🇷 Francés</option><option>🇩🇪 Alemán</option><option>🇯🇵 Japonés</option></select>
-            </div>
-            <div><label class="gen-label">Voz</label>
-              <div style="display:flex;gap:6px;align-items:center;">
-                <select class="gen-select" id="voiceSelect" onchange="updateVoicePreview()" style="flex:1;">
-                  <option value="0">Marco — Masculina grave</option><option value="1">Sofía — Femenina suave</option>
-                  <option value="2">Alex — Neutral joven</option><option value="3">Carlos — Masculina media</option>
-                  <option value="4">Elena — Femenina dinámica</option><option value="5">Orión — Narrativa épica</option>
-                </select>
-                <button onclick="playVoicePreview()" style="padding:8px 12px;border:none;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer;font-size:14px;">▶️</button>
-              </div>
-              <div id="voicePreviewBox" style="margin-top:6px;padding:6px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;font-size:11px;color:var(--text2);display:none;">
-                🎙️ <span id="voicePreviewText">Hola, soy Marco, tu narrador épico</span>
-              </div>
-            </div>
-          </div>
-          <label class="gen-label" style="margin-bottom:8px;">Programar publicación por red</label>
-          <div class="schedule-grid">
-            <div class="schedule-row"><span class="schedule-net">▶️</span><span class="schedule-label">YouTube</span><input type="time" class="schedule-time" value="18:00"/><div class="schedule-toggle" onclick="this.classList.toggle('on')"><div class="schedule-toggle-knob"></div></div></div>
-            <div class="schedule-row"><span class="schedule-net">🎵</span><span class="schedule-label">TikTok</span><input type="time" class="schedule-time" value="20:00"/><div class="schedule-toggle" onclick="this.classList.toggle('on')"><div class="schedule-toggle-knob"></div></div></div>
-            <div class="schedule-row"><span class="schedule-net">📸</span><span class="schedule-label">Instagram</span><input type="time" class="schedule-time" value="19:00"/><div class="schedule-toggle" onclick="this.classList.toggle('on')"><div class="schedule-toggle-knob"></div></div></div>
-          </div>
-          <button class="btn-generate" onclick="generateVideo()">🚀 Generar vídeo</button>
-          <div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
-          <div class="progress-text" id="progressText">⏳ La IA está creando tu vídeo...</div>
-          <div class="video-preview" id="videoPreview">
-            <div class="video-thumb">🎬</div>
-            <div class="video-meta">
-              <div class="video-meta-title"><span id="genTitle">Título generado</span><button class="copy-btn" onclick="copyText('genTitle')">📋 Copiar</button></div>
-              <div class="video-meta-desc" id="genDesc">Descripción generada automáticamente por la IA...</div>
-              <button class="copy-btn" style="margin-bottom:8px;" onclick="copyText('genDesc')">📋 Copiar descripción</button>
-              <div class="video-meta-tags" id="genTags"></div>
-              <button class="copy-btn" style="margin-top:8px;" onclick="copyAllTags()">📋 Copiar hashtags</button>
-            </div>
-            <div class="video-actions">
-              <button class="btn-action btn-dl" onclick="alert('Descargando MP4...')">⬇️ Descargar</button>
-              <button class="btn-action btn-pub" onclick="alert('El vídeo se publicará según tu programación')">📤 Publicar</button>
-              <button class="btn-action btn-dl" onclick="regenVideo()">🔄 Generar otro</button>
-            </div>
+          <div class="coming-soon-badge"><span class="badge-dot"></span>En desarrollo activo — muy pronto</div>
+          <div style="margin-top:20px;">
+            <button class="btn-primary" onclick="document.getElementById('advisorModal').classList.add('open')" style="padding:10px 24px;">✨ Mientras tanto, habla con el Asesor IA</button>
           </div>
         </div>
       </div>
 
-      <!-- MODO PELÍCULAS -->
+      <!-- MODO PELÍCULAS → PRÓXIMAMENTE -->
       <div class="panel-page" id="pp-movies">
         <div class="panel-title">🎥 Modo Películas</div>
-        <div class="gen-card">
-          <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px;color:var(--amber);">✨ Exclusivo plan Definitivo</div>
-          <div class="mode-tabs">
-            <button class="mode-tab active" onclick="setMovieMode('auto',this)">🤖 Película automática</button>
-            <button class="mode-tab" onclick="setMovieMode('manual',this)">📁 Subir mi vídeo</button>
-          </div>
-          <div id="movie-auto-fields">
-            <div class="gen-row">
-              <div><label class="gen-label">Película conocida</label>
-                <select class="gen-select" id="movieSelect">
-                  <option>🎬 El Rey León</option><option>🎬 Titanic</option><option>🎬 Avatar</option>
-                  <option>🎬 Interstellar</option><option>🎬 El Señor de los Anillos</option>
-                  <option>🎬 Spider-Man: No Way Home</option><option>🎬 Avengers: Endgame</option>
-                  <option>🎬 La La Land</option><option>🎬 Inception</option><option>🎬 Joker</option>
-                  <option>🎬 Forrest Gump</option><option>🎬 El Padrino</option>
-                </select>
-              </div>
-              <div><label class="gen-label">Número de partes</label>
-                <select class="gen-select" id="movieParts">
-                  <option value="2">2 partes</option><option value="3">3 partes</option>
-                  <option value="4">4 partes</option><option value="5">5 partes</option><option value="10">10 partes</option>
-                </select>
-              </div>
-            </div>
-            <div class="gen-row">
-              <div><label class="gen-label">Frase de enganche</label>
-                <select class="gen-select" id="hookPhrase">
-                  <option>👍 "Like para la parte siguiente"</option>
-                  <option>🔔 "Sígueme para no perderte la parte 2"</option>
-                  <option>💬 "Comenta qué crees que pasará"</option>
-                  <option>🔁 "Comparte con quien le guste esto"</option>
-                </select>
-              </div>
-              <div><label class="gen-label">Duración por parte</label>
-                <select class="gen-select"><option>30 - 60 segundos</option><option>60 - 90 segundos</option><option>2 - 3 minutos</option></select>
-              </div>
-            </div>
-          </div>
-          <div id="movie-manual-fields" style="display:none;">
-            <div class="form-group"><label class="gen-label">URL del vídeo de YouTube</label><input type="url" class="gen-input" placeholder="https://youtube.com/watch?v=..."/></div>
-            <div class="gen-row">
-              <div><label class="gen-label">Número de partes</label><select class="gen-select"><option>2 partes</option><option>3 partes</option><option>4 partes</option><option>5 partes</option></select></div>
-              <div><label class="gen-label">Frase de enganche</label><select class="gen-select"><option>👍 "Like para la parte siguiente"</option><option>🔔 "Sígueme para la parte 2"</option></select></div>
-            </div>
-          </div>
-          <div class="gen-row">
-            <div><label class="gen-label">Voz narradora</label>
-              <div style="display:flex;gap:6px;">
-                <select class="gen-select" id="movieVoice" style="flex:1;"><option value="0">Marco — Épico</option><option value="1">Sofía — Suave</option><option value="2">Alex — Joven</option><option value="3">Carlos — Dramático</option><option value="4">Elena — Energética</option><option value="5">Orión — Profundo</option></select>
-                <button onclick="playMovieVoice()" style="padding:8px 12px;border:none;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer;">▶️</button>
-              </div>
-            </div>
-            <div><label class="gen-label">Idioma</label><select class="gen-select"><option>🇪🇸 Español</option><option>🇬🇧 Inglés</option></select></div>
-          </div>
-          <button class="btn-generate" style="background:linear-gradient(135deg,#d97706,#f59e0b);" onclick="generateMovie()">🎬 Generar resumen</button>
-          <div class="progress-bar" id="movieProgressBar"><div class="progress-fill" id="movieProgressFill"></div></div>
-          <div class="progress-text" id="movieProgressText">🎬 Procesando película...</div>
-          <div class="video-preview" id="moviePreview">
-            <div class="video-thumb">🎬</div>
-            <div class="video-meta">
-              <div class="video-meta-title"><span id="movieTitle">Resumen generado</span><button class="copy-btn" onclick="copyText('movieTitle')">📋 Copiar</button></div>
-              <div class="video-meta-desc" id="movieDesc">Descripción del resumen...</div>
-              <div class="video-meta-tags" id="movieTags"></div>
-            </div>
-            <div class="video-actions">
-              <button class="btn-action btn-dl">⬇️ Descargar</button>
-              <button class="btn-action" style="background:linear-gradient(135deg,#000,#333);color:#fff;border:none;" onclick="alert('Publicando en TikTok...')">🎵 Publicar en TikTok</button>
-              <button class="btn-action btn-dl" onclick="regenMovie()">🔄 Generar otro</button>
-            </div>
-          </div>
+        <div class="coming-soon-box">
+          <div class="coming-soon-icon">🎥</div>
+          <div class="coming-soon-title">Modo Películas — Próximamente</div>
+          <div class="coming-soon-sub">Resume películas populares en vídeos cortos con voz narradora y publícalos automáticamente en TikTok e Instagram. Esta función estará disponible muy pronto para el plan Definitivo.</div>
+          <div class="coming-soon-badge"><span class="badge-dot"></span>Exclusivo plan Definitivo — En desarrollo</div>
         </div>
       </div>
 
       <!-- HISTORIAL -->
       <div class="panel-page" id="pp-history">
-        <div class="panel-title">📁 Mis vídeos</div>
+        <div class="panel-title">📁 Mi historial</div>
         <div class="history-grid" id="historyGrid">
-          <div style="text-align:center;color:var(--text3);padding:60px;grid-column:1/-1;">No has generado ningún vídeo aún. ¡Empieza ahora!</div>
+          <div style="text-align:center;color:var(--text3);padding:60px;grid-column:1/-1;">Aquí aparecerá tu historial de contenido generado.</div>
         </div>
       </div>
 
@@ -799,7 +618,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div class="panel-page" id="pp-stats">
         <div class="panel-title">📊 Estadísticas</div>
         <div class="stats-row">
-          <div class="stat-box"><div class="stat-box-label">Vídeos creados</div><div class="stat-box-val sv-p" id="statCreados">0</div></div>
+          <div class="stat-box"><div class="stat-box-label">Contenidos creados</div><div class="stat-box-val sv-p" id="statCreados">0</div></div>
           <div class="stat-box"><div class="stat-box-label">Publicados</div><div class="stat-box-val sv-c" id="statPublicados">0</div></div>
           <div class="stat-box"><div class="stat-box-label">Vistas totales</div><div class="stat-box-val sv-g" id="statVistas">0</div></div>
           <div class="stat-box"><div class="stat-box-label">Tu plan</div><div class="stat-box-val sv-a" id="statPlan">GRATIS</div></div>
@@ -814,9 +633,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
           <h3>Conecta tus cuentas</h3>
           <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">Cada red puede publicar a una hora diferente.</p>
           <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">▶️</span><div><div style="font-weight:600;font-size:14px;">YouTube</div><div style="font-size:11px;color:var(--text3);">No conectado</div></div></div><button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="alert('Próximamente')">Conectar</button></div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">🎵</span><div><div style="font-weight:600;font-size:14px;">TikTok</div><div style="font-size:11px;color:var(--text3);">No conectado</div></div></div><button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="alert('Próximamente')">Conectar</button></div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">📸</span><div><div style="font-weight:600;font-size:14px;">Instagram</div><div style="font-size:11px;color:var(--text3);">No conectado</div></div></div><button class="btn-primary" style="padding:7px 14px;font-size:12px;" onclick="alert('Próximamente')">Conectar</button></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">▶️</span><div><div style="font-weight:600;font-size:14px;">YouTube</div><div style="font-size:11px;color:var(--text3);">Próximamente</div></div></div><button class="btn-ghost" style="padding:7px 14px;font-size:12px;" disabled>Próximamente</button></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">🎵</span><div><div style="font-weight:600;font-size:14px;">TikTok</div><div style="font-size:11px;color:var(--text3);">Próximamente</div></div></div><button class="btn-ghost" style="padding:7px 14px;font-size:12px;" disabled>Próximamente</button></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg3);border-radius:10px;border:1px solid var(--border);"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:22px;">📸</span><div><div style="font-weight:600;font-size:14px;">Instagram</div><div style="font-size:11px;color:var(--text3);">Próximamente</div></div></div><button class="btn-ghost" style="padding:7px 14px;font-size:12px;" disabled>Próximamente</button></div>
           </div>
         </div>
       </div>
@@ -890,7 +709,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div class="ob-title">Tu estilo 🎯</div>
       <div class="ob-sub" style="margin-bottom:14px;">¿Algo especial que quieras en tus vídeos?</div>
       <textarea class="form-input" id="obNicho" placeholder="Ej: Quiero que mis vídeos hablen con un tono épico y siempre digan 'sígueme para más' al final..." style="min-height:90px;resize:none;"></textarea>
-      <button class="btn-primary" style="width:100%;padding:12px;margin-top:16px;" onclick="finishOb()">¡Empezar a crear! 🚀</button>
+      <button class="btn-primary" style="width:100%;padding:12px;margin-top:16px;" onclick="finishOb()">¡Empezar! 🚀</button>
     </div>
   </div>
 </div>
@@ -945,12 +764,12 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:40
       <div><h2 style="font-size:20px;">Asesor IA</h2><p style="font-size:12px;color:var(--text3);margin:0;">Tu asistente personal de creación</p></div>
     </div>
     <div class="advisor-messages" id="advisorMessages">
-      <div class="msg-bubble msg-ai">¡Hola! Soy tu Asesor IA. Puedo ayudarte a crear mejores vídeos y recordar tu estilo. ¿En qué te ayudo?</div>
+      <div class="msg-bubble msg-ai">¡Hola! Soy tu Asesor IA. Puedo ayudarte a planificar tu contenido y recordar tu estilo. ¿En qué te ayudo?</div>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
       <button onclick="askAdvisor(this.textContent)" style="padding:5px 10px;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;font-size:11px;color:var(--text2);cursor:pointer;">¿Qué tema está trending?</button>
       <button onclick="askAdvisor(this.textContent)" style="padding:5px 10px;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;font-size:11px;color:var(--text2);cursor:pointer;">¿Qué estilo funciona mejor?</button>
-      <button onclick="askAdvisor(this.textContent)" style="padding:5px 10px;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;font-size:11px;color:var(--text2);cursor:pointer;">Ayúdame a crear un vídeo</button>
+      <button onclick="askAdvisor(this.textContent)" style="padding:5px 10px;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;font-size:11px;color:var(--text2);cursor:pointer;">Ayúdame con mi contenido</button>
       <button onclick="askAdvisor(this.textContent)" style="padding:5px 10px;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;font-size:11px;color:var(--text2);cursor:pointer;">Recuerda mi estilo</button>
     </div>
     <div style="display:flex;gap:8px;">
@@ -965,8 +784,6 @@ const SUPA_URL="https://jzywivrjrqrlkiavyylg.supabase.co";
 const SUPA_KEY="sb_publishable_CvSGwFvLlcsAn0f_O--owg_EMLBV_xp";
 const GOOGLE_CLIENT_ID="1027787744444-57gra3a5tn3h9ag00t6d7jg9ne66586c.apps.googleusercontent.com";
 
-// COUPONS con tipo: 'single' = un solo uso, 'unlimited' = ilimitado
-// Los de un solo uso se marcan en localStorage cuando se usan
 const COUPONS_DEF={
   "xK9mP2qR7n":{discount:10,type:"percent",uses:"unlimited"},
   "Tz4wB8vL3j":{discount:15,type:"percent",uses:"unlimited"},
@@ -976,20 +793,12 @@ const COUPONS_DEF={
 };
 
 function getCoupons(){
-  // Permite que el admin añada cupones desde localStorage
   const extra=localStorage.getItem('autoia-admin-coupons');
   if(extra){try{return Object.assign({},COUPONS_DEF,JSON.parse(extra));}catch(e){}}
   return COUPONS_DEF;
 }
-
-function isCouponUsed(code){
-  const used=JSON.parse(localStorage.getItem('autoia-used-coupons')||'[]');
-  return used.includes(code);
-}
-function markCouponUsed(code){
-  const used=JSON.parse(localStorage.getItem('autoia-used-coupons')||'[]');
-  if(!used.includes(code)){used.push(code);localStorage.setItem('autoia-used-coupons',JSON.stringify(used));}
-}
+function isCouponUsed(code){const used=JSON.parse(localStorage.getItem('autoia-used-coupons')||'[]');return used.includes(code);}
+function markCouponUsed(code){const used=JSON.parse(localStorage.getItem('autoia-used-coupons')||'[]');if(!used.includes(code)){used.push(code);localStorage.setItem('autoia-used-coupons',JSON.stringify(used));}}
 
 const PAYMENT_LINKS={
   noob_monthly:"https://buy.stripe.com/14A8wQ3nxghQ1GN6jd18c05",
@@ -1002,15 +811,7 @@ const PAYMENT_LINKS={
   def_yearly:"https://buy.stripe.com/eVq6oIcY7c1A99fazt18c07"
 };
 
-const PLAN_LIMITS={free:3,noob:9999,inter:9999,pro:9999,definitivo:9999};
-
-let appliedCoupon=null;
-let plansCoupon=null;
-let currentUser=null;
-let videoCount=0;
-let obData={};
-let loginAttempts=0;
-let advisorMemory=[];
+let appliedCoupon=null,plansCoupon=null,currentUser=null,obData={},loginAttempts=0,advisorMemory=[];
 
 // URGENCY TIMER
 (function(){
@@ -1036,30 +837,21 @@ window.onload=function(){
   if(savedTheme){document.body.setAttribute('data-theme',savedTheme);const b=document.querySelector(`.theme-btn[data-t="${savedTheme}"]`);if(b){document.querySelectorAll('.theme-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');}}
   const mem=localStorage.getItem('autoia-advisor-memory');
   if(mem)advisorMemory=JSON.parse(mem);
-  updateStyleMemoryBox();
   const params=new URLSearchParams(window.location.search);
   if(params.get('success')==='1'){const plan=params.get('plan')||'noob';if(currentUser){currentUser.plan=plan;localStorage.setItem('autoia-user',JSON.stringify(currentUser));}setTimeout(()=>{alert('🎉 ¡Pago completado! Tu plan '+plan.toUpperCase()+' ha sido activado.');if(currentUser)showUserPanel();},500);}
   if(params.get('cancel')==='1')setTimeout(()=>alert('Pago cancelado. Puedes intentarlo cuando quieras.'),500);
 };
 
-function renderGoogleBtn(){
-  const c=document.getElementById('google-signin-btn');
-  if(c&&window.google){c.innerHTML='';google.accounts.id.renderButton(c,{theme:'outline',size:'large',width:400,text:'continue_with',shape:'rectangular'});}
-}
+function renderGoogleBtn(){const c=document.getElementById('google-signin-btn');if(c&&window.google){c.innerHTML='';google.accounts.id.renderButton(c,{theme:'outline',size:'large',width:400,text:'continue_with',shape:'rectangular'});}}
 
 async function handleGoogleSignin(response){
   const payload=JSON.parse(atob(response.credential.split('.')[1]));
   const userData={nombre:payload.name,email:payload.email,foto:payload.picture,plan:'free'};
-  await saveUser(userData);
-  currentUser=userData;
-  localStorage.setItem('autoia-user',JSON.stringify(userData));
-  closeModal('authModal');
-  checkOnboarding();
+  await saveUser(userData);currentUser=userData;localStorage.setItem('autoia-user',JSON.stringify(userData));closeModal('authModal');checkOnboarding();
 }
 
 async function supaFetch(path,method,body){
-  const res=await fetch(SUPA_URL+path,{method:method||'GET',headers:{'Content-Type':'application/json','apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY},body:body?JSON.stringify(body):undefined});
-  return res;
+  const res=await fetch(SUPA_URL+path,{method:method||'GET',headers:{'Content-Type':'application/json','apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY},body:body?JSON.stringify(body):undefined});return res;
 }
 
 async function saveUser(userData){
@@ -1071,34 +863,19 @@ async function saveUser(userData){
   }catch(e){}
 }
 
-function checkOnboarding(){
-  const done=localStorage.getItem('autoia-ob-done');
-  if(!done){document.getElementById('onboardingOverlay').style.display='flex';}
-  else{showUserPanel();}
-}
-
+function checkOnboarding(){const done=localStorage.getItem('autoia-ob-done');if(!done){document.getElementById('onboardingOverlay').style.display='flex';}else{showUserPanel();}}
 function selectOb(el,key,val){el.closest('.ob-options').querySelectorAll('.ob-option').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');obData[key]=val;}
 function nextOb(step){document.getElementById('ob-step-'+(step-1)).style.display='none';document.getElementById('ob-step-'+step).style.display='block';document.querySelectorAll('.ob-step').forEach((s,i)=>{s.classList.toggle('active',i<step);});}
 function finishOb(){
   const nicho=document.getElementById('obNicho').value.trim();
   if(nicho){advisorMemory.push({type:'style',text:nicho});localStorage.setItem('autoia-advisor-memory',JSON.stringify(advisorMemory));}
   obData.nicho=nicho;localStorage.setItem('autoia-ob-done','1');localStorage.setItem('autoia-ob-data',JSON.stringify(obData));
-  document.getElementById('onboardingOverlay').style.display='none';showUserPanel();updateStyleMemoryBox();
-}
-function updateStyleMemoryBox(){
-  const box=document.getElementById('styleMemoryBox');const txt=document.getElementById('styleMemoryText');
-  if(!box||!txt)return;
-  const styles=advisorMemory.filter(m=>m.type==='style');
-  if(styles.length>0){box.style.display='block';txt.textContent='El asesor recuerda: "'+styles[styles.length-1].text+'"';}
-  else{box.style.display='none';}
+  document.getElementById('onboardingOverlay').style.display='none';showUserPanel();
 }
 
 function showUserPanel(){
-  document.getElementById('landingPage').style.display='none';
-  document.getElementById('userPanel').style.display='block';
-  document.getElementById('btnLogin').style.display='none';
-  document.getElementById('btnRegister').style.display='none';
-  document.getElementById('navLinks').style.display='none';
+  document.getElementById('landingPage').style.display='none';document.getElementById('userPanel').style.display='block';
+  document.getElementById('btnLogin').style.display='none';document.getElementById('btnRegister').style.display='none';document.getElementById('navLinks').style.display='none';
   const av=document.getElementById('userAvatarNav');av.style.display='flex';
   if(currentUser.foto){av.innerHTML=`<img src="${currentUser.foto}">`;}else{av.textContent=(currentUser.nombre||'U')[0].toUpperCase();}
   const plan=(currentUser.plan||'free');
@@ -1112,19 +889,8 @@ function showUserPanel(){
   if(currentUser.foto){panelAv.innerHTML=`<img src="${currentUser.foto}">`;}else{panelAv.textContent=(currentUser.nombre||'U')[0].toUpperCase();}
   const moviesNav=document.getElementById('nav-movies');
   if(moviesNav)moviesNav.style.display=plan==='definitivo'?'flex':'none';
-  updateLimitBar();
   const refEl=document.getElementById('refLink');
   if(refEl)refEl.value='https://autoia-rouge.vercel.app?ref='+(currentUser.nombre||'user').replace(/\s/g,'');
-  updateStyleMemoryBox();
-}
-
-function updateLimitBar(){
-  if(!currentUser)return;
-  const plan=currentUser.plan||'free';const limit=PLAN_LIMITS[plan]||3;const used=videoCount;const pct=Math.min(100,(used/Math.max(limit,1))*100);
-  const fill=document.getElementById('limitFill');const text=document.getElementById('limitText');
-  if(!fill||!text)return;
-  if(limit>100){text.textContent='Ilimitado';fill.style.width='10%';fill.style.background='var(--green)';return;}
-  text.textContent=used+' / '+limit;fill.style.width=pct+'%';fill.style.background=pct>80?'var(--red)':pct>50?'var(--amber)':'var(--green)';
 }
 
 function goToLanding(){
@@ -1135,14 +901,11 @@ function goToLanding(){
 function goToPanel(){if(currentUser)showUserPanel();}
 function logout(){currentUser=null;localStorage.removeItem('autoia-user');document.getElementById('userPanel').style.display='none';document.getElementById('landingPage').style.display='block';document.getElementById('btnLogin').style.display='';document.getElementById('btnRegister').style.display='';document.getElementById('navLinks').style.display='flex';document.getElementById('userAvatarNav').style.display='none';if(window.google)google.accounts.id.disableAutoSelect();}
 function showPanelPage(id,el){document.querySelectorAll('.panel-page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.panel-nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('pp-'+id).classList.add('active');if(el)el.classList.add('active');}
-function setMode(mode,el){document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.getElementById('manual-fields').style.display=mode==='manual'?'block':'none';document.getElementById('auto-fields').style.display=mode==='auto'?'block':'none';}
-function setMovieMode(mode,el){document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.getElementById('movie-auto-fields').style.display=mode==='auto'?'block':'none';document.getElementById('movie-manual-fields').style.display=mode==='manual'?'block':'none';}
 
 // REGISTRO / LOGIN
 let regAttempts=0;
 async function doRegister(){
-  regAttempts++;
-  if(regAttempts>10){showMsg('reg-error','Demasiados intentos.');return;}
+  regAttempts++;if(regAttempts>10){showMsg('reg-error','Demasiados intentos.');return;}
   const nombre=document.getElementById('reg-nombre').value.trim();
   const email=document.getElementById('reg-email').value.trim();
   const pass=document.getElementById('reg-pass').value;
@@ -1152,25 +915,18 @@ async function doRegister(){
   let plan='free';
   if(appliedCoupon&&appliedCoupon.type==='definitivo')plan='definitivo';
   else if(appliedCoupon&&appliedCoupon.type==='pro')plan='pro';
-  // Marcar cupón de un solo uso
   if(appliedCoupon&&appliedCoupon.uses==='single')markCouponUsed(appliedCoupon.code);
   try{
     const res=await supaFetch('/rest/v1/usuarios','POST',{nombre,email,plan,videos_generados:0,estado:'active'});
     if(res.ok||res.status===201){
       currentUser={nombre,email,plan};localStorage.setItem('autoia-user',JSON.stringify(currentUser));
-      showMsg('reg-success','✓ ¡Bienvenido a AutoIA!');
-      setTimeout(()=>{closeModal('authModal');checkOnboarding();},1200);
-    } else {
-      const err=await res.json();
-      if(err.code==='23505')showMsg('reg-error','Este email ya está registrado.');
-      else showMsg('reg-error','Error al crear la cuenta.');
-    }
+      showMsg('reg-success','✓ ¡Bienvenido a AutoIA!');setTimeout(()=>{closeModal('authModal');checkOnboarding();},1200);
+    }else{const err=await res.json();if(err.code==='23505')showMsg('reg-error','Este email ya está registrado.');else showMsg('reg-error','Error al crear la cuenta.');}
   }catch(e){showMsg('reg-error','Error de conexión.');}
 }
 
 async function doLogin(){
-  loginAttempts++;
-  if(loginAttempts>5){showMsg('login-error','Demasiados intentos. Espera 1 minuto.');setTimeout(()=>{loginAttempts=0;},60000);return;}
+  loginAttempts++;if(loginAttempts>5){showMsg('login-error','Demasiados intentos.');setTimeout(()=>{loginAttempts=0;},60000);return;}
   const email=document.getElementById('login-email').value.trim();
   if(!email){showMsg('login-error','Introduce tu email');return;}
   try{
@@ -1181,11 +937,8 @@ async function doLogin(){
   }catch(e){showMsg('login-error','Error de conexión.');}
 }
 
-// CUPONES - validación unificada
 function validateCouponCode(code){
-  const clean=code.replace(/[<>"']/g,'').trim();
-  const coupons=getCoupons();
-  const c=coupons[clean];
+  const clean=code.replace(/[<>"']/g,'').trim();const coupons=getCoupons();const c=coupons[clean];
   if(!c)return{valid:false,msg:'✗ Código no válido.'};
   if(c.uses==='single'&&isCouponUsed(clean))return{valid:false,msg:'✗ Este código ya ha sido utilizado.'};
   return{valid:true,coupon:{...c,code:clean}};
@@ -1204,29 +957,21 @@ function applyCoupon(ctx){
     if(c.type==='definitivo'){result.style.color='#f59e0b';result.textContent='🎉 Código válido — Acceso Definitivo activado gratuitamente.';}
     else if(c.type==='pro'){result.style.color='#a855f7';result.textContent='🎉 Código válido — Acceso Pro activado.';}
     else{result.style.color='#10b981';result.textContent='✓ '+c.discount+'% de descuento aplicado'+(c.uses==='single'?' (uso único)':'')+'.';}
-  } else {
-    result.style.color='#ef4444';result.textContent=check.msg;
-    if(ctx==='plans'){plansCoupon=null;}else{appliedCoupon=null;}
-  }
+  }else{result.style.color='#ef4444';result.textContent=check.msg;if(ctx==='plans'){plansCoupon=null;}else{appliedCoupon=null;}}
 }
-
 function applyPlansCoupon(){applyCoupon('plans');}
-
 function showMsg(id,txt){document.querySelectorAll('.msg-success,.msg-error').forEach(e=>e.style.display='none');const el=document.getElementById(id);if(el){el.textContent=txt;el.style.display='block';}}
 
-// STRIPE CHECKOUT
 function checkout(plan){
   if(!currentUser){openModal('register');showMsg('reg-error','Crea una cuenta primero.');return;}
   const isAnnual=document.getElementById('billingToggle').classList.contains('on');
   const key=plan+(isAnnual?'_yearly':'_monthly');
   const url=PAYMENT_LINKS[key];
   if(!url){alert('Enlace de pago no disponible.');return;}
-  // Si hay cupón aplicado en planes, marcarlo como usado si es de uso único
   if(plansCoupon&&plansCoupon.uses==='single')markCouponUsed(plansCoupon.code);
   window.location.href=url+'?prefilled_email='+encodeURIComponent(currentUser.email);
 }
 
-// BILLING TOGGLE
 let annual=false;
 function toggleBilling(){
   annual=!annual;
@@ -1238,132 +983,55 @@ function toggleBilling(){
     setPrice('inter','109€','/año','/ año · 3 meses gratis · IVA excl.');
     setPrice('pro','147€','/año','/ año · 5 meses gratis · IVA excl.');
     setPrice('def','199,95€','/año','/ año · 3 meses gratis · IVA excl.');
-  } else {
+  }else{
     setPrice('noob','7€','/mes','Facturado mensualmente · IVA excl.');
     setPrice('inter','13€','/mes','Facturado mensualmente · IVA excl.');
     setPrice('pro','21€','/mes','Facturado mensualmente · IVA excl.');
     setPrice('def','39,99€','/mes','Facturado mensualmente · IVA excl.');
   }
 }
-function setPrice(id,price,period,sub){
-  const pe=document.getElementById('price-'+id);if(pe){pe.childNodes[0].textContent=price;document.getElementById('period-'+id).textContent=period;}
-  const se=document.getElementById('sub-'+id);if(se)se.textContent=sub;
-}
+function setPrice(id,price,period,sub){const pe=document.getElementById('price-'+id);if(pe){pe.childNodes[0].textContent=price;document.getElementById('period-'+id).textContent=period;}const se=document.getElementById('sub-'+id);if(se)se.textContent=sub;}
 
-// THEME
 function setTheme(t,el){document.body.setAttribute('data-theme',t);document.querySelectorAll('.theme-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');localStorage.setItem('autoia-theme',t);}
-
-// MODAL
 function openModal(tab){document.getElementById('authModal').classList.add('open');switchTab(tab);setTimeout(renderGoogleBtn,100);}
 function closeModal(id){document.getElementById(id).classList.remove('open');}
 document.querySelectorAll('.modal-overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('open');}));
 function switchTab(tab){
   const isReg=tab==='register';
-  document.getElementById('tab-register').classList.toggle('active',isReg);
-  document.getElementById('tab-login').classList.toggle('active',!isReg);
-  document.getElementById('register-fields').style.display=isReg?'block':'none';
-  document.getElementById('login-fields').style.display=isReg?'none':'block';
+  document.getElementById('tab-register').classList.toggle('active',isReg);document.getElementById('tab-login').classList.toggle('active',!isReg);
+  document.getElementById('register-fields').style.display=isReg?'block':'none';document.getElementById('login-fields').style.display=isReg?'none':'block';
   document.getElementById('modal-title').textContent=isReg?'Crear cuenta':'Bienvenido de vuelta';
   document.getElementById('modal-sub').textContent=isReg?'Empieza gratis, sin tarjeta':'Accede a tu cuenta';
 }
 
-// LANG
-const I18N={es:{cta_free:'Crear mi primer vídeo gratis'},en:{cta_free:'Create my first video free'},fr:{cta_free:'Créer ma première vidéo gratuite'},de:{cta_free:'Mein erstes Video erstellen'},pt:{cta_free:'Criar meu primeiro vídeo grátis'},it:{cta_free:'Crea il mio primo video gratis'}};
+const I18N={es:{cta_free:'Comenzar gratis'},en:{cta_free:'Get started free'},fr:{cta_free:'Commencer gratuitement'},de:{cta_free:'Kostenlos starten'},pt:{cta_free:'Começar grátis'},it:{cta_free:'Inizia gratis'}};
 function changeLang(lang){const t=I18N[lang]||I18N.es;document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');if(t[key])el.textContent=t[key];});localStorage.setItem('autoia-lang',lang);}
-const savedLang=localStorage.getItem('autoia-lang');
-if(savedLang){document.getElementById('langSelect').value=savedLang;changeLang(savedLang);}
+const savedLang=localStorage.getItem('autoia-lang');if(savedLang){document.getElementById('langSelect').value=savedLang;changeLang(savedLang);}
 
-// VOCES & ESTILOS
-const VOCES=[
-  {nombre:"Marco",frase:"Hola, soy Marco, tu narrador épico",pitch:0.8,rate:0.9},
-  {nombre:"Sofía",frase:"Hola, soy Sofía, tu voz suave y clara",pitch:1.4,rate:0.85},
-  {nombre:"Alex",frase:"Hola, soy Alex, joven y dinámico",pitch:1.1,rate:1.1},
-  {nombre:"Carlos",frase:"Hola, soy Carlos, voz profunda y segura",pitch:0.7,rate:0.95},
-  {nombre:"Elena",frase:"Hola, soy Elena, enérgica y motivadora",pitch:1.3,rate:1.05},
-  {nombre:"Orión",frase:"Hola, soy Orión, la voz del universo",pitch:0.6,rate:0.8}
-];
-const ESTILOS=[
-  {img:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",desc:"📸 Fotos reales — Imágenes fotográficas auténticas"},
-  {img:"https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80",desc:"✍️ Texto animado — Tipografía dinámica"},
-  {img:"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",desc:"🎨 Ilustración simple — Dibujos digitales coloridos"},
-  {img:"https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=600&q=80",desc:"💬 Estilo cómic — Viñetas con bocadillos"},
-  {img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",desc:"⚡ Minimalista — Formas geométricas simples"},
-  {img:"https://images.unsplash.com/photo-1580983218765-f663bec55b0b?w=600&q=80",desc:"📋 Estilo pizarra — Dibujado a mano"},
-  {img:"https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80",desc:"🧱 Estilo Lego 3D — Bloques de colores brillantes"},
-  {img:"https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&q=80",desc:"⛩️ Anime / Manga — Estilo japonés animado"},
-  {img:"https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",desc:"👾 Pixel art retro — Gráficos estilo años 80s"},
-  {img:"https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80",desc:"🌊 Acuarela digital — Colores difuminados"}
-];
-function updateVoicePreview(){const idx=parseInt(document.getElementById('voiceSelect').value)||0;const v=VOCES[idx];document.getElementById('voicePreviewText').textContent=v.frase;document.getElementById('voicePreviewBox').style.display='block';}
-function playVoicePreview(){const idx=parseInt(document.getElementById('voiceSelect').value)||0;speakVoice(VOCES[idx]);document.getElementById('voicePreviewBox').style.display='block';document.getElementById('voicePreviewText').textContent=VOCES[idx].frase;}
-function playMovieVoice(){const idx=parseInt(document.getElementById('movieVoice').value)||0;speakVoice(VOCES[idx]);}
-function speakVoice(v){if(!window.speechSynthesis)return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(v.frase);u.lang='es-ES';u.pitch=v.pitch;u.rate=v.rate;const voices=window.speechSynthesis.getVoices().filter(x=>x.lang.startsWith('es'));if(voices.length)u.voice=voices[0];window.speechSynthesis.speak(u);}
-function updateStylePreview(){const idx=parseInt(document.getElementById('estiloVisual').value)||0;const e=ESTILOS[idx];if(!e)return;document.getElementById('stylePreviewImg').src=e.img;document.getElementById('stylePreviewDesc').textContent=e.desc;}
-
-// VIDEO GENERATION
-const VIDEO_TITLES=['5 secretos que nadie te cuenta','Lo que la ciencia descubrió recientemente','Esto cambiará tu forma de ver el mundo','El misterio que tiene en vilo a millones','Datos que te dejarán sin palabras'];
-const VIDEO_DESCS=['Descubre en este vídeo los datos más sorprendentes que raramente se mencionan. Síguenos para más contenido así cada día.','La ciencia ha revelado algo que pocos conocen. En este vídeo te lo explicamos todo de forma sencilla.','¿Sabías que existe información que cambia completamente tu perspectiva? Hoy te lo contamos todo.'];
-const HASHTAGS=[['#viral','#curioso','#sabias','#aprendeentiktok','#contenido','#trending'],['#misterio','#terror','#miedo','#viral','#parted2','#yt'],['#ciencia','#curiosidades','#datos','#aprender','#educacion','#viral']];
-
-function generateVideo(){
-  const plan=currentUser?currentUser.plan||'free':'free';const limit=PLAN_LIMITS[plan]||3;
-  if(videoCount>=limit&&limit<=100){alert('Has alcanzado el límite de tu plan ('+limit+' vídeos/mes). ¡Mejora tu plan!');return;}
-  const bar=document.getElementById('progressBar');const fill=document.getElementById('progressFill');const text=document.getElementById('progressText');const preview=document.getElementById('videoPreview');
-  bar.style.display='block';text.style.display='block';preview.style.display='none';fill.style.width='0%';
-  const messages=['🤖 Analizando tu descripción...','🎨 Generando imágenes con IA...','🎙️ Añadiendo narración y música...','✨ Aplicando efectos finales...','📝 Creando título y descripción...'];
-  let p=0,msgIdx=0;
-  const iv=setInterval(()=>{p+=Math.random()*2.5;if(p>=100){p=100;clearInterval(iv);setTimeout(()=>{bar.style.display='none';text.style.display='none';preview.style.display='block';videoCount++;document.getElementById('statCreados').textContent=videoCount;updateLimitBar();const title=VIDEO_TITLES[Math.floor(Math.random()*VIDEO_TITLES.length)];const desc=VIDEO_DESCS[Math.floor(Math.random()*VIDEO_DESCS.length)];const tags=HASHTAGS[Math.floor(Math.random()*HASHTAGS.length)];document.getElementById('genTitle').textContent=title;document.getElementById('genDesc').textContent=desc;const tagsEl=document.getElementById('genTags');tagsEl.innerHTML='';tags.forEach(t=>{const s=document.createElement('span');s.className='video-tag';s.textContent=t;tagsEl.appendChild(s);});addToHistory(title);},400);}fill.style.width=p+'%';if(p>msgIdx*25&&msgIdx<messages.length){text.textContent=messages[msgIdx];msgIdx++;}},100);
-}
-
-function generateMovie(){
-  const bar=document.getElementById('movieProgressBar');const fill=document.getElementById('movieProgressFill');const text=document.getElementById('movieProgressText');const preview=document.getElementById('moviePreview');
-  bar.style.display='block';text.style.display='block';preview.style.display='none';fill.style.width='0%';
-  const movie=document.getElementById('movieSelect').value.replace('🎬 ','');const parts=document.getElementById('movieParts').value;
-  const msgs=['🎬 Analizando la película...','✂️ Dividiendo en '+parts+' partes...','🎙️ Añadiendo narración...','✨ Mezclando audio y vídeo...'];
-  let p=0,mi=0;
-  const iv=setInterval(()=>{p+=Math.random()*2;if(p>=100){p=100;clearInterval(iv);setTimeout(()=>{bar.style.display='none';text.style.display='none';preview.style.display='block';document.getElementById('movieTitle').textContent=movie+' | Parte 1 — Resumen completo';document.getElementById('movieDesc').textContent='Resumen de '+movie+' en '+parts+' partes. Dale like para ver la parte 2.';const tags=['#'+movie.replace(/\s/g,'').toLowerCase(),'#pelicula','#resumen','#parte1','#viral','#tiktok'];const t=document.getElementById('movieTags');t.innerHTML='';tags.forEach(tag=>{const s=document.createElement('span');s.className='video-tag';s.textContent=tag;t.appendChild(s);});},400);}fill.style.width=p+'%';if(p>mi*25&&mi<msgs.length){text.textContent=msgs[mi];mi++;}},120);
-}
-
-function regenVideo(){document.getElementById('videoPreview').style.display='none';generateVideo();}
-function regenMovie(){document.getElementById('moviePreview').style.display='none';generateMovie();}
-
-function addToHistory(title){
-  const grid=document.getElementById('historyGrid');const empty=grid.querySelector('[style*="grid-column"]');if(empty)empty.remove();
-  const card=document.createElement('div');card.className='history-card';
-  card.innerHTML=`<div class="history-thumb">🎬</div><div class="history-title">${title||'Vídeo generado'}</div><div class="history-meta">Hace unos segundos</div>`;
-  grid.prepend(card);
-}
-
-function copyText(id){const el=document.getElementById(id);if(!el)return;navigator.clipboard.writeText(el.textContent).then(()=>showToast('¡Copiado!'));}
-function copyAllTags(){const tags=Array.from(document.getElementById('genTags').querySelectorAll('.video-tag')).map(t=>t.textContent).join(' ');navigator.clipboard.writeText(tags).then(()=>showToast('¡Hashtags copiados!'));}
 function copyRefLink(){const el=document.getElementById('refLink');if(!el)return;navigator.clipboard.writeText(el.value).then(()=>showToast('¡Enlace copiado!'));}
 function showToast(msg){const t=document.createElement('div');t.style.cssText='position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;z-index:999;';t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),2000);}
 
-// ADVISOR IA
 function askAdvisor(q){document.getElementById('advisorInput').value=q;sendAdvisor();}
 function sendAdvisor(){
   const input=document.getElementById('advisorInput');const q=input.value.trim();if(!q)return;
   const safeQ=q.replace(/[<>"']/g,'').substring(0,300);addMsg(safeQ,'user');input.value='';
-  if(safeQ.toLowerCase().includes('quiero')&&(safeQ.toLowerCase().includes('vídeo')||safeQ.toLowerCase().includes('video')||safeQ.toLowerCase().includes('digan')||safeQ.toLowerCase().includes('estilo'))){
-    advisorMemory.push({type:'style',text:safeQ});if(advisorMemory.length>10)advisorMemory=advisorMemory.slice(-10);
-    localStorage.setItem('autoia-advisor-memory',JSON.stringify(advisorMemory));updateStyleMemoryBox();
+  if(safeQ.toLowerCase().includes('quiero')&&(safeQ.toLowerCase().includes('vídeo')||safeQ.toLowerCase().includes('video')||safeQ.toLowerCase().includes('estilo'))){
+    advisorMemory.push({type:'style',text:safeQ});if(advisorMemory.length>10)advisorMemory=advisorMemory.slice(-10);localStorage.setItem('autoia-advisor-memory',JSON.stringify(advisorMemory));
   }
-  setTimeout(()=>{addMsg(generateAdvisorResponse(safeQ.toLowerCase()),'ai');},600);
+  setTimeout(()=>addMsg(generateAdvisorResponse(safeQ.toLowerCase()),'ai'),600);
 }
 function addMsg(text,type){const msgs=document.getElementById('advisorMessages');const div=document.createElement('div');div.className='msg-bubble msg-'+type;div.textContent=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
 function generateAdvisorResponse(q){
   if(q.includes('trending')||q.includes('viral'))return '🔥 Trending ahora: Terror/misterio (+34%), Psicología (+28%) y Finanzas (+22%). Te recomiendo terror en 60-90s con estilo Anime.';
   if(q.includes('estilo'))return '🎨 Entretenimiento: Anime o Lego 3D. Educación: Infografía. Motivación: Cinematográfico épico. Misterio: Cine noir.';
-  if(q.includes('duración')||q.includes('duracion'))return '⏱️ 60-90 segundos: 47% más retención en TikTok. Para monetizar en YouTube: 7-10 minutos.';
   if(q.includes('recuerda')||q.includes('memoria')){const styles=advisorMemory.filter(m=>m.type==='style');if(styles.length>0)return '📝 Recuerdo que dijiste: "'+styles[styles.length-1].text+'". Lo tengo en cuenta.';return '🤔 Aún no me has dicho tu estilo. Cuéntame cómo quieres tus vídeos.';}
-  if(q.includes('quiero')&&(q.includes('video')||q.includes('vídeo')||q.includes('digan')))return '✅ ¡Guardado! Recordaré tus preferencias. ¿Quieres que sugiera un tema con ese estilo?';
-  if(q.includes('crea')||q.includes('ayuda'))return '💡 Para un buen vídeo: 1) Tema gancho (misterio/motivación), 2) 60-90s, 3) Estilo Anime o Lego 3D, 4) Frase de acción al final.';
+  if(q.includes('quiero')&&(q.includes('video')||q.includes('vídeo')||q.includes('estilo')))return '✅ ¡Guardado! Recordaré tus preferencias. ¿Quieres que sugiera un tema con ese estilo?';
+  if(q.includes('crea')||q.includes('ayuda')||q.includes('contenido'))return '💡 Para un buen contenido: 1) Tema gancho (misterio/motivación), 2) 60-90s, 3) Estilo Anime o Lego 3D, 4) Frase de acción al final.';
   if(q.includes('dinero')||q.includes('ganar'))return '💰 Con 3 canales (10K subs c/u) puedes generar 1.500€/mes de AdSense + TikTok Creator Fund. AutoIA lo gestiona solo.';
-  return '💡 Te recomiendo vídeos de 60-90s sobre terror o psicología en estilo Anime. Son los formatos con mayor engagement ahora mismo.';
+  return '💡 Te recomiendo contenido de 60-90s sobre terror o psicología en estilo Anime. Son los formatos con mayor engagement ahora mismo.';
 }
 document.getElementById('advisorInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendAdvisor();});
 
-// REVEAL
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
